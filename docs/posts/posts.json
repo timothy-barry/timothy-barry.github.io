@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/2020-05-27-enhancers/",
+    "title": "Genomics for Statisticians 1: Enhancers",
+    "description": "Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-05-27",
+    "categories": [
+      "Genomics"
+    ],
+    "preview": "posts/2020-05-27-enhancers/Nucleosome.jpg",
+    "last_modified": "2020-05-28T21:50:01-04:00"
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "About this blog",
+    "description": "Statistics, genetics, and (maybe) memes",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-05-27",
+    "categories": [
+      "About"
+    ],
+    "preview": "posts/welcome/pic.png",
+    "last_modified": "2020-05-28T22:19:43-04:00"
+  }
+]

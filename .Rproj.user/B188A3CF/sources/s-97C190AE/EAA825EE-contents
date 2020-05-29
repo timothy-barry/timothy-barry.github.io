@@ -1,0 +1,12 @@
+name: "website_2"
+title: "Tim Barry"
+description: |
+  Tim Barry
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Blog"
+      href: blog.html
+output: 
+  distill::distill_article:
+    css: styles.css

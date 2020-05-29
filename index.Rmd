@@ -1,0 +1,25 @@
+---
+title: "Tim Barry"
+site: distill::distill_website
+---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+I am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Kathryn Roeder and Eugene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. Here is my [CV](timsResume.pdf).
+
+**General interests** High-dimensional statistics, machine learning, statistical genomics
+
+**Current research** Gene transcription, genetic CRISPR screens
+
+**Connect** timothybarry@cmu.edu, [Github](https://github.com/Timothy-Barry)
+
+<br/>
+<br/>
+<center>
+![](pic_circle.png){#id .class width=50% height=50%}
+\center
