@@ -19,6 +19,6 @@ I am a PhD student in the Department of Statistics and Data Science at Carnegie 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
+[<i class="fa fa-envelope fa-3x"></i>](email.html)
 [<i class="fas fa-file fa-3x"></i>](timsResume.pdf)
 [<i class="fa fa-github fa-3x"></i>](https://github.com/Timothy-Barry)
-[<i class="fa fa-envelope fa-3x"></i>](email.html)
