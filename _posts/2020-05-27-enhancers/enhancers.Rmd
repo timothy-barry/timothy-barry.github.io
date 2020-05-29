@@ -109,17 +109,14 @@ This is the first post in a series called *Genomics for Statisticians.* In this 
 ## CRISPR-based methods for enhancer identification at scale
 
 * CRISPR-Cas9 is a flexible technology for genome perturbation and editing.
-* The basic idea is to use CRISPR to ``perturb'' (in some way) a short sequence of DNA. If this perturbation is associated with a shift in the expression of a nearby gene (as measured by, e.g., scRNA-seq), then the targeted sequence of DNA is likely an enhancer for that gene.
+* The basic idea is to use CRISPR to "perturb" (in some way) a short sequence of DNA. If this perturbation is associated with a shift in the expression of a nearby gene, then the targeted sequence of DNA is likely an enhancer for that gene.
 * CRISPR allows us to link enhancers to their target genes and (possibly) establish rigorous causal relationships between enhancer activity and gene expression.
 * CRISPR-based approaches differ along two main axes:
   + 1. **Number of genes measured**: Some CRISPR-based protocols track only a single gene; others track all genes (through, e.g., scRNA-seq).
   + 2. **Mode of perturbation**: CRISPR can "perturb" a candidate enhancer in several ways:
-    + CRISPR–Cas9 (nuclease active) makes a single cut inside the enhancer. The cell uses
-    **non-homologous end joining** to repair the cut. Generally, a few extra bases are inserted or
-    deleted during this process, altering and therefore deactivating the targeted enhancer.
+    + CRISPR–Cas9 (nuclease active) makes a single cut inside the enhancer. The cell uses **non-homologous end joining** to repair the cut. Generally, a few extra bases are inserted or deleted during this process, altering and consequently deactivating the targeted enhancer.
     
-    + CRISPRi (short for **CRISPR interference**) "turns off" a candidate enhancer without
-		altering its associated DNA sequence.
+    + CRISPRi (short for **CRISPR interference**) "turns off" a candidate enhancer without altering its associated DNA sequence.
 		
 ## References
 
