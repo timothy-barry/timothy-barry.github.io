@@ -2,8 +2,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Tim Barry</title>
-    <link>https://timothy-barry.github.io/blog.html</link>
-    <atom:link href="https://timothy-barry.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
+    <link>https://timothy-barry.github.io</link>
+    <atom:link href="https://timothy-barry.github.io/blog.xml" rel="self" type="application/rss+xml"/>
     <description>Tim's website and blog
 </description>
     <generator>Distill</generator>
@@ -11,20 +11,20 @@
     <item>
       <title>Genomics for Statisticians 1: Enhancers</title>
       <dc:creator>Tim Barry</dc:creator>
-      <link>https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers</link>
+      <link>https://timothy-barry.github.io/posts/2020-05-27-enhancers</link>
       <description>Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.</description>
-      <guid>https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers</guid>
+      <guid>https://timothy-barry.github.io/posts/2020-05-27-enhancers</guid>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/Nucleosome.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://timothy-barry.github.io/posts/2020-05-27-enhancers/Nucleosome.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>About this blog</title>
       <dc:creator>Tim Barry</dc:creator>
-      <link>https://timothy-barry.github.io/blog.html/posts/welcome</link>
+      <link>https://timothy-barry.github.io/posts/welcome</link>
       <description>Statistics, genetics, and (maybe) memes</description>
-      <guid>https://timothy-barry.github.io/blog.html/posts/welcome</guid>
+      <guid>https://timothy-barry.github.io/posts/welcome</guid>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://timothy-barry.github.io/blog.html/posts/welcome/pic.png" medium="image" type="image/png" width="987" height="549"/>
+      <media:content url="https://timothy-barry.github.io/posts/welcome/pic.png" medium="image" type="image/png" width="987" height="549"/>
     </item>
   </channel>
 </rss>

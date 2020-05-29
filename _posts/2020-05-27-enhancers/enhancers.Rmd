@@ -9,6 +9,8 @@ date: 05-27-2020
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2  
 categories:
   - Genomics
 preview: Nucleosome.jpg

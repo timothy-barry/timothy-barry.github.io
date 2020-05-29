@@ -23,7 +23,6 @@
 
 <meta property="description" itemprop="description" content="Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale."/>
 
-<link rel="canonical" href="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2020-05-27"/>
@@ -34,29 +33,19 @@
 <meta property="og:title" content="Tim Barry: Genomics for Statisticians 1: Enhancers"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale."/>
-<meta property="og:url" content="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"/>
-<meta property="og:image" content="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/Nucleosome.jpg"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Tim Barry"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="Tim Barry: Genomics for Statisticians 1: Enhancers"/>
 <meta property="twitter:description" content="Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale."/>
-<meta property="twitter:url" content="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"/>
-<meta property="twitter:image" content="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/Nucleosome.jpg"/>
 
-<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Tim Barry: Genomics for Statisticians 1: Enhancers"/>
-<meta name="citation_fulltext_html_url" content="https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"/>
-<meta name="citation_online_date" content="2020/05/27"/>
-<meta name="citation_publication_date" content="2020/05/27"/>
-<meta name="citation_author" content="Tim Barry"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","preview","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Genomics for Statisticians 1: Enhancers"]},{"type":"character","attributes":{},"value":["Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["05-27-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Genomics"]},{"type":"character","attributes":{},"value":["Nucleosome.jpg"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","preview"]}},"value":[{"type":"character","attributes":{},"value":["Genomics for Statisticians 1: Enhancers"]},{"type":"character","attributes":{},"value":["Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["05-27-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["Genomics"]},{"type":"character","attributes":{},"value":["Nucleosome.jpg"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1339,9 +1328,6 @@ body {
 </div>
 <div class="nav-right">
 <a href="../../blog.html">Blog</a>
-<a href="../../blog.xml">
-<i class="fa fa-rss"></i>
-</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1362,6 +1348,18 @@ body {
 </div>
 
 <div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#review-of-chromatin-and-transcription">Review of chromatin and transcription</a></li>
+<li><a href="#review-of-enhancer-biology">Review of enhancer biology</a></li>
+<li><a href="#methods-for-enhancer-identification-at-scale">Methods for enhancer identification at scale</a></li>
+<li><a href="#crispr-based-methods-for-enhancer-identification-at-scale">CRISPR-based methods for enhancer identification at scale</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
 <p>This is the first post in a series called <em>Genomics for Statisticians.</em> In this series I will explore some important ideas in modern genomics from the perspective of a non-biologist. When I began research in statistical genomics, I quickly discovered that my knowledge of genomics was not quite up to par. This series is the result of my effort to fill that gap. I hope other researchers in genomics who do not have extensive formal training in biology (e.g., statisticians, computer scientists) will find this series helpful as well. The posts should be reasonably self-contained. My goal is to explore concepts at the level of a college biology class, roughly. The first post in the series in on enhancers.</p>
 <h2 id="introduction">Introduction</h2>
 <ul>
@@ -1504,18 +1502,7 @@ body {
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom">
-  <h3 id="citation">Citation</h3>
-  <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Barry (2020, May 27). Tim Barry: Genomics for Statisticians 1: Enhancers. Retrieved from https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/</pre>
-  <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{barry2020genomics,
-  author = {Barry, Tim},
-  title = {Tim Barry: Genomics for Statisticians 1: Enhancers},
-  url = {https://timothy-barry.github.io/blog.html/posts/2020-05-27-enhancers/},
-  year = {2020}
-}</pre>
-</div>
+<div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

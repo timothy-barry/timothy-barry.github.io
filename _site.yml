@@ -3,13 +3,10 @@ title: "Tim Barry"
 description: |
   Tim's website and blog
 output_dir: "."
-base_url: https://timothy-barry.github.io/blog.html
 navbar:
   right:
     - text: "Blog"
       href: blog.html
-    - icon: fa fa-rss
-      href: blog.xml
 output: 
   distill::distill_article:
     css: styles.css
