@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2020-06-16-gamma-poisson-nb/",
+    "title": "Gamma, Poisson, and negative binomial distributions",
+    "description": "The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-06-16",
+    "categories": [
+      "Statistics"
+    ],
+    "preview": "posts/2020-06-16-gamma-poisson-nb/picsvg.png",
+    "last_modified": "2020-06-17T17:17:21-04:00"
+  },
+  {
     "path": "posts/2020-05-27-enhancers/",
     "title": "Genomics for Statisticians 1: Enhancers",
     "description": "Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.",
@@ -14,7 +31,7 @@
       "Genomics"
     ],
     "preview": "posts/2020-05-27-enhancers/Nucleosome.jpg",
-    "last_modified": "2020-05-29T01:20:59-04:00"
+    "last_modified": "2020-06-17T13:15:19-04:00"
   },
   {
     "path": "posts/welcome/",
