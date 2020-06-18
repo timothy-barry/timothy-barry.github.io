@@ -17,7 +17,7 @@ draft: false
 preview: Nucleosome.jpg
 ---
 
-This is the first post in a series called *Genomics for Statisticians.* In this series I will explore some important ideas in modern genomics from the perspective of a non-biologist. When I began research in statistical genomics, I quickly discovered that my knowledge of genomics was not quite up to par. This series is the result of my effort to fill that gap. I hope other researchers in genomics who do not have extensive formal training in biology (e.g., statisticians, computer scientists) will find this series helpful as well. The posts should be reasonably self-contained. My goal is to explore concepts at the level of a college biology class, roughly. The first post in the series in on enhancers.
+This is the first post in a series called Genomics for Statisticians. In this series I will explore some important ideas in modern genomics from the perspective of a non-biologist. When I began research in statistical genomics, I quickly discovered that my knowledge of genomics was not quite up to par. This series is the result of my effort to fill that gap. I hope other researchers in genomics who do not have extensive formal training in biology (e.g., statisticians, computer scientists) will find this series helpful as well. The posts should be reasonably self-contained. My goal is to explore concepts at the level of a college biology class, roughly. The first post in the series in on enhancers.
 
 ## Introduction
 
