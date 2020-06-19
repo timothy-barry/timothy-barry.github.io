@@ -63,7 +63,7 @@ There are several parameterizations of the negative binomial distribution. We li
 
 |Idx| Gamma parameterization                 | NB parameterization               | NB pmf                                    |
 |-| -------------------------------------- |---------------------------------- | ----------------------------------------- |
-|1. | Gamma$\left(r, \frac{1}{1 - p}\right)$ | NB$\left(r,p\right)$              | $$\binom{x + r - 1}{x} p^x (1-p)^r $$     |
+|1. | Gamma$\left(r, \frac{p}{1 - p}\right)$ | NB$\left(r,p\right)$              | $$\binom{x + r - 1}{x} p^x (1-p)^r $$     |
 |2. | Gamma$\left(r, \frac{p}{r} \right)$    | NB$\left(r, \frac{p}{p+r}\right)$ | $$ \binom{x + r - 1}{x} \left( \frac{p}{p+r} \right)^x \left( \frac{r}{p+r} \right)^r  $$                                       |
 | 3.| Gamma$\left(r, p \right)$              | NB$\left(r, \frac{p}{p+1}\right)$ | $$ \binom{x + r - 1}{x} \left( \frac{p}{p+1} \right)^x\left( \frac{1}{p+1} \right)^r $$ |
 

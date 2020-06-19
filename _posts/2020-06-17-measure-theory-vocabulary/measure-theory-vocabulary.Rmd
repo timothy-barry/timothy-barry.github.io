@@ -1,0 +1,26 @@
+---
+title: "Rebellion against the Lebesgue integral"
+description: |
+  A short description of the post.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date: 06-17-2020
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+% "Everything should be made as simple as possible, but not simpler." -- Albert Einstein
+
+I once took a graduate-level course on real analysis. The class was a whirlwind introduction to measure theory, Lebesgue integration, metric space completion, Banach spaces, Hilbert spaces, and so on. I found the class extremely difficult. I spent many late nights scrambling to finish problem sets, cursing inscrutable concepts like ["the cantor function"](https://en.wikipedia.org/wiki/Cantor_function) under my breath. I think I suffer from lingering trauma to this day.
+
+In a strange way, however, the class was fun, and I learned a lot.
+
+## RS integration
+
+We use integrals to compute probabilities and moments of random variables. RS is satisfactory for this purpose. Almost always, $\alpha$ is differentiable or a step function. If $\alpha$ is differentiable, we have a standard Reiman integral:
+$$ \int_{A} f d \alpha(x) = \int_A f \alpha'(x) dx.$$ In constrast, if $\alpha$ is the step function that results from the counting measure, we get
+$$ \int_{A} f d\alpha(x) = \sum_{i} f(i).$$ 
+So, maybe measures are necessary for defining probabilities. But, if we restrict our attention to the subset of measurable functions that have densities, then there is no need for measure theory. It represents a barrier to people who would like to read statistics papers but do not have a background in advanced math (public policy people, biologists, psychologists, etc). 
