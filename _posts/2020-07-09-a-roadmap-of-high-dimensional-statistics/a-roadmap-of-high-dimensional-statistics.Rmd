@@ -1,0 +1,51 @@
+---
+title: "A roadmap of high-dimensional statistics"
+description: |
+  A short description of the post.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date: 07-09-2020
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+## Methods
+
+Necessarily fuzzy; these are clusters, and inevitably there are some that I am missing. My focus here is on estimation and inference rather than prediction.
+
+### Regularization
+
+A broad class of methods that involves shrinking terms toward 0. Reduce variance substantially while increasing bias slightly.
+
+1. Regression
+- Lasso regression and ridge regression
+(Popularized by Rob Tibshirani)
+
+2. Covariance matrix estimation
+- Eigenvalue shrinkage methods
+
+### Model-X
+
+1. MX focuses on a problem of central importance in high-dimensional statistics: conditional independence testing. It assumes X is known and Y|X is unknown, which is rather different than most statistical approaches.
+
+MX and Regularization are not mutually exclusive. Gene and Aaditya propose L1ME CRT; no assumptions are made about Y|X, but maybe we can predict Y given X reasonably well using L1 regression.
+
+### Robust loss functions
+
+## Theory 
+
+There are three analytical toolboxes (that I know of) for analyzing high-dimensional methods.
+
+1. Concentration of measure
+- The approach preferred by Wainwright and Roman. Lots of results, especially covariance matrix estimation and Lasso regression.
+
+2. Random matrix theory
+- Analysis of ridge regression by Edgar, Stefan, and Dicker. Mind-bending.
+- Ridgless regression by Ryan tibshirani, Montinari, and others.
+
+3. Approximate message passing theory
+- Power of knockoffs by Asaf
+- High dimensional logistic regression by Pragya. Genius paper.

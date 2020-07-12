@@ -37,11 +37,11 @@ $$ p(x; r, p) = \binom{x + r - 1}{x} (1 - p)^r p^x, $$ where $r \in \mathbb{Z}^{
 $$ p(x; r, p) = \frac{\Gamma(x + r)}{x! \Gamma(r)}(1-p)^rp^k.$$
 This extension follows from properties of the gamma function.
 
-If one holds $r$ fixed, the NB distribution is a member of the exponential family. However, when both $r$ and $p$ are allowed to vary, the NB distribution is not member of the exponential family. This means that parameter estimation in the two-parameter NB model is a bit more challenging than parameter estimation in many other parameteric models. In particular, the NB maximum likelihood estimate fails to exist when the sample mean exceeds the sample seond moment [@Aragon1992]
+If one holds $r$ fixed, the NB distribution is a member of the exponential family. However, when both $r$ and $p$ are allowed to vary, the NB distribution is not member of the exponential family. This means that parameter estimation in the two-parameter NB model is a bit more challenging than parameter estimation in many other parameteric models. In particular, the NB maximum likelihood estimate fails to exist when the sample mean exceeds the sample seond moment. [@Aragon1992]
 
 ### Gamma-Poisson mixture
 
-A very cool (and useful) fact of the negative binomial distribution is that it can be written as a mixture of gamma and Poisson distributions. Consider a Poisson model with gamma-distributed mean:
+A very cool (and useful) fact about the negative binomial distribution is that it can be written as a mixture of gamma and Poisson distributions. Consider a Poisson model with gamma-distributed mean:
 $$
 \begin{cases}
 Y \sim \textrm{Pois}(\theta) \\
@@ -67,7 +67,7 @@ There are several parameterizations of the negative binomial distribution. We li
 |2. | Gamma$\left(r, \frac{p}{r} \right)$    | NB$\left(r, \frac{p}{p+r}\right)$ | $$ \binom{x + r - 1}{x} \left( \frac{p}{p+r} \right)^x \left( \frac{r}{p+r} \right)^r  $$                                       |
 | 3.| Gamma$\left(r, p \right)$              | NB$\left(r, \frac{p}{p+1}\right)$ | $$ \binom{x + r - 1}{x} \left( \frac{p}{p+1} \right)^x\left( \frac{1}{p+1} \right)^r $$ |
 
-Of these three NB parameterizations, the most common are the first and second. The first is the default used by the various NB functions (**dnbinom**, **rnbinom**, etc.) in base R. The second is the default used by the function **negbinomial** in the popular R package **[VGAM](https://cran.r-project.org/web/packages/VGAM/index.html)**. Note that in the second and third parameterizations, $p$ takes values in $\mathbb{R}^{\geq 0}$ and therefore cannot be interpreted as a probability.
+Of these three NB parameterizations, the most common are the first and second. The first is similar (but not identical) to the default used by the various NB functions (**dnbinom**, **rnbinom**, etc.) in base R (see documentation). The second is the default used by the function **negbinomial** in the popular R package **[VGAM](https://cran.r-project.org/web/packages/VGAM/index.html)**. Note that in the second and third parameterizations, $p$ takes values in $\mathbb{R}^{\geq 0}$ and therefore cannot be interpreted as a probability.
 
 ### NB, Poisson, and overdispersion
 

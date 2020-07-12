@@ -19,366 +19,39 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>Tim Barry: About me</title>
+  <title>Information matrices</title>
+  
+  <meta property="description" itemprop="description" content="Information matrices form the basis of classical (i.e., low-dimensional parametric) inference."/>
   
   
-  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-07-06"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-07-06"/>
+  <meta name="article:author" content="Tim Barry"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Tim Barry: About me"/>
+  <meta property="og:title" content="Information matrices"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Information matrices form the basis of classical (i.e., low-dimensional parametric) inference."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Tim Barry"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Tim Barry: About me"/>
+  <meta property="twitter:title" content="Information matrices"/>
+  <meta property="twitter:description" content="Information matrices form the basis of classical (i.e., low-dimensional parametric) inference."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["About me"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories","draft"]}},"value":[{"type":"character","attributes":{},"value":["Information matrices"]},{"type":"character","attributes":{},"value":["Information matrices form the basis of classical (i.e., low-dimensional parametric) inference.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["07-06-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["info_pic_2.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["exponential-families-and-information_files/bowser-1.9.3/bowser.min.js","exponential-families-and-information_files/distill-2.2.21/template.v2.js","exponential-families-and-information_files/jquery-1.11.3/jquery.min.js","exponential-families-and-information_files/webcomponents-2.0.0/webcomponents.js","info_pic_2.png"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  .distill-site-header {
-  
-  }
-  
-  .distill-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .distill-site-header .title {
-    font-size: 18px;
-  }
-  
-  .distill-site-header .logo {
-    padding: 0;
-  }
-  
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative;}
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1254,52 +927,13 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="exponential-families-and-information_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="exponential-families-and-information_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="exponential-families-and-information_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="exponential-families-and-information_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  .distill-site-nav {
-    color: #000000;
-    background-color: #EFEFEF;
-    font-weight: 200;
-    font-size: 13pt;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: black;
-  }
-  
-  .distill-site-header {
-  }
-  
-  .distill-site-footer {
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  body {
-    max-width: 1100px;
-    margin: auto;
-   padding: 1em;
-   line-height: 20px ; 
-  }
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -1308,40 +942,57 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About me","authors":[]}
+{"title":"Information matrices","description":"Information matrices form the basis of classical (i.e., low-dimensional parametric) inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-06T00:00:00.000-04:00","citationText":"Barry, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Tim Barry</a>
-</div>
-<div class="nav-right">
-<a href="blog.html">Blog</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About me</h1>
-
+<h1>Information matrices</h1>
+<p><p>Information matrices form the basis of classical (i.e., low-dimensional parametric) inference.</p></p>
 </div>
 
+<div class="d-byline">
+  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  
+<br/>07-06-2020
+</div>
 
 <div class="d-article">
-<p>I am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors <a href="http://www.stat.cmu.edu/~roeder/">Kathryn Roeder</a> and <a href="https://ekatsevi.github.io">Eugene Katsevich</a>. Previously, I studied math and computer science at the University of Maryland, College Park.</p>
-<p><strong>General interests</strong> Statistics, machine learning, statistical genomics</p>
-<p><strong>Current research</strong> Gene transcription, genetic CRISPR screens</p>
-<br/> <br/>
-<center>
-<p><img src="pic_circle.png" id="id" class="class" style="width:50.0%;height:50.0%" /> </p>
-<p><a href="email.html"><i class="fa fa-envelope fa-3x"></i></a> <a href="timsResume.pdf"><i class="fas fa-file fa-3x"></i></a> <a href="https://github.com/Timothy-Barry"><i class="fa fa-github fa-3x"></i></a></p>
+<p>Information matrices form the backbone of classical statistical inference. This post is a quick cheat sheet on information matrices. It should come in handy for subsequent posts on GLMs.</p>
+<h2 id="observed-information-matrix">Observed information matrix</h2>
+<p>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be an i.i.d. sample from a distribution with density <span class="math inline">\(f(x|\theta),\)</span> <span class="math inline">\(\theta \in \Theta \subset \mathbb{R}^k\)</span>. The vector <span class="math inline">\(\theta\)</span> may or may not be known. Define the log-likelihood <span class="math inline">\(\mathcal{L}\)</span> of <span class="math inline">\(\theta\)</span> by <span class="math display">\[ \mathcal{L}(\theta | X_1, \dots, X_n) = \sum_{i=1}^n \log(f(X_i)|\theta).\]</span> The <strong>observed information matrix</strong> of the distribution evaluated at <span class="math inline">\(\theta^* \in \Theta\)</span> (denoted <span class="math inline">\(J_n(\theta^*)\)</span>) is a random matrix defined as follows: <span class="math display">\[ J_n(\theta^*) = -\left(\frac{1}{n}\right) \nabla^2 l(\theta)|_{\theta = \theta^*}.\]</span> In words, compute the hessian of the (known) log-likelihood function, plug in the parameter <span class="math inline">\(\theta^*\)</span>, and multiply by <span class="math inline">\(-1/n\)</span>. The matrix <span class="math inline">\(J_n(\theta^*)\)</span> is random because the data <span class="math inline">\(X_1, \dots, X_n\)</span> are random.</p>
+<h2 id="expected-or-fisher-information-matrix">Expected (or Fisher) information matrix</h2>
+<p>The <strong>expected information matrix</strong> (also known as the <strong>Fisher information matrix</strong>) is the population analogue of the observed information matrix. Let <span class="math inline">\(X\)</span> be a single sample from a distribution with density <span class="math inline">\(f(x|\theta), \theta \in \Theta \subset \mathbb{R}^k.\)</span> The Fisher information matrix <span class="math inline">\(I(\theta^*)\)</span> evaluated at <span class="math inline">\(\theta^*\)</span> is defined as <span class="math display">\[ I(\theta^*) = \mathbb{E}[ J_1(\theta^*) ] = -\mathbb{E} \left[\nabla^2 \mathcal{L}(\theta | X) |_{\theta = \theta^*} \right].\]</span> In words, take the Hessian of the single-sample log-likelihood, evaluate at <span class="math inline">\(\theta^*\)</span>, compute the expectation, and multiply by <span class="math inline">\(-1\)</span>. The Fisher Information matrix (evaluated at <span class="math inline">\(\theta^*\)</span>) is a fixed quantity associated with the distribution. By the law of large numbers, the observed information matrix converges in probability to the Fisher information matrix.</p>
+<p>We can formulate the Fisher information matrix in an alternate way. Like before, let <span class="math inline">\(X\)</span> be a sample from a distribution with density <span class="math inline">\(f(x|\theta)\)</span>, <span class="math inline">\(\theta \in \Theta \subset \mathbb{R}^k\)</span>. Define the <strong>score statistic</strong> by <span class="math display">\[ Z(X) = \nabla \mathcal{L}(\theta|X).\]</span> Then the Fisher information matrix evaluated at <span class="math inline">\(\theta^*\)</span> is <span class="math display">\[ I(\theta^*) = \textrm{Cov}(Z(X)|\theta^*).\]</span> In words, set the parameter of the underlying distribution equal to <span class="math inline">\(\theta^*\)</span> and compute the covariance matrix of the score statistic. This alternate formulation is more of academic interest, as far as I can tell.</p>
+<h2 id="information-matrices-of-exponential-families">Information matrices of exponential families</h2>
+<p>There is an interesting connection between exponential families and information matrices. Recall that the density of a <span class="math inline">\(k\)</span>-parameter exponential family can be written as <span class="math display">\[f(x|\eta) = e^{ \sum_{i=1}^k \eta_i T_i(x) - \psi(\eta)}h(x),\]</span> where <span class="math inline">\(\eta \in \mathbb{R}^k\)</span> and <span class="math inline">\(x \in \mathbb{R}^d\)</span>. Let <span class="math inline">\(X\)</span> be a sample from a <span class="math inline">\(k\)</span>-parameter exponential family. The log-likelihood of <span class="math inline">\(\eta\)</span> given <span class="math inline">\(X\)</span> is <span class="math display">\[ \mathcal{L}(\eta | X) = \left(  \sum_{i=1}^k \eta_i T_i(X) - \psi(\eta) \right)  +  \textrm{constant}.\]</span> Taking the Hessian of this quantity (in <span class="math inline">\(\eta\)</span>), we find <span class="math display">\[ \nabla^2 \mathcal{L}(\eta | X) = -\nabla^2 \psi(\eta).\]</span> Evaluating this quantity at <span class="math inline">\(\eta^*\)</span> and multiplying by <span class="math inline">\(-1\)</span>, the observed information matrix is <span class="math inline">\(J_1(\eta^*) = \nabla^2 \psi(\eta^*).\)</span> Taking the expectation of the observed information matrix (in <span class="math inline">\(X\)</span>), the Fisher information matrix is <span class="math inline">\(I(\eta^*) = \nabla^2 \psi(\eta^*).\)</span> This analysis yields two interesting insights:</p>
+<ol type="1">
+<li>The observed and Fisher information matrices (for the canonnnical parameter <span class="math inline">\(\eta\)</span>) coincide for <span class="math inline">\(k\)</span>-parameter exponential families.</li>
+<li>There exists an explict formula for these quantities in terms of the function <span class="math inline">\(\psi\)</span>. In particular, <span class="math inline">\(I(\theta) = J_1(\theta) = \nabla^2 \psi(\eta).\)</span></li>
+</ol>
+<p>Recall that there is an alternate formulation of the information matrix in terms of the covariance matrix of the score statistic. For a <span class="math inline">\(k\)</span>-parameter exponential family in canonical form, the score statistic <span class="math inline">\(Z(X)\)</span> is simply the vector of sufficient statistics: <span class="math display">\[ Z(X) = \nabla \mathcal{L}(\eta | X) = [T_1(X), \dots, T_k(X)].\]</span> Furthermore, as we learned in our post on exponential families, the covariance matrix of the vector of sufficient statistics is equal to the Hessian of <span class="math inline">\(\psi\)</span> evaluated at the canonical parameter: <span class="math display">\[ \nabla^2 \psi(\eta) = \textrm{Cov}_\eta[T_1(X), \dots, T_k(X)].\]</span> But the covariance of the score statistic is equal to the Fisher information. Thus, <span class="math inline">\(\nabla^2 \psi(\eta)\)</span> is equal to the Fisher information. This is an alternate derivation of the above result.</p>
+<p>The Fisher information matrix depends on the chosen parameterization of the distribution. This result does not hold (in general) under alternate parameterizations.</p>
+<h2 id="asymptotic-covariance-matrices-of-mles">Asymptotic covariance matrices of MLEs</h2>
+<p>Information matrices are useful because they can be used to calculate asymptotic covariance matrices of MLEs. Let <span class="math inline">\(\hat{\theta}_{n}\)</span> be the MLE of a distribution <span class="math inline">\(\{P_{\theta}\},\)</span> where <span class="math inline">\(\theta \in \Theta \in \mathbb{R}^k\)</span>. Under very general conditions,</p>
+<p><span class="math display">\[ \begin{cases}
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [I(\theta)]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [I(\hat{\theta}_{n})]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [J_n(\theta)]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [J_n(\hat{\theta}_{n})]^{-1}).
+\end{cases}\]</span></p>
+<p>As we can see, we can express the limiting multivariate normal distribution in different ways. We can write the limiting distribution either in terms of the observed information matrix (expressions 3 and 4) or the Fisher information matrix (expressions 1 and 2). We can evaluate the chosen information matrix either at the MLE (expressions 2 and 4) or at the true parameter value <span class="math inline">\(\theta\)</span> (expressions 1 and 3). These various expressions are useful in different situations. For example, if we want to calculate a standard error of the MLE, we would use expressions 2 or 4; if we want to test a hypothesis, we could use any of the expressions. If we are unable to calculate the Fisher information matrix but are able to calculate the observed information matrix, we would use expressions 3 or 4, etc.</p>
+<p>Notation: no subscript means matrix is for the whole joint distribution (clear from context). <span class="math inline">\(I_n\)</span> matrix for <span class="math inline">\(n\)</span>-fold product distribution of an i.i.d. sample.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p><a href="https://www2.stat.duke.edu/courses/Spring05/sta215/lec/wk06a.pdf">Lecuture notes</a> provided by Professor Robert L Wolpert.</p></li>
+<li><p>Wikipedia articles on <a href="https://en.wikipedia.org/wiki/Observed_information">observed</a> and <a href="https://en.wikipedia.org/wiki/Fisher_information">Fisher</a> information matrices.</p></li>
+<li><p><a href="https://www.stat.umn.edu/geyer/s06/5102/notes/fish.pdf">Lecture notes</a> provided by professor Charles J Geyer.</p></li>
+</ol>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1349,6 +1000,15 @@
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Exponential families</title>
+  
+  <meta property="description" itemprop="description" content="The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families."/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-07-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-07-12"/>
+  <meta name="article:author" content="Tim Barry"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Exponential families"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families."/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Exponential families"/>
+  <meta property="twitter:description" content="The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families."/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories","draft"]}},"value":[{"type":"character","attributes":{},"value":["Exponential families"]},{"type":"character","attributes":{},"value":["The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["07-12-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["happy_normal.jpg"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["exponential-families_files/bowser-1.9.3/bowser.min.js","exponential-families_files/distill-2.2.21/template.v2.js","exponential-families_files/jquery-1.11.3/jquery.min.js","exponential-families_files/webcomponents-2.0.0/webcomponents.js","happy_normal.jpg","meme.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="exponential-families_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="exponential-families_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="exponential-families_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="exponential-families_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Exponential families","description":"The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-12T00:00:00.000-04:00","citationText":"Barry, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Exponential families</h1>
+<p><p>The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.</p></p>
+</div>
+
+<div class="d-byline">
+  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  
+<br/>07-12-2020
+</div>
+
+<div class="d-article">
+<p>The exponential family is a mathematical abstraction that unifies common parametric probability distributions. Exponential families play a prominent role in GLMs and graphical models, two methods frequently employed in parametric statistical genomics. In this post we define exponential families and review their basic properties. We take a fairly conceptual approach, omitting proofs for the most part. This is the first post in a three-part mini series on exponential families, information matrices, and GLMs.</p>
+<h2 id="one-parameter-exponential-family">One-parameter exponential family</h2>
+<p>A <em>parametric model</em> is a family of probability distributions indexed by a finite set of parameters. A one-parameter exponential family is a special type of parametric model indexed by a single scalar parameter.</p>
+<h3 id="definition">Definition</h3>
+<p>Let <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> be a random vector with distribution <span class="math inline">\(P_\theta,\)</span> where <span class="math inline">\(\theta \in \Theta \subset \mathbb{R}\)</span>. Assume the support of <span class="math inline">\(X\)</span> is <span class="math inline">\(S^d \subset \mathbb{R}^d\)</span>. We say <span class="math inline">\(\{P_{\theta} : \theta \in \Theta \}\)</span> belongs to the one-parameter exponential family if the density function <span class="math inline">\(f\)</span> of <span class="math inline">\(X\)</span> can be written as <span class="math display">\[ \begin{equation}\label{def}
+f(x | \theta) = e^{ \eta(\theta) T(x) - \psi(\theta) } h(x),
+\end{equation}\]</span> where <span class="math inline">\(\psi, \eta : \Theta \to \mathbb{R}\)</span> and <span class="math inline">\(T, h : S^d \to \mathbb{R}\)</span> are functions.</p>
+<p><strong>Note 1</strong>: The functions <span class="math inline">\(\psi, \eta, T,\)</span> and <span class="math inline">\(h\)</span> are non-unique.</p>
+<p><strong>Note 2</strong>: Technically, we also must specify an integrator <span class="math inline">\(\alpha\)</span> with respect to which we integrate the density <span class="math inline">\(f\)</span>. That is, we must specify an <span class="math inline">\(\alpha\)</span> such that <span class="math display">\[ P(X \in A) = \int_{A} f \alpha.\]</span> When <span class="math inline">\(d = 1\)</span>, <span class="math inline">\(\alpha(x) = x\)</span> for continuous distributions and <span class="math inline">\(\alpha(x) = \textrm{floor}(x)\)</span> for discrete distributions. The integrator <span class="math inline">\(\alpha\)</span> typically is clear from the context, so we do not explicitly state it.</p>
+<p>The exponential family encompasses the distributions most commonly used in statistical modeling, including the normal, exponential, gamma, beta, Bernoulli, Poisson, binomial (assuming fixed number of trials), and negative binomial (assuming fixed number of failures) distributions.</p>
+<h3 id="examples">Examples</h3>
+<ol type="1">
+<li><p><strong>Poisson distribution</strong>. The density function of a Poisson distribution is <span class="math display">\[ f(x|\theta) = \frac{\theta^x e^{-\theta}}{x!}.\]</span> We can write this density as <span class="math display">\[ f(x|\theta) = e^{x \log(\theta) -\theta} \frac{1}{x!}.\]</span> Written in this way, it is clear that <span class="math display">\[ 
+\begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = x \\
+\psi(\theta) = \theta \\
+h(x) = \frac{1}{x!}.
+\end{cases}
+\]</span> Therefore, the Poisson distribution belongs to the one-parameter exponential family.</p></li>
+<li><p><strong>Poisson product distribution</strong>. Let <span class="math inline">\(X = X_1, \dots, X_n \sim \textrm{Pois}(\theta).\)</span> The density function of <span class="math inline">\(X\)</span> is <span class="math display">\[ f(x|\theta) = \prod_{i=1}^n \frac{\theta^{x_i}e^{-\theta}}{x_i!} = \frac{ \theta^{\sum_{i=1}^n x_i}e^{-n\theta}}{\prod_{i=1}^n x_i!}.\]</span> Similar to above, we can write this function as <span class="math display">\[ f(x|\theta) = e^{\log(\theta) \left(\sum_{i=1}^n x_i\right) - n\theta} \frac{1}{\prod_{i=1}^n x_i!}.\]</span> We have <span class="math display">\[ 
+\begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = \sum_{i=1}^n x_i \\
+\psi(\theta) = n\theta \\
+h(x) = \frac{1}{\prod_{i=1}^n x_i!}.
+\end{cases}
+\]</span> Therefore, the Poisson product distribution, like the Poisson distribution, is a member of the one-parameter exponential family (of course, with different constituent functions).</p></li>
+<li><p><strong>Negative binomial distribution</strong>. Recall the density function of a negative binomial distribution with parameters <span class="math inline">\(r, \theta\)</span> is <span class="math display">\[ f(x| r, \theta) = \binom{x + r - 1}{x} \theta^{x}(1-\theta)^r.\]</span> Assume that <span class="math inline">\(r\)</span> is a known, fixed parameter. We can express the density function as <span class="math display">\[ f(x|r, \theta) = e^{ \log(\theta) x + r\log(1 - \theta)} \binom{x + r - 1}{x}.\]</span> Writing <span class="math display">\[ \begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = x \\
+\psi(\theta) = - r\log(1 - \theta) \\
+h(x) = \binom{x + r - 1}{x},
+\end{cases}
+\]</span> we see that the negative binomial distribution (with fixed <span class="math inline">\(r\)</span>) is an exponential family. The <span class="math inline">\(n-\)</span>fold negative binomial product distribution likewise is a one-parameter exponential family.</p></li>
+</ol>
+<h3 id="properties">Properties</h3>
+<p>We list several important properties of the one-parameter exponential family. The properties we state relate to sufficiency, reparameterization of the density function, convexity of the likelihood function, and moments of the distribution.</p>
+<ol type="1">
+<li><strong>Sufficiency</strong></li>
+</ol>
+<p>Sufficiency mathematically formalizes the notion of “no loss of information.” As far as I can tell, sufficiency once played a central role in mathematical statistics but since fallen out of favor to some extent. Still, the concept of sufficiency is important to understand in the context of the exponential family.</p>
+<p>Let <span class="math inline">\((X_1, \dots, X_d)\)</span> be a random vector with distribution <span class="math inline">\(P_\theta,\)</span> <span class="math inline">\(\theta \in \Theta \subset \mathbb{R}\)</span>. Let <span class="math inline">\(T(X)\)</span> be a statistic. We call <span class="math inline">\(T(X)\)</span> sufficient for <span class="math inline">\(\theta\)</span> if <span class="math inline">\(T(X)\)</span> preserves all information about <span class="math inline">\(\theta\)</span> contained in <span class="math inline">\((X_1, \dots, X_d)\)</span>. More precisely, <span class="math inline">\(T(X)\)</span> is sufficient for <span class="math inline">\(\theta\)</span> if the distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(T(X)\)</span> is constant in (i.e., does not depend on) <span class="math inline">\(\theta\)</span>.</p>
+<p><strong>Theorem</strong>. <em>Let <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> be distributed according to the one-parameter exponential family <span class="math inline">\(\{P_\theta\}\)</span>. Then the statistic <span class="math inline">\(T(X)\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>.</em></p>
+<p>The proof of this fact follows easily from the <a href="https://en.wikipedia.org/wiki/Sufficient_statistic">Fisher–Neyman factorization theorem</a>. Recall that <span class="math inline">\(T(X) = \sum_{i=1}^n X_i\)</span> is a sufficient statistic of the <span class="math inline">\(n-\)</span>fold Poisson product distribution (see previous section). Also recall that the MLE of the Poisson distribution is <span class="math inline">\((1/n)\sum_{i=1}^n X_i\)</span>. Intuitively, it makes sense that the sufficient statistic would coincide with the MLE (up to a constant). We see similar patterns for other members of the exponential family.</p>
+<ol start="2" type="1">
+<li><strong>Reparameterization</strong></li>
+</ol>
+<p>A common strategy in statistical analysis is to reparateterize a probability distribution. Suppose a family of probability distributions <span class="math inline">\(\{ P_{\theta} \}\)</span> is parameterized by <span class="math inline">\(\theta \in \mathbb{R}\)</span>. Suppose we set <span class="math inline">\(\gamma = f(\theta)\)</span>, where <span class="math inline">\(f: \mathbb{R} \to \mathbb{R}\)</span> is an invertible function. Then we can write <span class="math inline">\(\theta = f^{-1}(\gamma)\)</span> and parameterize the family of probability distributions in terms of <span class="math inline">\(\gamma\)</span> instead of <span class="math inline">\(\theta\)</span>. There is no loss of information in this reparameterization.</p>
+<p>Consider a family of distributions <span class="math inline">\(\{ P_{\theta} : \theta \in \Theta \subset \mathcal{R} \}\)</span> that is a member of the one-parameter exponential family, i.e. that has density <span class="math inline">\(f(x|\theta) = e^{\eta(\theta)T(x) - \psi(\theta)}h(x).\)</span> Typically, the function <span class="math inline">\(\eta: \Theta \to \mathbb{R}\)</span> is invertible. Therefore, we can reparameterize the family of distributions in terms of the function <span class="math inline">\(\eta\)</span>.</p>
+<p>Set <span class="math inline">\(\eta^* = \eta(\theta)\)</span>. Then <span class="math inline">\(\theta = \eta^{-1}(\eta^*)\)</span>, and so we can write the density <span class="math inline">\(f\)</span> as <span class="math display">\[f(x|\theta) = e^{\eta^* T(x) - \psi( \eta^{-1}(\eta^*)) }h(x).\]</span> Setting <span class="math inline">\(\psi^* = \psi \circ \eta^{-1},\)</span> we derive the reparameterization <span class="math display">\[ f(x|\eta^*) = e^{ \eta^* T(x) - \psi^*(\eta^*)}h(x),\]</span> which is parameterized in terms of <span class="math inline">\(\eta^*\)</span> rather than <span class="math inline">\(\theta\)</span>. Under this new parameterization, the parameter space <span class="math inline">\(\mathcal{T}\)</span> consists of the set of values for which the density function <span class="math inline">\(f\)</span> integrates to unity, i.e. <span class="math display">\[ \mathcal{T} = \{ \eta^* \in \mathbb{R} : \int_{R} e^{ \eta^* T(x) - \psi^*(\eta^*)}h(x) d \alpha(x) = 1  \}.\]</span> To ease notation, we drop the asterisk (*) from <span class="math inline">\(\eta\)</span> and <span class="math inline">\(\psi\)</span>. A family of probability distributions is said to be in <strong>canonical one-parameter exponential family form</strong> if its density function can be written as<br />
+<span class="math display">\[f(x|\eta) = e^{ \eta T(x) - \psi(\eta)}h(x), \eta \in \mathcal{T}.\]</span> The set <span class="math inline">\(\mathcal{T}\)</span> is sometimes called the natural parameter space. The canonical form of an exponential family is easy to work with mathematically. Thus, most theorems about exponential families are expressed in canonical form.</p>
+<p>Written in canonical form, the terms <span class="math inline">\(\eta, T(x), \psi(\eta),\)</span> and <span class="math inline">\(h(x)\)</span> have special names:</p>
+<ul>
+<li><p><span class="math inline">\(\eta\)</span> is called the <strong>canonical (or natural) parameter</strong>,</p></li>
+<li><p><span class="math inline">\(T(x)\)</span> is called the <strong>sufficient statistic</strong>,</p></li>
+<li><p><span class="math inline">\(\psi(\eta)\)</span> is called the <strong>cumulant-generating function</strong>, and</p></li>
+<li><p><span class="math inline">\(h(x)\)</span> is called the <strong>carrying density</strong>.</p></li>
+</ul>
+<p>Vocabulary can be a bit annoying, but in the case of exponential families it facilitates discussion. We look at a couple examples of exponential families in canonical form.</p>
+<p><strong>Example: Poisson canonical form</strong>. Recall that we can write the Poisson density in exponential family form as <span class="math display">\[f(x | \theta) = \left(e^{x \log(\theta)} - \theta \right)\frac{1}{x!}.\]</span> Set <span class="math inline">\(\eta^* = \log(\theta)\)</span>. Then <span class="math inline">\(\theta = e^{\eta^*},\)</span> and we can re-express <span class="math inline">\(f\)</span> as <span class="math display">\[f(x| \eta^*) = \left(e^{x \eta^* - e^{\eta^*}} \right) \frac{1}{x!}.\]</span> Dropping the asterisk from <span class="math inline">\(\eta\)</span> to ease notation, we end up with the canonical parameterization <span class="math display">\[f(x| \eta) = \left(e^{x \eta - e^{\eta}}\right) \frac{1}{x!},\]</span> where <span class="math inline">\(\eta \in \mathcal{T} = \mathbb{R}.\)</span> The canonical parameter is <span class="math inline">\(\eta\)</span>, the sufficient statistic is <span class="math inline">\(x\)</span>, the cumulant-generating function is <span class="math inline">\(e^\eta\)</span>, and the carrying density is <span class="math inline">\(1/x!\)</span>.</p>
+<p><strong>Example: Negative binomial canonical form</strong>. We expressed the negative binomial density in exponential family form as <span class="math display">\[ f(x|\theta) = e^{ \log (\theta)x  + r \log(1 - \theta)} \binom{x + r - 1}{x}.\]</span> Setting <span class="math inline">\(\eta = \log(\theta)\)</span>, we can re-write this density in canonical form as <span class="math display">\[ f(x|\eta) = e^{x \eta + r \log(1-e^\eta)}\binom{x+r-1}{x}.\]</span> The canonical parameter is <span class="math inline">\(\eta\)</span>, the sufficient statistic is <span class="math inline">\(x\)</span>, the cumulant-generating function is <span class="math inline">\(r\log(1 - e^\eta)\)</span>, and the carrying density is <span class="math inline">\(\binom{x + r - 1}{x}.\)</span></p>
+<ol start="3" type="1">
+<li><strong>Convexity</strong></li>
+</ol>
+<p>The exponential family enjoys some useful convexity properties.</p>
+<p><strong>Theorem</strong>: <em>Consider a canonical exponential family with density <span class="math display">\[f(x|\eta) = e^{\eta T(x) - \psi(\eta)}h(x)\]</span> and natural parameter space <span class="math inline">\(\mathcal{T}\)</span>. The set <span class="math inline">\(\mathcal{T}\)</span> is convex, and the cumulant-generating function <span class="math inline">\(\psi\)</span> is convex on <span class="math inline">\(\mathcal{T}\)</span>.</em></p>
+<p>The proof of this theorem is simple and involves the application of Holder’s inequality. This theorem has an important corollary.</p>
+<p><strong>Corollary</strong>: <em>Let <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> be a random vector distributed according to the exponential family <span class="math inline">\(\{ P_\eta : \eta \in \mathcal{T}\}.\)</span> The log-likelihood <span class="math display">\[\mathcal{L}(\eta; x) = \log\left(f(x|\eta)\right)\]</span> is a concave function defined on a convex set.</em></p>
+<p>The proof of this corollary is simple. Because <span class="math inline">\(\psi\)</span> is convex, <span class="math inline">\(-\psi\)</span> is concave. The log-likelihood <span class="math display">\[\mathcal{L}(\eta;x) = \eta T(x) - \psi(\eta) + \log\left( h(x) \right)\]</span> is the sum of concave functions and is therefore concave.</p>
+<p>This corollary has important implications: the MLE for <span class="math inline">\(\eta\)</span> exists and is easily computable (through convex optimization). When <span class="math inline">\(\psi\)</span> is strictly convex (which generally is the case), the MLE is unique.</p>
+<ol start="4" type="1">
+<li><strong>Moments</strong></li>
+</ol>
+<p>We easily can compute the moments of an exponential family.</p>
+<p><strong>Theorem</strong>. <em>Let <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> be distributed according to the canonical exponential family <span class="math inline">\(\{ P_\eta:\eta \in \mathcal{T}\}.\)</span> Then</em> <span class="math display">\[
+\begin{cases}
+\mathbb{E}_\eta [T(X)] = \psi&#39;(\eta) \\
+\mathbb{V}_\eta [T(X)] = \psi&#39;&#39;(\eta).
+\end{cases}
+\]</span></p>
+<p>We provide a proof sketch. The density function of the expoential family integrates to unity, i.e. <span class="math display">\[ \int_{\mathbb{R}^d} e^{\eta T(x) - \psi(\eta)}h(x) d\alpha(x) = 1.\]</span> Therefore, <span class="math display">\[ e^{\psi(\eta)} = \int_{ \mathbb{R}^d } e^{\eta T(x)}h(x) d\alpha(x).\]</span> Differentiating with respect to <span class="math inline">\(\eta\)</span>, we find <span class="math display">\[ e^{\psi(\eta)} \psi&#39;(\eta) = \int_{\mathbb{R}^d} T(x)e^{\eta T(x)} h(x) d\alpha(x),\]</span> and so <span class="math display">\[ \psi&#39;(\eta) = \int_{\mathbb{R}^d} T(x) e^{\eta T(x) - \psi(\eta)}h(x) d\alpha(x) = \int_{\mathbb{R}^d} T(x) f(x|\eta) d\alpha(x) = \mathbb{E}_\eta[T(X)].\]</span> Differentiating with respect to <span class="math inline">\(\eta\)</span> again and rearranging, we find <span class="math inline">\(\mathbb{V}_\eta [T(X)] = \psi&#39;&#39;(\eta)\)</span>.</p>
+<p><strong>Example</strong>: Recall that the Poisson distribution can be written in canonical form as <span class="math display">\[ f(x|\eta) = e^{x \eta - e^{\eta}} \frac{1}{x!}.\]</span> We have that <span class="math inline">\(\psi(\eta) = e^{\eta}\)</span> and <span class="math inline">\(T(X) = X\)</span>. Therefore, <span class="math inline">\(\mathbb{E}_\eta[X] = \psi&#39;(\eta) = e^{\eta}\)</span> and <span class="math inline">\(\mathbb{V}_\eta[X] = \psi&#39;&#39;(\eta) = e^{\eta}.\)</span> Recalling that <span class="math inline">\(\eta = \log(\theta)\)</span>, we recover <span class="math inline">\(\mathbb{E}[X] = \mathbb{V}[X] = \theta\)</span>.</p>
+<p>Our theorem about the moments of <span class="math inline">\(T(X)\)</span> has several intriguing corollaries.</p>
+<p><strong>Corollary 1</strong>. The second derivative of <span class="math inline">\(\psi\)</span> is equal to the variance of <span class="math inline">\(T(X)\)</span>. Because variance is non-negative, the second derivative of <span class="math inline">\(\psi\)</span> is non-negative. This implies that <span class="math inline">\(\psi\)</span> is convex. This is an alternate demonstration of the convexity of <span class="math inline">\(\psi\)</span>.</p>
+<p><strong>Corollary 2</strong>. Assume the variance of <span class="math inline">\(T(X)\)</span> is nonzero. Then <span class="math inline">\(\psi\)</span> is strictly convex, implying <span class="math inline">\(\eta \to \mathbb{E}_\eta[T(X)]\)</span> is injective. Thus, we can reparameterize the exponential family in terms of <span class="math inline">\(\mathbb{E}_\eta[T(X)].\)</span> Because <span class="math inline">\(T(X) = X\)</span> for the Poisson and negative binomial distributions in particular, we can parameterize the Poisson and negative binomial densities in terms of their means.</p>
+<h2 id="multiparameter-exponential-family">Multiparameter exponential family</h2>
+<p>We extend the definition of the exponential family to multiparameter distributions. Results that hold for one-parameter exponential families hold analogously for multiparameter exponential families.</p>
+<h3 id="definition-1">Definition</h3>
+<p>Let the random vector <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> have distribution <span class="math inline">\(P_\theta,\)</span> where <span class="math inline">\(\theta \in \Theta \subset \mathbb{R}^k\)</span>. The family <span class="math inline">\(\{P_\theta \}\)</span> belongs to the <span class="math inline">\(k\)</span>-parameter exponential family if its density can be written as <span class="math display">\[f(x|\theta) = e^{ \sum_{i=1}^k \eta_i(\theta)T_i(x) - \psi(\theta)}h(x),\]</span> where <span class="math display">\[ \begin{cases}
+\eta_1, \dotsm \eta_k : \mathbb{R}^k \to \mathbb{R} \\
+T_1, \dots, T_k : \mathbb{R}^d \to \mathbb{R} \\
+\psi : \mathbb{R}^k \to \mathbb{R} \\
+h : \mathbb{R}^d \to \mathbb{R}
+\end{cases}
+\]</span> are functions, and <span class="math inline">\(\theta \in \mathbb{R}^k\)</span>. We also require that the dimension of <span class="math inline">\(\theta = (\theta_1, \dots, \theta_n)\)</span> equal the dimension of <span class="math inline">\((\eta_1(\theta), \dots, \eta_k(\theta))\)</span>. (If the dimension of the latter exceeds that of the former, the distribution is said to belong to the <em>curved exponential family</em>.)</p>
+<h3 id="examples-1">Examples</h3>
+<p>Examples of the multiparameter exponential family include the normal distribution with unknown mean and variance and generalized linear models (GLMs). We will provide more detailed examples of multiparameter exponential families in the upcoming post on GLMs.</p>
+<h3 id="properties-1">Properties</h3>
+<p>We briefly list some properties of the multiparameter exponential family related to sufficiency, reparameterization, convexity, and moments.</p>
+<ol type="1">
+<li><strong>Sufficiency</strong></li>
+</ol>
+<p>The vector <span class="math inline">\([T_1(X), \dots, T_k(X)]^T\)</span> is a sufficient statistic for the parameter <span class="math inline">\(\theta\)</span>. This follows from the Neyman-Fisher factorization theorem.</p>
+<ol start="2" type="1">
+<li><strong>Reparameterization</strong></li>
+</ol>
+<p>We can reparameterize multivariate distributions as well. Similar to the one-parameter case, let <span class="math display">\[ \begin{cases}
+\eta_1^* = \eta_1(\theta_1, \dots, \theta_k) \\
+\dots \\
+\eta_k^* = \eta_k(\theta_1, \dots, \theta_k).
+\end{cases}
+\]</span> Typically, we can invert this vector-valued function, i.e., we can express <span class="math inline">\(\theta_1, \dots, \theta_k\)</span> in terms of <span class="math inline">\(\eta_1^*, \dots, \eta_k^*\)</span>. In this case, we can write the multiparameter exponential family in canonical form: <span class="math display">\[f(x|\eta) = e^{ \sum_{i=1}^k \eta_i T_i(x) - \psi(\eta)}h(x),\]</span> where <span class="math inline">\(\eta \in \mathbb{R}^k, T_1, \dots T_k: \mathbb{R}^d \to \mathbb{R},\)</span> <span class="math inline">\(\psi: \mathbb{R}^k \to \mathbb{R},\)</span> and <span class="math inline">\(h:\mathbb{R}^d \to \mathbb{R}\)</span>. The set <span class="math inline">\(\mathcal{T}\)</span> over which the natural parameters vary is called the natural parameter space.</p>
+<ol start="3" type="1">
+<li><strong>Convexity</strong></li>
+</ol>
+<p>The natural parameter space <span class="math inline">\(\mathcal{T}\)</span> is convex, and the function <span class="math inline">\(\psi: \mathbb{R}^k \to \mathbb{R}\)</span> is convex over <span class="math inline">\(\mathcal{T}\)</span>. Thus, the log-likelihood for the natural parameter <span class="math inline">\(\eta\)</span> of a <span class="math inline">\(k\)</span>-parameter exponential family is concave. The proof of this assertion in multiparameter families likewise leverages Holder’s inequality.</p>
+<ol start="4" type="1">
+<li><strong>Moments</strong></li>
+</ol>
+<p>Let <span class="math inline">\(X = (X_1, \dots, X_d)\)</span> have distribution <span class="math inline">\(\{P_\eta\}\)</span> belonging to the canonical <span class="math inline">\(k-\)</span>parameter exponential family. Then <span class="math display">\[ \nabla \psi(\eta) = \mathbb{E}_\eta[ T_1(X), \dots, T_k(X) ] \]</span> and <span class="math display">\[ \nabla^2 \psi(\eta) = \textrm{Cov}_\eta[T_1(X), \dots, T_k(X)],\]</span> where <span class="math inline">\(\nabla \psi\)</span> is the gradient of <span class="math inline">\(\psi\)</span>, and <span class="math inline">\(\nabla^2\psi\)</span> is the Hessian of <span class="math inline">\(\psi\)</span>. In words, the gradient of the cumulant-generating function <span class="math inline">\(\psi\)</span> is the expected value of the vector of sufficient statistics <span class="math inline">\([T_1(X), \dots, T_k(X)]\)</span>, and the hessian of <span class="math inline">\(\psi\)</span> is the variance-covariance matrix of the vector of sufficient statistics. Because variance-covariance matrices are positive semi-definite, the function <span class="math inline">\(\psi\)</span> is convex. This is an alternate demonstration of the convexity of <span class="math inline">\(\psi\)</span>. The Hessian of <span class="math inline">\(\psi\)</span> evaulated at <span class="math inline">\(\eta\)</span> sometimes is called the Fisher information matrix (evaluated at <span class="math inline">\(\eta\)</span>).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we defined exponential families and explored some of their basic properties. In the remaining two posts of this mini-series, we will explore the connection between exponential families, information matrices, and GLMs.</p>
+<center>
+<p><img src="meme.png" id="id" class="class" style="width:50.0%" /></p>
+<em>me.me</em>
+</center>
+<h2 id="referenes">Referenes</h2>
+<ol type="1">
+<li><a href="https://www.stat.purdue.edu/~dasgupta/expfamily.pdf">Lecture notes</a> provided by Professor Anirban DasGupta.</li>
+</ol>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

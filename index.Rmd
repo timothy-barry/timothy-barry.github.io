@@ -1,11 +1,11 @@
 ---
-title: "Tim Barry"
+title: "About me"
 site: distill::distill_website
 ---
 
-I am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Kathryn Roeder and Eugene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park.
+I am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) and [Eugene Katsevich](https://ekatsevi.github.io). Previously, I studied math and computer science at the University of Maryland, College Park.
 
-**General interests** High-dimensional statistics, machine learning, statistical genomics
+**General interests** Statistics, machine learning, statistical genomics
 
 **Current research** Gene transcription, genetic CRISPR screens
 

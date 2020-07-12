@@ -1,0 +1,230 @@
+---
+title: "Exponential families"
+description: |
+ The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date:
+output:
+  distill::distill_article:
+    self_contained: false
+preview: happy_normal.jpg
+categories:
+  - Statistics
+draft: false
+---
+
+The exponential family is a mathematical abstraction that unifies common parametric probability distributions. Exponential families play a prominent role in GLMs and graphical models, two methods frequently employed in parametric statistical genomics. In this post we define exponential families and review their basic properties. We take a fairly conceptual approach, omitting proofs for the most part. This is the first post in a three-part mini series on exponential families, information matrices, and GLMs.
+
+## One-parameter exponential family
+
+A *parametric model* is a family of probability distributions indexed by a finite set of parameters. A one-parameter exponential family is a special type of parametric model indexed by a single scalar parameter.
+
+### Definition
+
+Let $X = (X_1, \dots, X_d)$ be a random vector with distribution $P_\theta,$ where $\theta \in \Theta \subset \mathbb{R}$. Assume the support of $X$ is $S^d \subset \mathbb{R}^d$. We say $\{P_{\theta} : \theta \in \Theta \}$ belongs to the one-parameter exponential family if the density function $f$ of $X$ can be written as
+$$ \begin{equation}\label{def}
+f(x | \theta) = e^{ \eta(\theta) T(x) - \psi(\theta) } h(x),
+\end{equation}$$ where $\psi, \eta : \Theta \to \mathbb{R}$ and $T, h : S^d \to \mathbb{R}$ are functions.
+
+**Note 1**: The functions $\psi, \eta, T,$ and $h$ are non-unique.
+
+**Note 2**: Technically, we also must specify an integrator $\alpha$ with respect to which we integrate the density $f$. That is, we must specify an $\alpha$ such that
+$$ P(X \in A) = \int_{A} f \alpha.$$ When $d = 1$, $\alpha(x) = x$ for continuous distributions and $\alpha(x) = \textrm{floor}(x)$ for discrete distributions. The integrator $\alpha$ typically is clear from the context, so we do not explicitly state it.
+
+The exponential family encompasses the distributions most commonly used in statistical modeling, including the normal, exponential, gamma, beta, Bernoulli, Poisson, binomial (assuming fixed number of trials), and negative binomial (assuming fixed number of failures) distributions.
+
+### Examples
+
+1. **Poisson distribution**. The density function of a Poisson distribution is
+$$ f(x|\theta) = \frac{\theta^x e^{-\theta}}{x!}.$$ We can write this density as
+$$ f(x|\theta) = e^{x \log(\theta) -\theta} \frac{1}{x!}.$$ Written in this way, it is clear that
+$$ 
+\begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = x \\
+\psi(\theta) = \theta \\
+h(x) = \frac{1}{x!}.
+\end{cases}
+$$
+Therefore, the Poisson distribution belongs to the one-parameter exponential family.
+
+2. **Poisson product distribution**. Let $X = X_1, \dots, X_n \sim \textrm{Pois}(\theta).$ The density function of $X$ is
+$$ f(x|\theta) = \prod_{i=1}^n \frac{\theta^{x_i}e^{-\theta}}{x_i!} = \frac{ \theta^{\sum_{i=1}^n x_i}e^{-n\theta}}{\prod_{i=1}^n x_i!}.$$ Similar to above, we can write this function as
+$$ f(x|\theta) = e^{\log(\theta) \left(\sum_{i=1}^n x_i\right) - n\theta} \frac{1}{\prod_{i=1}^n x_i!}.$$
+We have
+$$ 
+\begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = \sum_{i=1}^n x_i \\
+\psi(\theta) = n\theta \\
+h(x) = \frac{1}{\prod_{i=1}^n x_i!}.
+\end{cases}
+$$
+Therefore, the Poisson product distribution, like the Poisson distribution, is a member of the one-parameter exponential family (of course, with different constituent functions).
+
+3. **Negative binomial distribution**. Recall the density function of a negative binomial distribution with parameters $r, \theta$ is
+$$ f(x| r, \theta) = \binom{x + r - 1}{x} \theta^{x}(1-\theta)^r.$$ Assume that $r$ is a known, fixed parameter. We can express the density function as
+$$ f(x|r, \theta) = e^{ \log(\theta) x + r\log(1 - \theta)} \binom{x + r - 1}{x}.$$ Writing
+$$ \begin{cases}
+\eta(\theta) = \log(\theta) \\
+T(x) = x \\
+\psi(\theta) = - r\log(1 - \theta) \\
+h(x) = \binom{x + r - 1}{x},
+\end{cases}
+$$
+we see that the negative binomial distribution (with fixed $r$) is an exponential family. The $n-$fold negative binomial product distribution likewise is a one-parameter exponential family.
+
+### Properties
+
+We list several important properties of the one-parameter exponential family. The properties we state relate to sufficiency, reparameterization of the density function, convexity of the likelihood function, and moments of the distribution.
+
+1. **Sufficiency**
+
+Sufficiency mathematically formalizes the notion of "no loss of information." As far as I can tell, sufficiency once played a central role in mathematical statistics but since fallen out of favor to some extent. Still, the concept of sufficiency is important to understand in the context of the exponential family.
+
+Let $(X_1, \dots, X_d)$ be a random vector with distribution $P_\theta,$ $\theta \in \Theta \subset \mathbb{R}$. Let $T(X)$ be a statistic. We call $T(X)$ sufficient for $\theta$ if $T(X)$ preserves all information about $\theta$ contained in $(X_1, \dots, X_d)$. More precisely, $T(X)$ is sufficient for $\theta$ if the distribution of $X$ given $T(X)$ is constant in (i.e., does not depend on) $\theta$.
+
+**Theorem**. *Let $X = (X_1, \dots, X_d)$ be distributed according to the one-parameter exponential family $\{P_\theta\}$. Then the statistic $T(X)$ is a sufficient statistic for $\theta$.*
+
+The proof of this fact follows easily from the [Fisher–Neyman factorization theorem](https://en.wikipedia.org/wiki/Sufficient_statistic). Recall that
+$T(X) = \sum_{i=1}^n X_i$ is a sufficient statistic of the $n-$fold Poisson product distribution (see previous section). Also recall that the MLE of the Poisson distribution is $(1/n)\sum_{i=1}^n X_i$. Intuitively, it makes sense that the sufficient statistic would coincide with the MLE (up to a constant). We see similar patterns for other members of the exponential family.
+
+2. **Reparameterization**
+
+A common strategy in statistical analysis is to reparateterize a probability distribution. Suppose a family of probability distributions $\{ P_{\theta} \}$ is parameterized by $\theta \in \mathbb{R}$. Suppose we set $\gamma = f(\theta)$, where $f: \mathbb{R} \to \mathbb{R}$ is an invertible function. Then we can write $\theta = f^{-1}(\gamma)$ and parameterize the family of probability distributions in terms of $\gamma$ instead of $\theta$. There is no loss of information in this reparameterization.
+
+Consider a family of distributions $\{ P_{\theta} : \theta \in \Theta \subset \mathcal{R} \}$ that is a member of the one-parameter exponential family, i.e. that has density $f(x|\theta) = e^{\eta(\theta)T(x) - \psi(\theta)}h(x).$ Typically, the function $\eta: \Theta \to \mathbb{R}$ is invertible. Therefore, we can reparameterize the family of distributions in terms of the function $\eta$.
+
+Set $\eta^* = \eta(\theta)$. Then $\theta = \eta^{-1}(\eta^*)$, and so we can write the density $f$ as
+$$f(x|\theta) = e^{\eta^* T(x) - \psi( \eta^{-1}(\eta^*)) }h(x).$$ Setting $\psi^* = \psi \circ \eta^{-1},$ we derive the reparameterization
+$$ f(x|\eta^*) = e^{ \eta^* T(x) - \psi^*(\eta^*)}h(x),$$ which is parameterized in terms of $\eta^*$ rather than $\theta$. Under this new parameterization, the parameter space $\mathcal{T}$ consists of the set of values for which the density function $f$ integrates to unity, i.e.
+$$ \mathcal{T} = \{ \eta^* \in \mathbb{R} : \int_{R} e^{ \eta^* T(x) - \psi^*(\eta^*)}h(x) d \alpha(x) = 1  \}.$$ To ease notation, we drop the asterisk (\*) from $\eta$ and $\psi$. A family of probability distributions is said to be in **canonical one-parameter exponential family form** if its density function can be written as  
+$$f(x|\eta) = e^{ \eta T(x) - \psi(\eta)}h(x), \eta \in \mathcal{T}.$$ The set $\mathcal{T}$ is sometimes called the natural parameter space. The canonical form of an exponential family is easy to work with mathematically. Thus, most theorems about exponential families are expressed in canonical form.
+
+Written in canonical form, the terms $\eta, T(x), \psi(\eta),$ and $h(x)$ have special names:
+
+  * $\eta$ is called the **canonical (or natural) parameter**,
+
+  * $T(x)$ is called the **sufficient statistic**,
+
+  * $\psi(\eta)$ is called the **cumulant-generating function**, and
+
+  * $h(x)$ is called the **carrying density**.
+
+Vocabulary can be a bit annoying, but in the case of exponential families it facilitates discussion. We look at a couple examples of exponential families in canonical form.
+
+**Example: Poisson canonical form**. Recall that we can write the Poisson density in exponential family form as
+$$f(x | \theta) = \left(e^{x \log(\theta)} - \theta \right)\frac{1}{x!}.$$ Set $\eta^* = \log(\theta)$. Then $\theta = e^{\eta^*},$ and we can re-express $f$ as
+$$f(x| \eta^*) = \left(e^{x \eta^* - e^{\eta^*}} \right) \frac{1}{x!}.$$ Dropping the asterisk from $\eta$ to ease notation, we end up with the canonical parameterization 
+$$f(x| \eta) = \left(e^{x \eta - e^{\eta}}\right) \frac{1}{x!},$$ where $\eta \in \mathcal{T} = \mathbb{R}.$ The canonical parameter is $\eta$, the sufficient statistic is $x$, the cumulant-generating function is $e^\eta$, and the carrying density is $1/x!$.
+
+**Example: Negative binomial canonical form**. We expressed the negative binomial density in exponential family form as
+$$ f(x|\theta) = e^{ \log (\theta)x  + r \log(1 - \theta)} \binom{x + r - 1}{x}.$$ Setting $\eta = \log(\theta)$, we can re-write this density in canonical form as $$ f(x|\eta) = e^{x \eta + r \log(1-e^\eta)}\binom{x+r-1}{x}.$$
+The canonical parameter is $\eta$, the sufficient statistic is $x$, the cumulant-generating function is $r\log(1 - e^\eta)$, and the carrying density is $\binom{x + r - 1}{x}.$
+
+3. **Convexity**
+
+The exponential family enjoys some useful convexity properties.
+
+**Theorem**: *Consider a canonical exponential family with density $$f(x|\eta) = e^{\eta T(x) - \psi(\eta)}h(x)$$ and natural parameter space $\mathcal{T}$. The set $\mathcal{T}$ is convex, and the cumulant-generating function $\psi$ is convex on $\mathcal{T}$.*
+
+The proof of this theorem is simple and involves the application of Holder's inequality. This theorem has an important corollary.
+
+**Corollary**: *Let $X = (X_1, \dots, X_d)$ be a random vector distributed according to the exponential family $\{ P_\eta : \eta \in \mathcal{T}\}.$ The log-likelihood $$\mathcal{L}(\eta; x) = \log\left(f(x|\eta)\right)$$ is a concave function defined on a convex set.*
+
+The proof of this corollary is simple. Because $\psi$ is convex, $-\psi$ is concave. The log-likelihood
+$$\mathcal{L}(\eta;x) = \eta T(x) - \psi(\eta) + \log\left( h(x) \right)$$ is the sum of concave functions and is therefore concave.
+
+This corollary has important implications: the MLE for $\eta$ exists and is easily computable (through convex optimization). When $\psi$ is strictly convex (which generally is the case), the MLE is unique.
+
+4. **Moments**
+
+We easily can compute the moments of an exponential family.
+
+**Theorem**. *Let $X = (X_1, \dots, X_d)$ be distributed according to the canonical exponential family $\{ P_\eta:\eta \in \mathcal{T}\}.$ Then*
+$$
+\begin{cases}
+\mathbb{E}_\eta [T(X)] = \psi'(\eta) \\
+\mathbb{V}_\eta [T(X)] = \psi''(\eta).
+\end{cases}
+$$
+
+We provide a proof sketch. The density function of the expoential family integrates to unity, i.e.
+$$ \int_{\mathbb{R}^d} e^{\eta T(x) - \psi(\eta)}h(x) d\alpha(x) = 1.$$ Therefore,
+$$ e^{\psi(\eta)} = \int_{ \mathbb{R}^d } e^{\eta T(x)}h(x) d\alpha(x).$$
+Differentiating with respect to $\eta$, we find
+$$ e^{\psi(\eta)} \psi'(\eta) = \int_{\mathbb{R}^d} T(x)e^{\eta T(x)} h(x) d\alpha(x),$$ and so 
+$$ \psi'(\eta) = \int_{\mathbb{R}^d} T(x) e^{\eta T(x) - \psi(\eta)}h(x) d\alpha(x) = \int_{\mathbb{R}^d} T(x) f(x|\eta) d\alpha(x) = \mathbb{E}_\eta[T(X)].$$ Differentiating with respect to $\eta$ again and rearranging, we find $\mathbb{V}_\eta [T(X)] = \psi''(\eta)$.
+
+**Example**: Recall that the Poisson distribution can be written in canonical form as
+$$ f(x|\eta) = e^{x \eta - e^{\eta}} \frac{1}{x!}.$$ We have that $\psi(\eta) = e^{\eta}$ and $T(X) = X$. Therefore, $\mathbb{E}_\eta[X] = \psi'(\eta) = e^{\eta}$ and $\mathbb{V}_\eta[X] = \psi''(\eta) = e^{\eta}.$ Recalling that $\eta = \log(\theta)$, we recover $\mathbb{E}[X] = \mathbb{V}[X] = \theta$. 
+
+Our theorem about the moments of $T(X)$ has several intriguing corollaries.
+
+**Corollary 1**. The second derivative of $\psi$ is equal to the variance of $T(X)$. Because variance is non-negative, the second derivative of $\psi$ is non-negative. This implies that $\psi$ is convex. This is an alternate demonstration of the convexity of $\psi$.
+
+**Corollary 2**. Assume the variance of $T(X)$ is nonzero. Then $\psi$ is strictly convex, implying $\eta \to \mathbb{E}_\eta[T(X)]$ is injective. Thus, we can reparameterize the exponential family in terms of $\mathbb{E}_\eta[T(X)].$ Because $T(X) = X$ for the Poisson and negative binomial distributions in particular, we can parameterize the Poisson and negative binomial densities in terms of their means.
+
+## Multiparameter exponential family
+
+We extend the definition of the exponential family to multiparameter distributions. Results that hold for one-parameter exponential families hold analogously for multiparameter exponential families.
+
+### Definition
+
+Let the random vector $X = (X_1, \dots, X_d)$ have distribution $P_\theta,$ where $\theta \in \Theta \subset \mathbb{R}^k$. The family $\{P_\theta \}$ belongs to the $k$-parameter exponential family if its density can be written as
+$$f(x|\theta) = e^{ \sum_{i=1}^k \eta_i(\theta)T_i(x) - \psi(\theta)}h(x),$$ where
+$$ \begin{cases}
+\eta_1, \dotsm \eta_k : \mathbb{R}^k \to \mathbb{R} \\
+T_1, \dots, T_k : \mathbb{R}^d \to \mathbb{R} \\
+\psi : \mathbb{R}^k \to \mathbb{R} \\
+h : \mathbb{R}^d \to \mathbb{R}
+\end{cases}
+$$ are functions, and $\theta \in \mathbb{R}^k$. We also require that the dimension of $\theta = (\theta_1, \dots, \theta_n)$ equal the dimension of $(\eta_1(\theta), \dots, \eta_k(\theta))$. (If the dimension of the latter exceeds that of the former, the distribution is said to belong to the *curved exponential family*.)
+
+### Examples
+
+Examples of the multiparameter exponential family include the normal distribution with unknown mean and variance and generalized linear models (GLMs). We will provide more detailed examples of multiparameter exponential families in the upcoming post on GLMs.
+
+### Properties
+
+We briefly list some properties of the multiparameter exponential family related to sufficiency, reparameterization, convexity, and moments.
+
+1. **Sufficiency**
+
+The vector $[T_1(X), \dots, T_k(X)]^T$ is a sufficient statistic for the parameter $\theta$. This follows from the Neyman-Fisher factorization theorem.
+
+2. **Reparameterization**
+
+We can reparameterize multivariate distributions as well. Similar to the one-parameter case, let
+$$ \begin{cases}
+\eta_1^* = \eta_1(\theta_1, \dots, \theta_k) \\
+\dots \\
+\eta_k^* = \eta_k(\theta_1, \dots, \theta_k).
+\end{cases}
+$$ Typically, we can invert this vector-valued function, i.e., we can express $\theta_1, \dots, \theta_k$ in terms of $\eta_1^*, \dots, \eta_k^*$. In this case, we can write the multiparameter exponential family in canonical form:
+$$f(x|\eta) = e^{ \sum_{i=1}^k \eta_i T_i(x) - \psi(\eta)}h(x),$$ where $\eta \in \mathbb{R}^k, T_1, \dots T_k: \mathbb{R}^d \to \mathbb{R},$ $\psi: \mathbb{R}^k \to \mathbb{R},$ and $h:\mathbb{R}^d \to \mathbb{R}$. The set $\mathcal{T}$ over which the natural parameters vary is called the natural parameter space.
+
+3. **Convexity**
+
+The natural parameter space $\mathcal{T}$ is convex, and the function $\psi: \mathbb{R}^k \to \mathbb{R}$ is convex over $\mathcal{T}$. Thus, the log-likelihood for the natural parameter $\eta$ of a $k$-parameter exponential family is concave. The proof of this assertion in multiparameter families likewise leverages Holder's inequality.
+
+4. **Moments**
+
+Let $X = (X_1, \dots, X_d)$ have distribution $\{P_\eta\}$ belonging to the canonical $k-$parameter exponential family. Then
+$$ \nabla \psi(\eta) = \mathbb{E}_\eta[ T_1(X), \dots, T_k(X) ] $$ and $$ \nabla^2 \psi(\eta) = \textrm{Cov}_\eta[T_1(X), \dots, T_k(X)],$$ where $\nabla \psi$ is the gradient of $\psi$, and $\nabla^2\psi$ is the Hessian of $\psi$. In words, the gradient of the cumulant-generating function $\psi$ is the expected value of the vector of sufficient statistics $[T_1(X), \dots, T_k(X)]$, and the hessian of $\psi$ is the variance-covariance matrix of the vector of sufficient statistics. Because variance-covariance matrices are positive semi-definite, the function $\psi$ is convex. This is an alternate demonstration of the convexity of $\psi$. The Hessian of $\psi$ evaulated at $\eta$ sometimes is called the Fisher information matrix (evaluated at $\eta$).
+
+## Conclusion
+
+The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we defined exponential families and explored some of their basic properties. In the remaining two posts of this mini-series, we will explore the connection between exponential families, information matrices, and GLMs.
+
+<center>
+![](meme.png){#id .class width=50%}
+
+*me.me*
+</center>
+
+## Referenes
+
+1. [Lecture notes](https://www.stat.purdue.edu/~dasgupta/expfamily.pdf) provided by Professor Anirban DasGupta.

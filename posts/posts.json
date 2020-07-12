@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2020-06-22-exponential-families/",
+    "title": "Exponential families",
+    "description": "The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-07-12",
+    "categories": [
+      "Statistics"
+    ],
+    "preview": "posts/2020-06-22-exponential-families/happy_normal.jpg",
+    "last_modified": "2020-07-12T16:10:47-04:00"
+  },
+  {
     "path": "posts/2020-06-16-gamma-poisson-nb/",
     "title": "Gamma, Poisson, and negative binomial distributions",
     "description": "The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.",
@@ -14,11 +31,11 @@
       "Statistics"
     ],
     "preview": "posts/2020-06-16-gamma-poisson-nb/picsvg.png",
-    "last_modified": "2020-06-18T23:50:12-04:00"
+    "last_modified": "2020-06-19T00:14:28-04:00"
   },
   {
     "path": "posts/2020-05-27-enhancers/",
-    "title": "Genomics for Statisticians 1: Enhancers",
+    "title": "Genomics for statisticians 1: enhancers",
     "description": "Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.",
     "author": [
       {
@@ -31,7 +48,7 @@
       "Genomics"
     ],
     "preview": "posts/2020-05-27-enhancers/Nucleosome.jpg",
-    "last_modified": "2020-06-17T22:35:39-04:00"
+    "last_modified": "2020-07-07T12:12:38-04:00"
   },
   {
     "path": "posts/welcome/",

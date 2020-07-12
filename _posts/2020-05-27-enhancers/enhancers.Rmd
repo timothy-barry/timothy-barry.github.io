@@ -1,5 +1,5 @@
 ---
-title: "Genomics for Statisticians 1: Enhancers"
+title: "Genomics for statisticians 1: enhancers"
 description: |
   Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.
 author:

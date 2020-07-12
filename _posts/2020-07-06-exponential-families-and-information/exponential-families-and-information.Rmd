@@ -1,0 +1,75 @@
+---
+title: "Information matrices"
+description: |
+  Information matrices form the basis of classical (i.e., low-dimensional parametric) inference.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date: 07-06-2020
+output:
+  distill::distill_article:
+    self_contained: false
+preview: info_pic_2.png
+categories:
+  - Statistics
+draft: true
+---
+
+Information matrices form the backbone of classical statistical inference. This post is a quick cheat sheet on information matrices. It should come in handy for subsequent posts on GLMs.
+
+## Observed information matrix
+
+Let $X_1, \dots, X_n$ be an i.i.d. sample from a distribution with density $f(x|\theta),$ $\theta \in \Theta \subset \mathbb{R}^k$. The vector $\theta$ may or may not be known. Define the log-likelihood $\mathcal{L}$ of $\theta$ by
+$$ \mathcal{L}(\theta | X_1, \dots, X_n) = \sum_{i=1}^n \log(f(X_i)|\theta).$$ The **observed information matrix** of the distribution evaluated at $\theta^* \in \Theta$ (denoted $J_n(\theta^*)$) is a random matrix defined as follows:
+$$ J_n(\theta^*) = -\left(\frac{1}{n}\right) \nabla^2 l(\theta)|_{\theta = \theta^*}.$$
+In words, compute the hessian of the (known) log-likelihood function, plug in the parameter $\theta^*$, and multiply by $-1/n$. The matrix $J_n(\theta^*)$ is random because the data $X_1, \dots, X_n$ are random.
+
+## Expected (or Fisher) information matrix
+
+The **expected information matrix** (also known as the **Fisher information matrix**) is the population analogue of the observed information matrix. Let $X$ be a single sample from a distribution with density $f(x|\theta), \theta \in \Theta \subset \mathbb{R}^k.$ The Fisher information matrix $I(\theta^*)$ evaluated at $\theta^*$ is defined as
+$$ I(\theta^*) = \mathbb{E}[ J_1(\theta^*) ] = -\mathbb{E} \left[\nabla^2 \mathcal{L}(\theta | X) |_{\theta = \theta^*} \right].$$
+In words, take the Hessian of the single-sample log-likelihood, evaluate at $\theta^*$, compute the expectation, and multiply by $-1$. The Fisher Information matrix (evaluated at $\theta^*$) is a fixed quantity associated with the distribution. By the law of large numbers, the observed information matrix converges in probability to the Fisher information matrix.
+
+We can formulate the Fisher information matrix in an alternate way. Like before, let $X$ be a sample from a distribution with density $f(x|\theta)$, $\theta \in \Theta \subset \mathbb{R}^k$. Define the **score statistic** by
+$$ Z(X) = \nabla \mathcal{L}(\theta|X).$$ Then the Fisher information matrix evaluated at $\theta^*$ is
+$$ I(\theta^*) = \textrm{Cov}(Z(X)|\theta^*).$$ In words, set the parameter of the underlying distribution equal to $\theta^*$ and compute the covariance matrix of the score statistic. This alternate formulation is more of academic interest, as far as I can tell.
+
+## Information matrices of exponential families
+
+There is an interesting connection between exponential families and information matrices. Recall that the density of a $k$-parameter exponential family can be written as
+$$f(x|\eta) = e^{ \sum_{i=1}^k \eta_i T_i(x) - \psi(\eta)}h(x),$$ where $\eta \in \mathbb{R}^k$ and $x \in \mathbb{R}^d$. Let $X$ be a sample from a $k$-parameter exponential family. The log-likelihood of $\eta$ given $X$ is
+$$ \mathcal{L}(\eta | X) = \left(  \sum_{i=1}^k \eta_i T_i(X) - \psi(\eta) \right)  +  \textrm{constant}.$$ Taking the Hessian of this quantity (in $\eta$), we find
+$$ \nabla^2 \mathcal{L}(\eta | X) = -\nabla^2 \psi(\eta).$$ Evaluating this quantity at $\eta^*$ and multiplying by $-1$, the observed information matrix is
+$J_1(\eta^*) = \nabla^2 \psi(\eta^*).$ Taking the expectation of the observed information matrix (in $X$), the Fisher information matrix is $I(\eta^*) = \nabla^2 \psi(\eta^*).$ This analysis yields two interesting insights:
+
+  1. The observed and Fisher information matrices (for the canonnnical parameter $\eta$) coincide for $k$-parameter exponential families.
+  2. There exists an explict formula for these quantities in terms of the function $\psi$. In particular, $I(\theta) = J_1(\theta) = \nabla^2 \psi(\eta).$
+
+Recall that there is an alternate formulation of the information matrix in terms of the covariance matrix of the score statistic. For a $k$-parameter exponential family in canonical form, the score statistic $Z(X)$ is simply the vector of sufficient statistics:
+$$ Z(X) = \nabla \mathcal{L}(\eta | X) = [T_1(X), \dots, T_k(X)].$$ Furthermore, as we learned in our post on exponential families, the covariance matrix of the vector of sufficient statistics is equal to the Hessian of $\psi$ evaluated at the canonical parameter:
+$$ \nabla^2 \psi(\eta) = \textrm{Cov}_\eta[T_1(X), \dots, T_k(X)].$$ But the covariance of the score statistic is equal to the Fisher information. Thus, $\nabla^2 \psi(\eta)$ is equal to the Fisher information. This is an alternate derivation of the above result.
+
+The Fisher information matrix depends on the chosen parameterization of the distribution. This result does not hold (in general) under alternate parameterizations.
+
+## Asymptotic covariance matrices of MLEs
+
+Information matrices are useful because they can be used to calculate asymptotic covariance matrices of MLEs. Let $\hat{\theta}_{n}$ be the MLE of a distribution $\{P_{\theta}\},$ where $\theta \in \Theta \in \mathbb{R}^k$. Under very general conditions,
+
+$$ \begin{cases}
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [I(\theta)]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [I(\hat{\theta}_{n})]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [J_n(\theta)]^{-1}) \\
+\sqrt{n} [ \hat{\theta}_{n} - \theta ] \xrightarrow{d} N(0, [J_n(\hat{\theta}_{n})]^{-1}).
+\end{cases}$$
+
+As we can see, we can express the limiting multivariate normal distribution in different ways. We can write the limiting distribution either in terms of the observed information matrix (expressions 3 and 4)  or the Fisher information matrix (expressions 1 and 2). We can evaluate the chosen information matrix either at the MLE (expressions 2 and 4) or at the true parameter value $\theta$ (expressions 1 and 3).  These various expressions are useful in different situations. For example, if we want to calculate a standard error of the MLE, we would use expressions 2 or 4; if we want to test a hypothesis, we could use any of the expressions. If we are unable to calculate the Fisher information matrix but are able to calculate the observed information matrix, we would use expressions 3 or 4, etc.
+
+Notation: no subscript means matrix is for the whole joint distribution (clear from context). $I_n$ matrix for $n$-fold product distribution of an i.i.d. sample.
+
+## References
+
+1. [Lecuture notes](https://www2.stat.duke.edu/courses/Spring05/sta215/lec/wk06a.pdf) provided by Professor Robert L Wolpert.
+
+2. Wikipedia articles on [observed](https://en.wikipedia.org/wiki/Observed_information) and [Fisher](https://en.wikipedia.org/wiki/Fisher_information) information matrices.
+
+3. [Lecture notes](https://www.stat.umn.edu/geyer/s06/5102/notes/fish.pdf) provided by professor Charles J Geyer.
