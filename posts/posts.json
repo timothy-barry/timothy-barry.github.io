@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2020-06-03-second-generation-sequencing/",
+    "title": "Genomics for statisticians 2: Next-generation sequencing, polymerase chain reaction",
+    "description": "DNA sequencing lies at the core of modern genomic assays. Here, we discuss next-generation sequencing and the related technology of polymerase chain reaction.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-08-11",
+    "categories": [
+      "Genomics"
+    ],
+    "preview": "posts/2020-06-03-second-generation-sequencing/next_gen_3_crop.png",
+    "last_modified": "2020-08-11T00:15:01-04:00"
+  },
+  {
     "path": "posts/2020-06-22-exponential-families/",
     "title": "Exponential families",
     "description": "The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.",
@@ -35,7 +52,7 @@
   },
   {
     "path": "posts/2020-05-27-enhancers/",
-    "title": "Genomics for statisticians 1: enhancers",
+    "title": "Genomics for statisticians 1: Enhancers",
     "description": "Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.",
     "author": [
       {
@@ -48,7 +65,7 @@
       "Genomics"
     ],
     "preview": "posts/2020-05-27-enhancers/Nucleosome.jpg",
-    "last_modified": "2020-07-07T12:12:38-04:00"
+    "last_modified": "2020-08-11T00:16:47-04:00"
   },
   {
     "path": "posts/welcome/",

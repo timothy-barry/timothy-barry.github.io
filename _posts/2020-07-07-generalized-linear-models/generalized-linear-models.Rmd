@@ -105,13 +105,17 @@ $$ Also, define the vector $s = [ y_1 - \mu_1, \dots, y_n - \mu_n]^T.$ We can sh
 $$ \nabla \mathcal{L}(\beta) = X^T \Delta s$$ and
 $$ \nabla^2 \mathcal{L}(\beta) = - X^T (\Delta V \Delta - \Delta'H ) X.$$
 
-Suppose we use the canonical link function. Then $h$ is the identity, implying $h'$ is identically equal to $1$ and $h''$ is identically equal to $0$. Thus, $\Delta = I$ and $\Delta' = 0$, and we get a simpler expression for the observed information matrix:
-$$\nabla^2 \mathcal{L}(\beta) = -X^TVX.$$
+Suppose we use the canonical link function. Then $h$ is the identity, implying $h'$ is identically equal to $1$ and $h''$ is identically equal to $0$. Thus, $\Delta = I$ and $\Delta' = 0$, yielding a simpler expression for the observed information matrix:
+$$\nabla^2 \mathcal{L}(\beta) = -X^TWX.$$
 
 We can compute the Fisher information matrix $I(\beta)$ by taking the expectation of the observed information matrix:
-$$ I(\beta) = \mathbb{E} \left[ \nabla^2 \mathcal{L}(\beta) \right] = -X^T ( \Delta V \Delta - \Delta' \mathbb{E}[H])X = -X^T ( \Delta V \Delta)X = -X^TWX.$$
+$$ I(\beta) = - \mathbb{E} \left[ \nabla^2 \mathcal{L}(\beta) \right] = X^T ( \Delta V \Delta - \Delta' \mathbb{E}[H])X = X^T ( \Delta V \Delta)X = X^TWX.$$
 
 Note that the observed and Fisher matrices coincide if we use the canonical link function (as predicted by exponential family theory).
+
+We make a brief digression to discuss the log-likelihood of weighted GLMs. Let $T_1, \dots, T_n > 0$ be given scalar weights. We can generalize the log-likelihood of the GLM slightly by multiplying the $i$th term by $T_i$:
+$$ \mathcal{L}(\beta) = \sum_{i=1}^n  T_i \left[ y_i \cdot h(\langle x_i, \beta \rangle) - \psi( h(\langle x_i, \beta \rangle)) \right].$$ We might do this if we consider some observations to be more "important" than others. Let $T = \textrm{diag} \{ T_i \}_{i=1}^n$ be the diagonal matrix of weights. It is easy to show that the gradient $\nabla \mathcal{L}$ and Hessian $\nabla^2 \mathcal{L}$ of the weighted log-likelihood are
+$\nabla \mathcal{L}(\beta) = X^T T \Delta s$ and $\nabla^2 \mathcal{L}(\beta) = - X^T T (\Delta V \Delta - \Delta'H ) X$, respectively.
 
 ## Optimization
 
@@ -152,7 +156,7 @@ R uses IRLS to implement the *glm* function. R initializes the parameter $\beta^
 ## Inference
 
 We can construct standard errors for the estimated parameter $\hat{\beta}$ using MLE asymptotics. Recall that $I(\beta)$ is the Fisher information matrix of the model evaluated at $\beta$. If the number of samples $n$ is large, we have the approximation
-$$ \hat{\beta} \sim N_p(\beta, I(\hat{\beta})).$$ We can compute $I(\hat{\beta})$ according to the formula $I(\hat{\beta}) = X^T W(\hat{\beta})X,$ where $W(\hat{\beta})$ is the weight matrix evaluated at $\hat{\beta}$. Note that R returns the matrix $W(\hat{\beta})$ as part of the *glm* output.
+$$ \hat{\beta} \sim N_p(\beta, [I(\hat{\beta})]^{-1}).$$ We can compute $I(\hat{\beta})$ according to the formula $I(\hat{\beta}) = X^T W(\hat{\beta})X,$ where $W(\hat{\beta})$ is the weight matrix evaluated at $\hat{\beta}$. Note that R returns the matrix $W(\hat{\beta})$ as part of the *glm* output.
 
 ## Conclusion
 
