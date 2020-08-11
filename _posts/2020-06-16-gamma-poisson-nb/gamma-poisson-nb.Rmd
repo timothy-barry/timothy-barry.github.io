@@ -37,7 +37,7 @@ $$ p(x; r, p) = \binom{x + r - 1}{x} (1 - p)^r p^x, $$ where $r \in \mathbb{Z}^{
 $$ p(x; r, p) = \frac{\Gamma(x + r)}{x! \Gamma(r)}(1-p)^rp^k.$$
 This extension follows from properties of the gamma function.
 
-If one holds $r$ fixed, the NB distribution is a member of the exponential family. However, when both $r$ and $p$ are allowed to vary, the NB distribution is not member of the exponential family. This means that parameter estimation in the two-parameter NB model is a bit more challenging than parameter estimation in many other parameteric models. In particular, the NB maximum likelihood estimate fails to exist when the sample mean exceeds the sample seond moment. [@Aragon1992]
+If one holds $r$ fixed, the NB distribution is a member of the exponential family. However, when both $r$ and $p$ are allowed to vary, the NB distribution is not member of the exponential family. This means that parameter estimation in the two-parameter NB model is a bit more challenging than parameter estimation in many other common parameteric models. In particular, the NB maximum likelihood estimate fails to exist when the sample mean exceeds the sample seond moment [@Aragon1992] .
 
 ### Gamma-Poisson mixture
 
