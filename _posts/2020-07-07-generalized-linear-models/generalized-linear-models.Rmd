@@ -5,19 +5,16 @@ description: |
 author:
   - name: Tim Barry
     url: https://timothy-barry.github.io
-date: 07-07-2020
 output:
   distill::distill_article:
     self_contained: false
 preview: log_reg.png
 categories:
   - Statistics
-draft: true
+draft: false
 ---
 
-I like the CMU Statistics Department very much. However, the department does not really teach students about GLMs. Given the popularity of GLMs in application, this makes me scratch my head a bit. This post is my effort to understand GLMs. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference. Please let me know (via an email or a tap on the shoulder when I am at my desk\*) if I've gotten anything wrong!
-
-\* You alternately can throw a crumpled piece of paper at me if you'd like to maintain social distancing.
+This post is my effort to once and for all understand GLMs. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference.
 
 ## Exponential family review
 
@@ -160,7 +157,7 @@ $$ \hat{\beta} \sim N_p(\beta, [I(\hat{\beta})]^{-1}).$$ We can compute $I(\hat{
 
 ## Conclusion
 
-This ends our three-part mini series on exponential families, information matrices, and GLMs. We saw that GLMs, though old, are an elegant, general, and powerful method for modeling and inference. In later posts we will study how GLMs can be used to model genomic and genetic data, with an eye toward single-cell and bulk-tissue RNA-seq. But first we will take a high-dimensional detour.
+This ends our three-part mini series on exponential families, information matrices, and GLMs. We saw that GLMs, though old, are an elegant, general, and powerful method for modeling and inference. In later posts we will see how GLMs can be used to model genomic and genetic data, with an eye toward single-cell and bulk-tissue RNA-seq.
 
 <center>
 ![](meme.png){#id .class width=40%}

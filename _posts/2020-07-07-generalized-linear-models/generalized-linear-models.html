@@ -25,8 +25,8 @@
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-07-07"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-07-07"/>
+  <meta property="article:published" itemprop="datePublished" content="2020-12-03"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-12-03"/>
   <meta name="article:author" content="Tim Barry"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -44,7 +44,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories","draft"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["07-07-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","preview","categories","draft","date"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["12-03-2020"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -399,6 +399,16 @@
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
   }
   
   
@@ -942,7 +952,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-07T00:00:00.000-04:00","citationText":"Barry, 2020"}
+{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-12-03T00:00:00.000-05:00","citationText":"Barry, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -959,12 +969,11 @@
 <div class="d-byline">
   Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
   
-<br/>07-07-2020
+<br/>12-03-2020
 </div>
 
 <div class="d-article">
-<p>I like the CMU Statistics Department very much. However, the department does not really teach students about GLMs. Given the popularity of GLMs in application, this makes me scratch my head a bit. This post is my effort to understand GLMs. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference. Please let me know (via an email or a tap on the shoulder when I am at my desk*) if I’ve gotten anything wrong!</p>
-<p>* You alternately can throw a crumpled piece of paper at me if you’d like to maintain social distancing.</p>
+<p>This post is my effort to once and for all understand GLMs. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference.</p>
 <h2 id="exponential-family-review">Exponential family review</h2>
 <p>Let <span class="math inline">\(\{P_\theta\}, \theta \in \Theta \subset \mathbb{R}\)</span> be a family of distributions. Recall that <span class="math inline">\(\{P_\theta\}\)</span> belongs to the 1-parameter exponential family if its density can be written as <span class="math display">\[f(y | \theta) = e^{ \eta(\theta) T(y) - \psi(\theta)} h(y).\]</span></p>
 <p>We can reparameterize the exponential family so that its density is in canonical form: <span class="math display">\[f(y|\eta) = e^{ \eta T(y) - \psi(\eta)}h(y).\]</span> In this post we will assume the data <span class="math inline">\(\{y_1, \dots, y_n\}\)</span> come from a slightly restricted version of the exponential family. Specifically, we will assume the <span class="math inline">\(y_i\)</span>s have density <span class="math display">\[f(y_i | \eta_i) = e^{\eta_i y_i - \psi(\eta_i)}h(y_i),\]</span> i.e., we will assume the sufficient statistic <span class="math inline">\(T(y_i)\)</span> is the identity. This slightly narrower class encompasses the most important distributions for statistical modeling, including the binomial, exponential, Poisson, Bernoulli, negative binomial (assuming fixed number of failures), and normal (assuming unit variance) distributions. Note that the function <span class="math inline">\(h\)</span> is not a function of the unknown parameter <span class="math inline">\(\eta_i\)</span> and thus will show up as a constant in the log-likelihood. The only function that contains information (relevant to inference) about the distribution is the cumulant generating function <span class="math inline">\(\psi\)</span>. Thus, we can identify exponential families (with identity sufficient statistic) with their corresponding canonical-form cumulant generating function.</p>
@@ -1043,7 +1052,7 @@ W = \Delta V \Delta.
 <h2 id="inference">Inference</h2>
 <p>We can construct standard errors for the estimated parameter <span class="math inline">\(\hat{\beta}\)</span> using MLE asymptotics. Recall that <span class="math inline">\(I(\beta)\)</span> is the Fisher information matrix of the model evaluated at <span class="math inline">\(\beta\)</span>. If the number of samples <span class="math inline">\(n\)</span> is large, we have the approximation <span class="math display">\[ \hat{\beta} \sim N_p(\beta, [I(\hat{\beta})]^{-1}).\]</span> We can compute <span class="math inline">\(I(\hat{\beta})\)</span> according to the formula <span class="math inline">\(I(\hat{\beta}) = X^T W(\hat{\beta})X,\)</span> where <span class="math inline">\(W(\hat{\beta})\)</span> is the weight matrix evaluated at <span class="math inline">\(\hat{\beta}\)</span>. Note that R returns the matrix <span class="math inline">\(W(\hat{\beta})\)</span> as part of the <em>glm</em> output.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>This ends our three-part mini series on exponential families, information matrices, and GLMs. We saw that GLMs, though old, are an elegant, general, and powerful method for modeling and inference. In later posts we will study how GLMs can be used to model genomic and genetic data, with an eye toward single-cell and bulk-tissue RNA-seq. But first we will take a high-dimensional detour.</p>
+<p>This ends our three-part mini series on exponential families, information matrices, and GLMs. We saw that GLMs, though old, are an elegant, general, and powerful method for modeling and inference. In later posts we will see how GLMs can be used to model genomic and genetic data, with an eye toward single-cell and bulk-tissue RNA-seq.</p>
 <center>
 <p><img src="meme.png" id="id" class="class" style="width:40.0%" /></p>
 <em>9gag</em>

@@ -1,5 +1,23 @@
 [
   {
+    "path": "posts/2020-07-07-generalized-linear-models/",
+    "title": "Generalized linear models",
+    "description": "A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2020-12-03",
+    "categories": [
+      "Statistics"
+    ],
+    "preview": "posts/2020-07-07-generalized-linear-models/log_reg.png",
+    "last_modified": "2020-12-03T21:15:45-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2020-06-03-second-generation-sequencing/",
     "title": "Genomics for statisticians 2: Next-generation sequencing, polymerase chain reaction",
     "description": "DNA sequencing lies at the core of modern genomic assays. Here, we discuss next-generation sequencing and the related technology of polymerase chain reaction.",
@@ -14,7 +32,8 @@
       "Genomics"
     ],
     "preview": "posts/2020-06-03-second-generation-sequencing/next_gen_3_crop.png",
-    "last_modified": "2020-08-23T15:47:24-04:00"
+    "last_modified": "2020-08-23T15:47:26-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/2020-06-22-exponential-families/",
@@ -31,7 +50,8 @@
       "Statistics"
     ],
     "preview": "posts/2020-06-22-exponential-families/happy_normal.jpg",
-    "last_modified": "2020-07-12T16:10:47-04:00"
+    "last_modified": "2020-07-12T16:10:47-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/2020-06-16-gamma-poisson-nb/",
@@ -48,7 +68,8 @@
       "Statistics"
     ],
     "preview": "posts/2020-06-16-gamma-poisson-nb/picsvg.png",
-    "last_modified": "2020-08-11T01:42:29-04:00"
+    "last_modified": "2020-08-11T01:42:29-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/2020-05-27-enhancers/",
@@ -65,7 +86,8 @@
       "Genomics"
     ],
     "preview": "posts/2020-05-27-enhancers/Nucleosome.jpg",
-    "last_modified": "2020-08-11T00:16:47-04:00"
+    "last_modified": "2020-08-11T00:16:47-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
@@ -82,6 +104,7 @@
       "About"
     ],
     "preview": "posts/welcome/pic.png",
-    "last_modified": "2020-05-29T17:20:55-04:00"
+    "last_modified": "2020-05-29T17:20:55-04:00",
+    "input_file": {}
   }
 ]

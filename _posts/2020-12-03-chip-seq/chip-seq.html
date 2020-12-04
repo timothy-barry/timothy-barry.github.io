@@ -19,369 +19,39 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>Tim Barry: Under construction...</title>
+  <title>ChIP-seq</title>
   
-  <meta property="description" itemprop="description" content="...but it will be fun."/>
+  <meta property="description" itemprop="description" content="A dive into ChIP-seq."/>
   
   
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-12-03"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-12-03"/>
+  <meta name="article:author" content="Tim Barry"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Tim Barry: Under construction..."/>
+  <meta property="og:title" content="ChIP-seq"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="...but it will be fun."/>
+  <meta property="og:description" content="A dive into ChIP-seq."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Tim Barry"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Tim Barry: Under construction..."/>
-  <meta property="twitter:description" content="...but it will be fun."/>
+  <meta property="twitter:title" content="ChIP-seq"/>
+  <meta property="twitter:description" content="A dive into ChIP-seq."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Under construction..."]},{"type":"character","attributes":{},"value":["...but it will be fun."]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["ChIP-seq"]},{"type":"character","attributes":{},"value":["A dive into ChIP-seq.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["12-03-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["antibody.png","chip_seq_protocol.jpg","chip-seq_files/bowser-1.9.3/bowser.min.js","chip-seq_files/distill-2.2.21/template.v2.js","chip-seq_files/jquery-1.11.3/jquery.min.js","chip-seq_files/webcomponents-2.0.0/webcomponents.js","chip-seq_peaks.png"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  .distill-site-header {
-  
-  }
-  
-  .distill-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .distill-site-header .title {
-    font-size: 18px;
-  }
-  
-  .distill-site-header .logo {
-    padding: 0;
-  }
-  
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative;}
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1267,50 +937,13 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="chip-seq_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="chip-seq_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="chip-seq_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="chip-seq_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  .distill-site-nav {
-    color: #000000;
-    background-color: #EFEFEF;
-    font-weight: 200;
-    font-size: 13pt;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: black;
-  }
-  
-  .distill-site-header {
-  }
-  
-  .distill-site-footer {
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  body {
-    max-width: 1100px;
-    margin: auto;
-   padding: 1em;
-   line-height: 20px ; 
-  }
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -1319,34 +952,56 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Under construction...","description":"...but it will be fun.","authors":[]}
+{"title":"ChIP-seq","description":"A dive into ChIP-seq.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-12-03T00:00:00.000-05:00","citationText":"Barry, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Tim Barry</a>
-</div>
-<div class="nav-right">
-<a href="blog.html">Blog</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Under construction…</h1>
-<p><p>…but it will be fun.</p></p>
+<h1>ChIP-seq</h1>
+<p><p>A dive into ChIP-seq.</p></p>
 </div>
 
+<div class="d-byline">
+  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  
+<br/>12-03-2020
+</div>
 
 <div class="d-article">
-
+<h2 id="introduction-and-background">Introduction and background</h2>
+<ul>
+<li>ChIP-seq is a technology that reveals the epigenetics of tissue or a cell.</li>
+<li>ChIP-seq is used to uncover two types of epigenetic marks: transcriptional regulators and histone modifications.
+<ul>
+<li><ol type="1">
+<li>Transcriptional regulators are proteins that bind to sequence-specific regions of the DNA (e.g., enhancers, promoters, or silencers) and modulate the transcription of a nearby gene.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Histone modifications are chemical changes to histone proteins (i.e., the proteins that bind DNA to form chromatin). Histone modifications are associated with specific biology. For example, acetylation (e.g., acetylation of lysine 9 of histone, denoted H3K9ac) is associated open chromatin and thus transcription.</li>
+</ol></li>
+</ul></li>
+<li>The purpose of ChIP-seq is to discover the location and type of these epigenetic modifications genome-wide through use of bulk RNA-seq.</li>
+<li>ChIP-seq makes heavy use of <strong>antibodies.</strong> Antibodies are large, Y-shaped proteins that bind to a specific protein, called an antigen. An antibody and antigen are analogous to a lock and key.</li>
+</ul>
+<br/>
+<center>
+<p><img src="antibody.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
+<em>An antibody (bottom) and a set of antigens (top). The antibody binds to a specific antigen (and to that antigen only), in this case the yelllow antigen.</em>
+</center>
+<p><br/></p>
+<ul>
+<li>Antibodies are found naturally in the immune system. We will use antibodies here to identify and bind specific proteins of interest.</li>
+</ul>
+<h2 id="chip-seq-protocol">ChIP-Seq protocol</h2>
+<ul>
+<li><p>First, we decide which protein (or histone modification) we would like to target in the experiment.</p></li>
+<li><p>Next, we design or identify an antibody that binds to this protein.</p></li>
+</ul>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
