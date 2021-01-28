@@ -26,8 +26,8 @@
       "path": "research.html",
       "title": "Research",
       "author": [],
-      "contents": "\nRecent paper(s)\nSee CV for full list.\nE Katsevich, T Barry, K Roeder. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.\nondisc: A computational engine for powering large-scale analyses of single-cell data; designed to run on all platforms, from laptops to supercomputers.\n\n\n\n",
-      "last_modified": "2021-01-27T22:18:10-05:00"
+      "contents": "\nRecent paper(s)\nSee CV for full list.\nE Katsevich, T Barry, K Roeder. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.\nondisc: A computational engine for large-scale analyses of single-cell data; designed to run on all platforms, from laptops to supercomputers.\n\n\n\n",
+      "last_modified": "2021-01-28T11:13:19-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
