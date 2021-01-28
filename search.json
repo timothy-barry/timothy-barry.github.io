@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "path": "blog.html",
+      "title": "Tim's Blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-01-27T19:02:57-05:00"
+    },
+    {
+      "path": "fun.html",
+      "title": "Under construction...",
+      "description": "...but it will be fun.",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-01-27T19:02:58-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "About me",
+      "author": [],
+      "contents": "\nI am a third-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors Kathryn Roeder and Gene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. My interests lie at the intersection of statistics, computer science, and genomics. I work on statistical methods and computational algorithms for the analysis of data produced by new genomic technologies. I am especially interested in problems arising from single-cell regulatory CRISPR screens and large-scale single-cell data.\n\n\n  \n\n\n\n",
+      "last_modified": "2021-01-27T21:59:33-05:00"
+    },
+    {
+      "path": "research.html",
+      "title": "Research",
+      "author": [],
+      "contents": "\nRecent paper(s)\nSee CV for full list.\nE Katsevich, T Barry, K Roeder. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.\nondisc: A computational engine for powering large-scale analyses of single-cell data; designed to run on all platforms, from laptops to supercomputers.\n\n\n\n",
+      "last_modified": "2021-01-27T22:00:45-05:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

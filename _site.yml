@@ -5,6 +5,8 @@ description: |
 output_dir: "."
 navbar:
   right:
+    - text: "Research"
+      href: research.html
     - text: "Blog"
       href: blog.html
 output: 
