@@ -19,8 +19,8 @@
       "path": "index.html",
       "title": "About me",
       "author": [],
-      "contents": "\nI am a third-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors Kathryn Roeder and Gene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. My interests lie at the intersection of statistics, computer science, and genomics. I work on statistical methods and computational algorithms for the analysis of data produced by new genomic technologies. I am especially interested in problems arising from single-cell regulatory CRISPR screens and large-scale single-cell data.\n\n\n  \n\n\n\n",
-      "last_modified": "2021-01-27T22:18:09-05:00"
+      "contents": "\nI am a third-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors Kathryn Roeder and Gene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. My interests are at the intersection of statistics, computer science, and genomics. I work on statistical methods and computational algorithms for the analysis of data produced by new genomic technologies. I am especially interested in problems arising from single-cell regulatory CRISPR screens and large-scale single-cell sequencing data.\n\n\n  \n\n\n\n",
+      "last_modified": "2021-02-09T18:18:56-05:00"
     },
     {
       "path": "research.html",
