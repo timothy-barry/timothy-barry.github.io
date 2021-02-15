@@ -17,4 +17,4 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 
 1. [**sceptre**](https://github.com/timothy-barry/SCEPTRE): A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.
 
-2. [**ondisc**](https://timothy-barry.github.io/ondisc/): A computational engine for large-scale analyses of single-cell data; designed to run on all platforms, from laptops to supercomputers.
+2. [**ondisc**](https://timothy-barry.github.io/ondisc/): In progress.
