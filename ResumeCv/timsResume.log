@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 JAN 2021 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 FEB 2021 21:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,6 +291,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 44.
 LaTeX Info: Redefining \pageref on input line 44.
 LaTeX Info: Redefining \nameref on input line 44.
+
+(./timsResume.out) (./timsResume.out)
 \@outlinefile=\write3
 \openout3 = `timsResume.out'.
 
@@ -353,21 +355,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
 (./timsResume.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
-
-
-Package rerunfilecheck Warning: File `timsResume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `timsResume.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `timsResume.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
  ) 
 Here is how much of TeX's memory you used:
- 5757 strings out of 492649
- 83994 string characters out of 6129622
- 190213 words of memory out of 5000000
+ 5761 strings out of 492649
+ 84054 string characters out of 6129622
+ 190317 words of memory out of 5000000
  9621 multiletter control sequences out of 15000+600000
  8105 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -378,7 +373,7 @@ b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
 b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 
-Output written on timsResume.pdf (1 page, 54470 bytes).
+Output written on timsResume.pdf (1 page, 54478 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
