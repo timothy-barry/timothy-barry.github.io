@@ -15,6 +15,6 @@ See [CV](ResumeCv/timsResume.pdf) for full list.
 knitr::include_graphics("graphics/tessellation_cropped.png")
 ```
 
-1. [**sceptre**](https://github.com/timothy-barry/SCEPTRE): A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.
+1. **sceptre**: A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.
 
-2. [**ondisc**](https://timothy-barry.github.io/ondisc/): In progress.
+2. **ondisc**: Fast, universal, and intuitive computing on large-scale single-cell data. [[CRAN](https://cloud.r-project.org/web/packages/ondisc/index.html)] [[Web](https://timothy-barry.github.io/ondisc/)] [[Github](https://github.com/timothy-barry/ondisc)]
