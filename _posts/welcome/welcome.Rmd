@@ -13,6 +13,7 @@ output:
 categories:
   - About
 preview: pic.png
+draft: true
 ---
 
 Hello world,

@@ -1,0 +1,36 @@
+---
+title: "Things you might not know about Unix/Linux"
+description: |
+  A short description of the post.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date: 03-06-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+- Most unix commands take options:
+`command -options arguments`
+Single-letter commands are preceded by a single dash, and word commands are preceded by two dashes.
+You combine single-letter commands using a single dash.
+
+- `ls-l` useful; gives access rights, number hard links, username of owner, name of group, size, modification time, and name.
+
+-ASC II text file: basically just a vector of characters, plus carriage return and tab and a few others, where each character is stored using a byte of data
+
+- We can type commands into the console. We can use `which` to determine where the command lives (generally in some subdirectory `/usr`), and we can use `man` to pull up a man file.
+
+- alsiasing: temporary naming of a command or sequence of commands
+
+- Redirection allows us to redirect the standard input and standard output of commands into files or other commands.
+
+- redirect the standard output of a command into a file using > operator; e.g., ls -l > ls-out.txt
+- append redirected output to a file: ls -l >> ls-out.txt
+- pipeline: pipe the standard output of command 1 into the standard input of command 2, as follows: `command1 | command2`. Note that | and > differ; the RHS of | is a command, and the RHS of > is the name of a file. However, they are similar in that they both receive standard input.
+
+- e.g., ls /bin /usr/bin | sort | uniq | wc -l
+
+- Permissions: `ls -l` gives the permissions of each file; the first letter is the file type, and the next three letters indicate read, write, and execute permissions for the file; the remaining six leters indicate read/write/execute permissions for the group and world; these are not necessary in most cases.

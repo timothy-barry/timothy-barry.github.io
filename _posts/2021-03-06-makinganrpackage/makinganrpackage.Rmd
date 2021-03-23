@@ -1,0 +1,37 @@
+---
+title: "making_an_r_package"
+description: |
+  A short description of the post.
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date: 03-06-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+# 1. 
+
+# 2. Add a function.
+
+The basic unit of R is the function; we build packages by gradually adding functions.
+
+i. - use `use_r()` to add a new R file.
+- document using Roxygen; if exported, use @export tag; if not, use @noRd. Document several related methods simultaneously; use NULL, then add @Rdname to each function.
+ii. `load_all()` to manually load
+iii. `check()`
+iv. `use_test()` to add a test script; or just open an existing one.
+
+# 3. Add data to the package
+
+- To add standard .rda data to the package, use `use_data_raw()`; this will create a directory /data-raw and a file DATASET.R within the directory.
+- Modify DATASET.R, creating the data. At the end of the script, use use_data(x,y,z) to save the objects as .rda files in the /data directory. After loading the package, you can access the data using the `data` function.
+- Document the data. Type `use_this("data")` to create a new file `data.R` inside the /R directory. 
+
+# 4. Create a website
+
+1. Turn package into pkgdown website via `usethis::use_pkgdown()`.
+
+2. Update the site via `pkgdown::build_site()`.

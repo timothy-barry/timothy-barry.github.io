@@ -7,7 +7,7 @@ site: distill::distill_website
 
 See [CV](ResumeCv/timsResume.pdf) for full list.
 
-1. E Katsevich, **T Barry**, K Roeder. "Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.08.13.250092v3).
+1. **T Barry**, X Wang,  K Roeder, E Katsevich. "Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.08.13.250092v5).
 
 # Software
 
@@ -15,6 +15,6 @@ See [CV](ResumeCv/timsResume.pdf) for full list.
 knitr::include_graphics("graphics/tessellation_cropped.png")
 ```
 
-1. **sceptre**: A statistical tool for robustly inferring regulatory relationships in single-cell CRISPR screen assays.
+1. **sceptre**: Robustly infer regulatory relationships in single-cell CRISPR screens. [[Web](https://timothy-barry.github.io/sceptre/)] [[Github](https://github.com/timothy-barry/sceptre)]
 
 2. **ondisc**: Fast, universal, and intuitive computing on large-scale single-cell data. [[CRAN](https://cloud.r-project.org/web/packages/ondisc/index.html)] [[Web](https://timothy-barry.github.io/ondisc/)] [[Github](https://github.com/timothy-barry/ondisc)]
