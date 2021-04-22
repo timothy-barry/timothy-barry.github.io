@@ -18,6 +18,73 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
   <!--radix_placeholder_meta_tags-->
 <title>Tim Barry: Gamma, Poisson, and negative binomial distributions</title>
 
@@ -1727,6 +1794,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
@@ -1800,6 +1872,11 @@ body {
 
 <div class="d-title">
 <h1>Gamma, Poisson, and negative binomial distributions</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../blog.html#category:Statistics" class="dt-tag">Statistics</a>
+</div>
+<!--/radix_placeholder_categories-->
 <p><p>The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.</p></p>
 </div>
 
@@ -1872,6 +1949,7 @@ p(y; r, p) = \int_{0}^{\infty} p(y | \theta) p(\theta) d \theta \textrm{ (law of
 <p>Of these three NB parameterizations, the most common are the first and second. The first is similar (but not identical) to the default used by the various NB functions (<strong>dnbinom</strong>, <strong>rnbinom</strong>, etc.) in base R (see documentation). The second is the default used by the function <strong>negbinomial</strong> in the popular R package <strong><a href="https://cran.r-project.org/web/packages/VGAM/index.html">VGAM</a></strong>. Note that in the second and third parameterizations, <span class="math inline">\(p\)</span> takes values in <span class="math inline">\(\mathbb{R}^{\geq 0}\)</span> and therefore cannot be interpreted as a probability.</p>
 <h3 id="nb-poisson-and-overdispersion">NB, Poisson, and overdispersion</h3>
 <p>Consider the second parameterization of the NB distribution in the table above. Its mean is <span class="math display">\[ \frac{p/(p+r)r}{1 -p/(p+r)} = p\]</span> and its variance is <span class="math display">\[ \frac{ p/(p+r) r }{ (1 - p/(p+r))^2 } = p + \frac{p^2}{r}.\]</span> Thus, for <span class="math inline">\(r &lt; \infty\)</span>, the variance of the negative binomial distribution exceeds the mean. This is an important difference between the Poisson and NB distributions — in the Poisson distribution, the mean and variance coincide. One can show that the NB distribution converges to the Poisson distribution as <span class="math inline">\(r\)</span> tends to infinity. Informally, <span class="math display">\[\lim_{r \to \infty} \textrm{NB}\left( r, \frac{\lambda}{r + \lambda}\right) = \textrm{Pois}(\lambda).\]</span> Thus, for large <span class="math inline">\(r\)</span>, the NB and Poisson distributions are approximately equivalent. For small <span class="math inline">\(r\)</span>, the NB distribution is a sort of “overdispersed” Poisson distribution. This property of the NB distribution makes it an appealing candidate for modeling highly variable gene expression data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-Aragon1992">
 <p>Aragon, Jorge, David Eberly, and Shelly Eberly. 1992. “Existence and uniqueness of the maximum likelihood estimator for the two-parameter negative binomial distribution.” <em>Statistics and Probability Letters</em> 15 (5): 375–79. <a href="https://doi.org/10.1016/0167-7152(92)90157-Z">https://doi.org/10.1016/0167-7152(92)90157-Z</a>.</p>

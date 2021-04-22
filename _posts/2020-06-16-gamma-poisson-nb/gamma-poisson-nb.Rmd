@@ -9,7 +9,6 @@ date: 06-16-2020
 output:
   distill::distill_article:
     self_contained: false
-# draft: true
 categories:
   - Statistics
 bibliography: ../library.bib

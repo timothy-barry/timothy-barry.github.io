@@ -18,6 +18,73 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
   <!--radix_placeholder_meta_tags-->
   <title>Gamma, Poisson, and negative binomial distributions</title>
   
@@ -85,6 +152,51 @@
     font-size: 15px;
   }
   
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+  
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+  
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+  
   .html-widget {
     margin-bottom: 2.0em;
   }
@@ -124,6 +236,7 @@
   }
   
   d-article {
+    padding-top: 2.5rem;
     padding-bottom: 30px;
   }
   
@@ -135,91 +248,48 @@
     width: 100%;
   }
   
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
   
-  figure img.external {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-    padding: 18px;
-    box-sizing: border-box;
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
   
-  /* CSS for table of contents */
-  
-  .d-toc {
-    color: rgba(0,0,0,0.8);
-    font-size: 0.8em;
-    line-height: 1em;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
   }
   
-  .d-toc-header {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 1.3em;
+  d-article div.sourceCode {
+    background-color: white;
   }
   
-  .d-toc a {
-    border-bottom: none;
-  }
-  
-  .d-toc ul {
-    padding-left: 0;
-  }
-  
-  .d-toc li>ul {
-    padding-top: 0.8em;
-    padding-left: 16px;
-    margin-bottom: 0.6em;
-  }
-  
-  .d-toc ul,
-  .d-toc li {
-    list-style-type: none;
-  }
-  
-  .d-toc li {
-    margin-bottom: 0.9em;
-  }
-  
-  .d-toc-separator {
-    margin-top: 20px;
-    margin-bottom: 2em;
-  }
-  
-  .d-article-with-toc {
-    border-top: none;
-    padding-top: 0;
-  }
-  
-  
-  
-  /* Tweak code blocks (note that this CSS is repeated above in an injection
-     into the d-code shadow dom) */
-  
-  d-code {
-    overflow-x: auto !important;
-  }
-  
-  pre.d-code code.d-code {
+  d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
   
-  pre.text-output {
-  
+  d-article pre {
     font-size: 12px;
     color: black;
     background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    margin-top: 0;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -237,20 +307,128 @@
     hyphens: none;
   }
   
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
-  d-code {
-    overflow-x: visible !important;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
   }
   
-  pre.d-code code.d-code  {
-      padding-left: 18px;
-      font-size: 14px;
-  }
-  pre.text-output {
+  d-article div.sourceCode pre {
+    padding-left: 18px;
     font-size: 14px;
   }
+  
+  d-article pre {
+    font-size: 14px;
   }
+  
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+  
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .d-contents li {
+    list-style-type: none
+  }
+  
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+  
+  .d-contents ul {
+    padding-left: 1em
+  }
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+  
   
   /* Figure */
   
@@ -288,6 +466,27 @@
     color: rgba(0, 0, 0, 1.0);
   }
   
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
   
   
   /* Tweak 1000px media break to show more text */
@@ -363,6 +562,91 @@
     word-wrap: break-word;
   }
   
+  /* Include appendix styles here so they can be overridden */
+  
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+  
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+  
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+  
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+  
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+  
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+  
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  d-appendix > * {
+    grid-column: text;
+  }
+  
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+  
+  /* Include footnote styles here so they can be overridden */
+  
+  d-footnote-list {
+    contain: layout style;
+  }
+  
+  d-footnote-list > * {
+    grid-column: text;
+  }
+  
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+  
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
   
   /* Social footer */
   
@@ -407,6 +691,221 @@
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+  
+  /* Styles for posts lists (not auto-injected) */
+  
+  
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+  
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+  
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+  
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+  
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+  
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+  
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+  
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+  
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+  
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+  
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+  
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .posts-list img {
+    opacity: 1;
+  }
+  
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+  
+  .posts-more {
+    clear: both;
+  }
+  
+  
+  .posts-sidebar {
+    font-size: 16px;
+  }
+  
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+  
+  .categories li>a {
+    border-bottom: none;
+  }
+  
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  
+  .categories .active {
+    font-weight: 600;
+  }
+  
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
   
   
@@ -538,6 +1037,12 @@
     hyphens: none;
   }
   
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+  
+  
+  
   </style>
   
   <script type="application/javascript">
@@ -553,6 +1058,13 @@
   
   // show body when load is complete
   function on_load_complete() {
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
   
     // set body to visible
     document.body.style.visibility = 'visible';
@@ -599,23 +1111,8 @@
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
   
-    // create d-bibliography
-    var bibliography = $('<d-bibliography></d-bibliography>');
-    $('#distill-bibliography').wrap(bibliography);
-  
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
-    // replace citations with <d-cite>
-    $('.citation').each(function(i, val) {
-      appendix = true;
-      var cites = $(this).attr('data-cites').split(" ");
-      var dt_cite = $('<d-cite></d-cite>');
-      dt_cite.attr('key', cites.join());
-      $(this).replaceWith(dt_cite);
-    });
-    // remove refs
-    $('#refs').remove();
   
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
@@ -633,39 +1130,21 @@
     // remove footnotes
     $('.footnotes').remove();
   
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
     $('h3.appendix').each(function(i, val) {
       var id = $(this).attr('id');
-      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
   
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
-    // replace code blocks with d-code
-    $('pre>code').each(function(i, val) {
-      var code = $(this);
-      var pre = code.parent();
-      var clz = "";
-      var language = pre.attr('class');
-      if (language) {
-        // map unknown languages to "clike" (without this they just dissapear)
-        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
-                                 "javascript", "js", "julia", "lua", "markdown",
-                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
-          language = "clike";
-        language = ' language="' + language + '"';
-        var dt_code = $('<d-code block' + language + clz + '></d-code>');
-        dt_code.text(code.text());
-        pre.replaceWith(dt_code);
-      } else {
-        code.addClass('text-output').unwrap().changeElementType('pre');
-      }
-    });
   
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
@@ -674,7 +1153,7 @@
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('d-code, pre.text-output, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -691,6 +1170,13 @@
       $(this).children().unwrap();
     });
   
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+  
     // load distill framework
     load_distill_framework();
   
@@ -706,12 +1192,26 @@
       if (!have_authors)
         $('d-byline').addClass('hidden');
   
-      // table of contents
-      if (have_authors) // adjust border if we are in authors
-        $('.d-toc').parent().addClass('d-article-with-toc');
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
   
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
   
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
@@ -761,18 +1261,27 @@
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
   
-      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
-      $('d-code').each(function(i, val) {
-        var style = document.createElement('style');
-        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
-                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
-        if (this.shadowRoot)
-          this.shadowRoot.appendChild(style);
-      });
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
   
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -804,9 +1313,7 @@
     $('.d-byline a').remove();
   
     // remove toc
-    $('.d-toc-header').remove();
-    $('.d-toc').remove();
-    $('.d-toc-separator').remove();
+    $('.d-contents').remove();
   
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
@@ -936,6 +1443,11 @@
   
   <!--/radix_placeholder_distill-->
   <script src="gamma-poisson-nb_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="gamma-poisson-nb_files/popper-2.6.0/popper.min.js"></script>
+  <link href="gamma-poisson-nb_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="gamma-poisson-nb_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="gamma-poisson-nb_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="gamma-poisson-nb_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="gamma-poisson-nb_files/bowser-1.9.3/bowser.min.js"></script>
   <script src="gamma-poisson-nb_files/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="gamma-poisson-nb_files/distill-2.2.21/template.v2.js"></script>
@@ -950,7 +1462,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Gamma, Poisson, and negative binomial distributions","description":"The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-06-16T00:00:00.000-04:00","citationText":"Barry, 2020"}
+{"title":"Gamma, Poisson, and negative binomial distributions","description":"The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-06-16T00:00:00.000+00:00","citationText":"Barry, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -961,6 +1473,11 @@
 
 <div class="d-title">
 <h1>Gamma, Poisson, and negative binomial distributions</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">Statistics</div>
+</div>
+<!--/radix_placeholder_categories-->
 <p><p>The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.</p></p>
 </div>
 
@@ -1033,6 +1550,7 @@ p(y; r, p) = \int_{0}^{\infty} p(y | \theta) p(\theta) d \theta \textrm{ (law of
 <p>Of these three NB parameterizations, the most common are the first and second. The first is similar (but not identical) to the default used by the various NB functions (<strong>dnbinom</strong>, <strong>rnbinom</strong>, etc.) in base R (see documentation). The second is the default used by the function <strong>negbinomial</strong> in the popular R package <strong><a href="https://cran.r-project.org/web/packages/VGAM/index.html">VGAM</a></strong>. Note that in the second and third parameterizations, <span class="math inline">\(p\)</span> takes values in <span class="math inline">\(\mathbb{R}^{\geq 0}\)</span> and therefore cannot be interpreted as a probability.</p>
 <h3 id="nb-poisson-and-overdispersion">NB, Poisson, and overdispersion</h3>
 <p>Consider the second parameterization of the NB distribution in the table above. Its mean is <span class="math display">\[ \frac{p/(p+r)r}{1 -p/(p+r)} = p\]</span> and its variance is <span class="math display">\[ \frac{ p/(p+r) r }{ (1 - p/(p+r))^2 } = p + \frac{p^2}{r}.\]</span> Thus, for <span class="math inline">\(r &lt; \infty\)</span>, the variance of the negative binomial distribution exceeds the mean. This is an important difference between the Poisson and NB distributions — in the Poisson distribution, the mean and variance coincide. One can show that the NB distribution converges to the Poisson distribution as <span class="math inline">\(r\)</span> tends to infinity. Informally, <span class="math display">\[\lim_{r \to \infty} \textrm{NB}\left( r, \frac{\lambda}{r + \lambda}\right) = \textrm{Pois}(\lambda).\]</span> Thus, for large <span class="math inline">\(r\)</span>, the NB and Poisson distributions are approximately equivalent. For small <span class="math inline">\(r\)</span>, the NB distribution is a sort of “overdispersed” Poisson distribution. This property of the NB distribution makes it an appealing candidate for modeling highly variable gene expression data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-Aragon1992">
 <p>Aragon, Jorge, David Eberly, and Shelly Eberly. 1992. “Existence and uniqueness of the maximum likelihood estimator for the two-parameter negative binomial distribution.” <em>Statistics and Probability Letters</em> 15 (5): 375–79. <a href="https://doi.org/10.1016/0167-7152(92)90157-Z">https://doi.org/10.1016/0167-7152(92)90157-Z</a>.</p>
@@ -1059,6 +1577,8 @@ p(y; r, p) = \int_{0}^{\infty} p(y | \theta) p(\theta) d \theta \textrm{ (law of
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
 <h3 id="citation">Citation</h3>
 <p>For attribution, please cite this work as</p>
 <pre class="citation-appendix short">Barry (2020, June 16). Gamma, Poisson, and negative binomial distributions. Retrieved from https://timothy-barry.github.io/posts/2020-06-16-gamma-poisson-nb/</pre>
@@ -1070,576 +1590,6 @@ p(y; r, p) = \int_{0}^{\infty} p(y | \theta) p(\theta) d \theta \textrm{ (law of
   year = {2020}
 }</pre>
 </div>
-<script id="distill-bibliography" type="text/bibtex">
-Automatically generated by Mendeley Desktop 1.19.4
-Any changes to this file will be lost if it is regenerated by Mendeley.
-
-BibTeX export options can be customized via Preferences -> BibTeX in Mendeley Desktop
-
-@article{Yang2019,
-abstract = {CRISPR/Cas9 based functional screening coupled with single-cell RNA-seq (“single-cell CRISPR screening”) unravels gene regulatory networks and enhancer-gene regulations in a large scale. We propose scMAGeCK, a computational framework to systematically identify genes and non-coding elements associated with multiple expression-based phenotypes in single-cell CRISPR screening. scMAGeCK identified genes and enhancers that modulate the expression of a known proliferation marker, MKI67 (Ki-67), a result that resembles the outcome of proliferation-linked CRISPR screening. We further performed single-cell CRISPR screening on mouse embryonic stem cells (mESC), and identified key genes associated with different pluripotency states. scMAGeCK enabled an unbiased construction of genotype-phenotype network, where multiple phenotypes can be regulated by different gene perturbations. Finally, we studied key factors that improve the statistical power of single-cell CRISPR screens, including target gene expression and the number of guide RNAs (gRNAs) per cell. Collectively, scMAGeCK is a novel and effective computational tool to study genotype-phenotype relationships at a single-cell level.},
-author = {Yang, Lin and Zhu, Yuqing and Yu, Hua and Chen, Sitong and Chu, Yulan and Huang, He and Zhang, Jin and Li, Wei},
-doi = {10.1101/658146},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Yang{\_}2020.pdf:pdf},
-journal = {bioRxiv},
-keywords = {biology,crispr methods},
-mendeley-tags = {biology,crispr methods},
-pages = {658146},
-publisher = {Genome Biology},
-title = {{Linking genotypes with multiple phenotypes in single-cell CRISPR screens}},
-url = {https://www.biorxiv.org/content/10.1101/658146v1?ct=},
-year = {2019}
-}
-@article{Dixit2016,
-abstract = {Genetic screens help infer gene function in mammalian cells, but it has remained difficult to assay complex phenotypes—such as transcriptional profiles—at scale. Here, we develop Perturb-seq, combining single-cell RNA sequencing (RNA-seq) and clustered regularly interspaced short palindromic repeats (CRISPR)-based perturbations to perform many such assays in a pool. We demonstrate Perturb-seq by analyzing 200,000 cells in immune cells and cell lines, focusing on transcription factors regulating the response of dendritic cells to lipopolysaccharide (LPS). Perturb-seq accurately identifies individual gene targets, gene signatures, and cell states affected by individual perturbations and their genetic interactions. We posit new functions for regulators of differentiation, the anti-viral response, and mitochondrial function during immune activation. By decomposing many high content measurements into the effects of perturbations, their interactions, and diverse cell metadata, Perturb-seq dramatically increases the scope of pooled genomic assays.},
-author = {Dixit, Atray and Parnas, Oren and Li, Biyu and Chen, Jenny and Fulco, Charles P. and Jerby-Arnon, Livnat and Marjanovic, Nemanja D. and Dionne, Danielle and Burks, Tyler and Raychowdhury, Raktima and Adamson, Britt and Norman, Thomas M. and Lander, Eric S. and Weissman, Jonathan S. and Friedman, Nir and Regev, Aviv},
-doi = {10.1016/j.cell.2016.11.038},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/perturb-seq.pdf:pdf},
-issn = {10974172},
-journal = {Cell},
-keywords = {CRISPR,biology,epistasis,genetic interactions,pooled screen,single-cell RNA-seq},
-mendeley-tags = {biology},
-number = {7},
-pages = {1853--1866.e17},
-pmid = {27984732},
-publisher = {Elsevier Inc.},
-title = {{Perturb-Seq: Dissecting Molecular Circuits with Scalable Single-Cell RNA Profiling of Pooled Genetic Screens}},
-url = {http://dx.doi.org/10.1016/j.cell.2016.11.038},
-volume = {167},
-year = {2016}
-}
-@article{Haque2017,
-abstract = {RNA sequencing (RNA-seq) is a genomic approach for the detection and quantitative analysis of messenger RNA molecules in a biological sample and is useful for studying cellular responses. RNA-seq has fueled much discovery and innovation in medicine over recent years. For practical reasons, the technique is usually conducted on samples comprising thousands to millions of cells. However, this has hindered direct assessment of the fundamental unit of biology-the cell. Since the first single-cell RNA-sequencing (scRNA-seq) study was published in 2009, many more have been conducted, mostly by specialist laboratories with unique skills in wet-lab single-cell genomics, bioinformatics, and computation. However, with the increasing commercial availability of scRNA-seq platforms, and the rapid ongoing maturation of bioinformatics approaches, a point has been reached where any biomedical researcher or clinician can use scRNA-seq to make exciting discoveries. In this review, we present a practical guide to help researchers design their first scRNA-seq studies, including introductory information on experimental hardware, protocol choice, quality control, data analysis and biological interpretation.},
-author = {Haque, Ashraful and Engel, Jessica and Teichmann, Sarah A. and L{\"{o}}nnberg, Tapio},
-doi = {10.1186/s13073-017-0467-4},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Haque2017.pdf:pdf},
-issn = {1756994X},
-journal = {Genome Medicine},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {1},
-pages = {1--12},
-publisher = {Genome Medicine},
-title = {{A practical guide to single-cell RNA-sequencing for biomedical research and clinical applications}},
-volume = {9},
-year = {2017}
-}
-@article{Karlis2007,
-abstract = {Mixed Poisson distributions have been used in a wide range of scientific fields for modeling non-homogeneous populations. This paper aims at reviewing the existing literature on Poisson mixtures by bringing together a great number of properties, while, at the same time, providing tangential information on general mixtures. A selective presentation of some of the most prominent members of the family of Poisson mixtures is made. {\textcopyright} International Statistical Institute.},
-author = {Karlis, Dimitris and Xekalaki, Evdokia},
-doi = {10.1111/j.1751-5823.2005.tb00250.x},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/pois{\_}mixture.pdf:pdf},
-issn = {0306-7734},
-journal = {International Statistical Review},
-keywords = {discrete distributions,distribution theory,mixing distribution,mixtures,negative binomial,overdispersion,statistics},
-mendeley-tags = {negative binomial,statistics},
-number = {1},
-pages = {35--58},
-title = {{Mixed Poisson Distributions}},
-volume = {73},
-year = {2007}
-}
-@article{Minka2003,
-abstract = {The Dirichlet distribution and it's compound variant, the Dirichlet-multinomial, are two of the most basic models for proportional data, such as the mix of vocabulary words in a text document. Yet the maximum-likelihood estimate of these distributions is not available in closed-form. This paper describes simple and efficient iterative schemes for obtaining parameter estimates in these models. In each case, a fixed point iteration and a Newton-Rhapson (or generalized Newton-Rhapson) iteration is provided.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1011.1669v3},
-author = {Minka, Thomas P.},
-doi = {10.1007/s00256-007-0299-1},
-eprint = {arXiv:1011.1669v3},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/beta{\_}binomial{\_}mle.pdf:pdf},
-isbn = {0025600702},
-issn = {03642348},
-journal = {Annals of Physics},
-keywords = {beta binomial,statistics},
-mendeley-tags = {beta binomial,statistics},
-number = {8},
-pages = {1--13},
-pmid = {16470396},
-title = {{Estimating a Dirichlet distribution}},
-url = {http://research.microsoft.com/en-us/um/people/minka/papers/dirichlet/minka-dirichlet.pdf},
-volume = {2000},
-year = {2003}
-}
-@article{Hashimshony2012,
-abstract = {High-throughput sequencing has allowed for unprecedented detail in gene expression analyses, yet its efficient application to single cells is challenged by the small starting amounts of RNA. We have developed CEL-Seq, a method for overcoming this limitation by barcoding and pooling samples before linearly amplifying mRNA with the use of one round of in vitro transcription. We show that CEL-Seq gives more reproducible, linear, and sensitive results than a PCR-based amplification method. We demonstrate the power of this method by studying early C. elegans embryonic development at single-cell resolution. Differential distribution of transcripts between sister cells is seen as early as the two-cell stage embryo, and zygotic expression in the somatic cell lineages is enriched for transcription factors. The robust transcriptome quantifications enabled by CEL-Seq will be useful for transcriptomic analyses of complex tissues containing populations of diverse cell types},
-author = {Hashimshony, Tamar and Wagner, Florian and Sher, Noa and Yanai, Itai},
-doi = {10.1016/j.celrep.2012.08.003},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Hashimshony.pdf:pdf},
-issn = {22111247},
-journal = {Cell Reports},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {3},
-pages = {666--673},
-pmid = {22939981},
-publisher = {The Authors},
-title = {{CEL-Seq: Single-Cell RNA-Seq by Multiplexed Linear Amplification}},
-url = {http://dx.doi.org/10.1016/j.celrep.2012.08.003},
-volume = {2},
-year = {2012}
-}
-@article{Gasperini2020,
-abstract = {The human gene catalogue is essentially complete, but we lack an equivalently vetted inventory of bona fide human enhancers. Hundreds of thousands of candidate enhancers have been nominated via biochemical annotations; however, only a handful of these have been validated and confidently linked to their target genes. Here we review emerging technologies for discovering, characterizing and validating human enhancers at scale. We furthermore propose a new framework for operationally defining enhancers that accommodates the heterogeneous and complementary results that are emerging from reporter assays, biochemical measurements and CRISPR screens.},
-author = {Gasperini, Molly and Tome, Jacob M. and Shendure, Jay},
-doi = {10.1038/s41576-019-0209-0},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Gasperini2020.pdf:pdf},
-isbn = {4157601902090},
-issn = {14710064},
-journal = {Nature Reviews Genetics},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {5},
-pages = {292--310},
-pmid = {31988385},
-publisher = {Springer US},
-title = {{Towards a comprehensive catalogue of validated and target-linked human enhancers}},
-url = {http://dx.doi.org/10.1038/s41576-019-0209-0},
-volume = {21},
-year = {2020}
-}
-@article{Thompson2016,
-abstract = {The life cycle of endogenous retroviruses (ERVs), also called long terminal repeat (LTR) retrotransposons, begins with transcription by RNA polymerase II followed by reverse transcription and re-integration into the host genome. While most ERVs are relics of ancient integration events, "young" proviruses competent for retrotransposition-found in many mammals, but not humans-represent an ongoing threat to host fitness. As a consequence, several restriction pathways have evolved to suppress their activity at both transcriptional and post-transcriptional stages of the viral life cycle. Nevertheless, accumulating evidence has revealed that LTR sequences derived from distantly related ERVs have been exapted as regulatory sequences for many host genes in a wide range of cell types throughout mammalian evolution. Here, we focus on emerging themes from recent studies cataloging the diversity of ERV LTRs acting as important transcriptional regulatory elements in mammals and explore the molecular features that likely account for LTR exaptation in developmental and tissue-specific gene regulation.},
-author = {Thompson, Peter J. and Macfarlan, Todd S. and Lorincz, Matthew C.},
-doi = {10.1016/j.molcel.2016.03.029},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Thompson2016.pdf:pdf},
-issn = {10974164},
-journal = {Molecular Cell},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {5},
-pages = {766--776},
-publisher = {Elsevier Inc.},
-title = {{Long Terminal Repeats: From Parasitic Elements to Building Blocks of the Transcriptional Regulatory Repertoire}},
-url = {http://dx.doi.org/10.1016/j.molcel.2016.03.029},
-volume = {62},
-year = {2016}
-}
-@article{Jeong2019,
-abstract = {The simplicity and cost-effectiveness of CRISPR technology have made high-throughput pooled screening approaches accessible to virtually any laboratory. Analyzing the large sequencing data derived from these studies, however, still demands considerable bioinformatics expertise. Various methods have been developed to lessen this requirement, but there are still three tasks for accurate CRISPR screen analysis that involve bioinformatic know-how, if not prowess: designing a proper statistical hypothesis test for robust target identification, developing an accurate mapping algorithm to quantify sgRNA levels, and minimizing the parameters that need to be fine-tuned. To make CRISPR screen analysis more reliable as well as more readily accessible, we have developed a new algorithm, called CRISPRBetaBinomial or CB2. Based on the beta-binomial distribution, which is better suited to sgRNA data, CB2 outperforms the eight most commonly used methods (HiTSelect, MAGeCK, PBNPA, PinAPL-Py, RIGER, RSA, ScreenBEAM, and sgRSEA) in both accurately quantifying sgRNAs and identifying target genes, with greater sensitivity and a much lower false discovery rate. It also accommodates staggered sgRNA sequences. In conjunction with CRISPRcloud, CB2 brings CRISPR screen analysis within reach for a wider community of researchers.},
-author = {Jeong, Hyun Hwan and Kim, Seon Young and Rousseaux, Maxime W.C. and Zoghbi, Huda Y. and Liu, Zhandong},
-doi = {10.1101/gr.245571.118},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Jeong{\_}2020.pdf:pdf},
-issn = {15495469},
-journal = {Genome Research},
-keywords = {biology,crispr methods},
-mendeley-tags = {biology,crispr methods},
-number = {6},
-pages = {999--1008},
-pmid = {31015259},
-title = {{Beta-binomial modeling of CRISPR pooled screen data identifies target genes with greater sensitivity and fewer false negatives}},
-volume = {29},
-year = {2019}
-}
-@article{Dukler2017,
-author = {Dukler, Noah and Gulko, Brad and Huang, Yi Fei and Siepel, Adam},
-doi = {10.1038/ng.3759},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/super{\_}enhancer2016.pdf:pdf},
-issn = {15461718},
-journal = {Nature Genetics},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {1},
-pages = {2--4},
-title = {{Is a super-enhancer greater than the sum of its parts?}},
-volume = {49},
-year = {2017}
-}
-@article{Hill2018,
-abstract = {Several groups recently coupled CRISPR perturbations and single-cell RNA-seq for pooled genetic screens. We demonstrate that vector designs of these studies are susceptible to {\^{a}} 1/450{\%} swapping of guide RNA-barcode associations because of lentiviral template switching. We optimized a published alternative, CROP-seq, in which the guide RNA also serves as the barcode, and here confirm that this strategy performs robustly and doubled the rate at which guides are assigned to cells to 94{\%}.},
-author = {Hill, Andrew J. and McFaline-Figueroa, Jos{\'{e}} L. and Starita, Lea M. and Gasperini, Molly J. and Matreyek, Kenneth A. and Packer, Jonathan and Jackson, Dana and Shendure, Jay and Trapnell, Cole},
-doi = {10.1038/nmeth.4604},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Hill2018.pdf:pdf},
-issn = {15487105},
-journal = {Nature Methods},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {4},
-pages = {271--274},
-publisher = {Nature Publishing Group},
-title = {{On the design of CRISPR-based single-cell molecular screens}},
-url = {http://dx.doi.org/10.1038/nmeth.4604},
-volume = {15},
-year = {2018}
-}
-@article{Luecken2019,
-abstract = {Single-cell RNA-seq has enabled gene expression to be studied at an unprecedented resolution. The promise of this technology is attracting a growing user base for single-cell analysis methods. As more analysis tools are becoming available, it is becoming increasingly difficult to navigate this landscape and produce an up-to-date workflow to analyse one's data. Here, we detail the steps of a typical single-cell RNA-seq analysis, including pre-processing (quality control, normalization, data correction, feature selection, and dimensionality reduction) and cell- and gene-level downstream analysis. We formulate current best-practice recommendations for these steps based on independent comparison studies. We have integrated these best-practice recommendations into a workflow, which we apply to a public dataset to further illustrate how these steps work in practice. Our documented case study can be found at https://www.github.com/theislab/single-cell-tutorial This review will serve as a workflow tutorial for new entrants into the field, and help established users update their analysis pipelines.},
-author = {Luecken, Malte D and Theis, Fabian J},
-doi = {10.15252/msb.20188746},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Luecken.pdf:pdf},
-isbn = {4989318722},
-issn = {1744-4292},
-journal = {Molecular Systems Biology},
-keywords = {15252,20188746,2019,accepted 3 april 2019,analysis pipeline development,biology,computational biology,data analy-,doi 10,msb,received 16 november 2018,revised 15 march,single-cell rna-seq,sis tutorial},
-mendeley-tags = {biology},
-number = {6},
-pmid = {31217225},
-title = {{Current best practices in single‐cell RNA‐seq analysis: a tutorial}},
-volume = {15},
-year = {2019}
-}
-@article{Pachter2011,
-abstract = {RNA-Seq is rapidly becoming the standard technology for transcriptome analysis. Fundamental to many of the applications of RNA-Seq is the quantification problem, which is the accurate measurement of relative transcript abundances from the sequenced reads. We focus on this problem, and review many recently published models that are used to estimate the relative abundances. In addition to describing the models and the different approaches to inference, we also explain how methods are related to each other. A key result is that we show how inference with many of the models results in identical estimates of relative abundances, even though model formulations can be very different. In fact, we are able to show how a single general model captures many of the elements of previously published methods. We also review the applications of RNA-Seq models to differential analysis, and explain why accurate relative transcript abundance estimates are crucial for downstream analyses.},
-archivePrefix = {arXiv},
-arxivId = {1104.3889},
-author = {Pachter, Lior},
-eprint = {1104.3889},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/rna{\_}seq{\_}transcript{\_}quantification.pdf:pdf},
-pages = {1--28},
-title = {{Models for transcript quantification from RNA-Seq}},
-url = {http://arxiv.org/abs/1104.3889},
-year = {2011}
-}
-@article{Chen2019,
-abstract = {Single-cell RNA sequencing (scRNA-seq) technologies allow the dissection of gene expression at single-cell resolution, which greatly revolutionizes transcriptomic studies. A number of scRNA-seq protocols have been developed, and these methods possess their unique features with distinct advantages and disadvantages. Due to technical limitations and biological factors, scRNA-seq data are noisier and more complex than bulk RNA-seq data. The high variability of scRNA-seq data raises computational challenges in data analysis. Although an increasing number of bioinformatics methods are proposed for analyzing and interpreting scRNA-seq data, novel algorithms are required to ensure the accuracy and reproducibility of results. In this review, we provide an overview of currently available single-cell isolation protocols and scRNA-seq technologies, and discuss the methods for diverse scRNA-seq data analyses including quality control, read mapping, gene expression quantification, batch effect correction, normalization, imputation, dimensionality reduction, feature selection, cell clustering, trajectory inference, differential expression calling, alternative splicing, allelic expression, and gene regulatory network reconstruction. Further, we outline the prospective development and applications of scRNA-seq technologies.},
-author = {Chen, Geng and Ning, Baitang and Shi, Tieliu},
-doi = {10.3389/fgene.2019.00317},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/chen2019.pdf:pdf},
-issn = {16648021},
-journal = {Frontiers in Genetics},
-keywords = {Allelic expression,Alternative splicing,Cell clustering,Cell trajectory,Single-cell RNA-seq,biology},
-mendeley-tags = {biology},
-number = {APR},
-pages = {1--13},
-title = {{Single-cell RNA-seq technologies and related computational data analysis}},
-volume = {10},
-year = {2019}
-}
-@article{Adamson2016,
-abstract = {Functional genomics efforts face tradeoffs between number of perturbations examined and complexity of phenotypes measured. We bridge this gap with Perturb-seq, which combines droplet-based single-cell RNA-seq with a strategy for barcoding CRISPR-mediated perturbations, allowing many perturbations to be profiled in pooled format. We applied Perturb-seq to dissect the mammalian unfolded protein response (UPR) using single and combinatorial CRISPR perturbations. Two genome-scale CRISPR interference (CRISPRi) screens identified genes whose repression perturbs ER homeostasis. Subjecting ∼100 hits to Perturb-seq enabled high-precision functional clustering of genes. Single-cell analyses decoupled the three UPR branches, revealed bifurcated UPR branch activation among cells subject to the same perturbation, and uncovered differential activation of the branches across hits, including an isolated feedback loop between the translocon and IRE1$\alpha$. These studies provide insight into how the three sensors of ER homeostasis monitor distinct types of stress and highlight the ability of Perturb-seq to dissect complex cellular responses.},
-author = {Adamson, Britt and Norman, Thomas M. and Jost, Marco and Cho, Min Y. and Nu{\~{n}}ez, James K. and Chen, Yuwen and Villalta, Jacqueline E. and Gilbert, Luke A. and Horlbeck, Max A. and Hein, Marco Y. and Pak, Ryan A. and Gray, Andrew N. and Gross, Carol A. and Dixit, Atray and Parnas, Oren and Regev, Aviv and Weissman, Jonathan S.},
-doi = {10.1016/j.cell.2016.11.048},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/adamson2016.pdf:pdf},
-issn = {10974172},
-journal = {Cell},
-keywords = {CRIPSRi,CRISPR,Single-cell RNA-seq,biology,cell-to-cell heterogeneity,genome-scale screening,single-cell genomics,unfolded protein response},
-mendeley-tags = {biology},
-number = {7},
-pages = {1867--1882.e21},
-title = {{A Multiplexed Single-Cell CRISPR Screening Platform Enables Systematic Dissection of the Unfolded Protein Response}},
-volume = {167},
-year = {2016}
-}
-@article{Milone2018,
-abstract = {Viral vectors provide an efficient means for modification of eukaryotic cells, and their use is now commonplace in academic laboratories and industry for both research and clinical gene therapy applications. Lentiviral vectors, derived from the human immunodeficiency virus, have been extensively investigated and optimized over the past two decades. Third-generation, self-inactivating lentiviral vectors have recently been used in multiple clinical trials to introduce genes into hematopoietic stem cells to correct primary immunodeficiencies and hemoglobinopathies. These vectors have also been used to introduce genes into mature T cells to generate immunity to cancer through the delivery of chimeric antigen receptors (CARs) or cloned T-cell receptors. CAR T-cell therapies engineered using lentiviral vectors have demonstrated noteworthy clinical success in patients with B-cell malignancies leading to regulatory approval of the first genetically engineered cellular therapy using lentiviral vectors. In this review, we discuss several aspects of lentiviral vectors that will be of interest to clinicians, including an overview of lentiviral vector development, the current uses of viral vectors as therapy for primary immunodeficiencies and cancers, large-scale manufacturing of lentiviral vectors, and long-term follow-up of patients treated with gene therapy products.},
-author = {Milone, Michael C. and O'Doherty, Una},
-doi = {10.1038/s41375-018-0106-0},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Milone2018.pdf:pdf},
-issn = {14765551},
-journal = {Leukemia},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {7},
-pages = {1529--1541},
-pmid = {29654266},
-publisher = {Springer US},
-title = {{Clinical use of lentiviral vectors}},
-url = {http://dx.doi.org/10.1038/s41375-018-0106-0},
-volume = {32},
-year = {2018}
-}
-@article{Vu2016,
-abstract = {Motivation: Single-cell RNA-sequencing technology allows detection of gene expression at the single-cell level. One typical feature of the data is a bimodality in the cellular distribution even for highly expressed genes, primarily caused by a proportion of non-expressing cells. The standard and the over-dispersed gamma-Poisson models that are commonly used in bulk-cell RNA-sequencing are not able to capture this property. Results: We introduce a beta-Poisson mixture model that can capture the bimodality of the single-cell gene expression distribution. We further integrate the model into the generalized linear model framework in order to perform differential expression analyses. The whole analytical procedure is called BPSC. The results from several real single-cell RNA-seq datasets indicate that ∼90{\%} of the transcripts are well characterized by the beta-Poisson model; the model-fit from BPSC is better than the fit of the standard gamma-Poisson model in {\textgreater} 80{\%} of the transcripts. Moreover, in differential expression analyses of simulated and real datasets, BPSC performs well against edgeR, a conventional method widely used in bulk-cell RNA-sequencing data, and against scde and MAST, two recent methods specifically designed for single-cell RNA-seq data. Availability and Implementation: An R package BPSC for model fitting and differential expression analyses of single-cell RNA-seq data is available under GPL-3 license at https://github.com/nghiavtr/BPSC. Contact: or mattias.rantalainen@ki.se Supplementary information: Supplementary data are available at Bioinformatics online.},
-author = {Vu, Trung Nghia and Wills, Quin F. and Kalari, Krishna R. and Niu, Nifang and Wang, Liewei and Rantalainen, Mattias and Pawitan, Yudi},
-doi = {10.1093/bioinformatics/btw202},
-issn = {14602059},
-journal = {Bioinformatics},
-keywords = {statistics},
-mendeley-tags = {statistics},
-number = {14},
-pages = {2128--2135},
-title = {{Beta-Poisson model for single-cell RNA-seq data analyses}},
-volume = {32},
-year = {2016}
-}
-@article{Feldman2018,
-abstract = {Lentiviral vectors are widely used for functional genomic screens, enabling efficient and stable transduction of target cells with libraries of genetic elements. Unfortunately, designs that rely on integrating multiple variable sequences, such as combinatorial perturbations or perturbations linked to barcodes, may be compromised by unintended consequences of lentiviral packaging. Intermolecular recombination between library elements and integration of multiple perturbations (even at limiting virus dilution) can negatively impact the sensitivity of pooled screens. Here, we describe a simple approach to prevent recombination between lentiviral vectors containing multiple linked variable elements, such as the recently reported CRISP-seq, Perturb-seq, and Mosaic-seq designs. We show that modifying the packaging protocol by diluting the perturbation library with a carrier plasmid increases the fraction of correct, single integrations from {\textless}60{\%} to {\textgreater}90{\%}, at the cost of reducing titer by 100-fold.},
-author = {Feldman, David and Singh, Avtar and Garrity, Anthony J. and Blainey, Paul C.},
-doi = {10.1101/262121},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/feldman2018.pdf:pdf},
-journal = {bioRxiv},
-keywords = {biology},
-mendeley-tags = {biology},
-pages = {262121},
-title = {{Lentiviral co-packaging mitigates the effects of intermolecular recombination and multiple integrations in pooled genetic screens}},
-url = {https://www.sciencedirect.com/science/article/pii/S0092867418312340?via{\%}3Dihub{\%}0Ahttps://linkinghub.elsevier.com/retrieve/pii/S0092867418312340{\%}0Ahttps://www.biorxiv.org/content/10.1101/262121v1},
-year = {2018}
-}
-@article{Sarkar2020,
-abstract = {How to model and analyze scRNA-seq data has been the subject of consid- erable confusion and debate. The high proportion of zero counts in a typical scRNA-seq data matrix has garnered particular attention, and lead to widespread but inconsistent use of terminology such as “dropout” and “missing data.” Here, we argue that much of this terminology is unhelpful and confusing, and outline simple ways of thinking about models for scRNA-seq data that can help avoid this confusion. The key ideas are: (1) observed scRNA-seq counts reflect both the actual expression level of each gene in each cell and the measurement process, and it is important for models to explicitly distinguish contribu- tions from these two distinct factors; and (2) the measurement process can be adequately described by a simple Poisson model, a claim for which we provide both theoretical and empirical support. We show how these ideas lead to a simple, flexible statistical framework which encompasses a number of commonly used models and analysis methods, and how this framework makes explicit their different assumptions and helps interpret their results. We also illustrate how explicitly separating models for expression and measurement can help address questions of biological interest, such as whether mRNA expression levels are multi-modal among cells.},
-author = {Sarkar, Abhishek and Stephens, Matthew},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Stephens{\_}rnaseq.pdf:pdf},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {2},
-pages = {1--24},
-title = {{Confusion in single cell RNA-Seq analysis}},
-year = {2020}
-}
-@article{Haberle2018,
-abstract = {RNA polymerase II (Pol II) core promoters are specialized DNA sequences at transcription start sites of protein-coding and non-coding genes that support the assembly of the transcription machinery and transcription initiation. They enable the highly regulated transcription of genes by selectively integrating regulatory cues from distal enhancers and their associated regulatory proteins. In this Review, we discuss the defining properties of gene core promoters, including their sequence features, chromatin architecture and transcription initiation patterns. We provide an overview of molecular mechanisms underlying the function and regulation of core promoters and their emerging functional diversity, which defines distinct transcription programmes. On the basis of the established properties of gene core promoters, we discuss transcription start sites within enhancers and integrate recent results obtained from dedicated functional assays to propose a functional model of transcription initiation. This model can explain the nature and function of transcription initiation at gene starts and at enhancers and can explain the different roles of core promoters, of Pol II and its associated factors and of the activating cues provided by enhancers and the transcription factors and cofactors they recruit.},
-author = {Haberle, Vanja and Stark, Alexander},
-doi = {10.1038/s41580-018-0028-8},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Haberle2018.pdf:pdf},
-issn = {14710080},
-journal = {Nature Reviews Molecular Cell Biology},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {10},
-pages = {621--637},
-pmid = {29946135},
-publisher = {Springer US},
-title = {{Eukaryotic core promoters and the functional basis of transcription initiation}},
-url = {http://dx.doi.org/10.1038/s41580-018-0028-8},
-volume = {19},
-year = {2018}
-}
-@article{Fulco2019,
-abstract = {Enhancer elements in the human genome control how genes are expressed in specific cell types and harbor thousands of genetic variants that influence risk for common diseases1–4. Yet, we still do not know how enhancers regulate specific genes, and we lack general rules to predict enhancer–gene connections across cell types5,6. We developed an experimental approach, CRISPRi-FlowFISH, to perturb enhancers in the genome, and we applied it to test {\textgreater}3,500 potential enhancer–gene connections for 30 genes. We found that a simple activity-by-contact model substantially outperformed previous methods at predicting the complex connections in our CRISPR dataset. This activity-by-contact model allows us to construct genome-wide maps of enhancer–gene connections in a given cell type, on the basis of chromatin state measurements. Together, CRISPRi-FlowFISH and the activity-by-contact model provide a systematic approach to map and predict which enhancers regulate which genes, and will help to interpret the functions of the thousands of disease risk variants in the noncoding genome.},
-author = {Fulco, Charles P. and Nasser, Joseph and Jones, Thouis R. and Munson, Glen and Bergman, Drew T. and Subramanian, Vidya and Grossman, Sharon R. and Anyoha, Rockwell and Doughty, Benjamin R. and Patwardhan, Tejal A. and Nguyen, Tung H. and Kane, Michael and Perez, Elizabeth M. and Durand, Neva C. and Lareau, Caleb A. and Stamenova, Elena K. and Aiden, Erez Lieberman and Lander, Eric S. and Engreitz, Jesse M.},
-doi = {10.1038/s41588-019-0538-0},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/activity{\_}by{\_}contact.pdf:pdf},
-issn = {15461718},
-journal = {Nature Genetics},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {12},
-pages = {1664--1669},
-pmid = {31784727},
-publisher = {Springer US},
-title = {{Activity-by-contact model of enhancer–promoter regulation from thousands of CRISPR perturbations}},
-url = {http://dx.doi.org/10.1038/s41588-019-0538-0},
-volume = {51},
-year = {2019}
-}
-@article{Klein2015,
-abstract = {It has long been the dream of biologists to map gene expression at the single-cell level. With such data one might track heterogeneous cell sub-populations, and infer regulatory relationships between genes and pathways. Recently, RNA sequencing has achieved single-cell resolution. What is limiting is an effective way to routinely isolate and process large numbers of individual cells for quantitative in-depth sequencing. We have developed a high-throughput droplet-microfluidic approach for barcoding the RNA from thousands of individual cells for subsequent analysis by next-generation sequencing. The method shows a surprisingly low noise profile and is readily adaptable to other sequencing-based assays. We analyzed mouse embryonic stem cells, revealing in detail the population structure and the heterogeneous onset of differentiation after leukemia inhibitory factor (LIF) withdrawal. The reproducibility of these high-throughput single-cell data allowed us to deconstruct cell populations and infer gene expression relationships.},
-author = {Klein, Allon M. and Mazutis, Linas and Akartuna, Ilke and Tallapragada, Naren and Veres, Adrian and Li, Victor and Peshkin, Leonid and Weitz, David A. and Kirschner, Marc W.},
-doi = {10.1016/j.cell.2015.04.044},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Klein2015.pdf:pdf},
-issn = {10974172},
-journal = {Cell},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {5},
-pages = {1187--1201},
-pmid = {26000487},
-publisher = {Elsevier Inc.},
-title = {{Droplet barcoding for single-cell transcriptomics applied to embryonic stem cells}},
-url = {http://dx.doi.org/10.1016/j.cell.2015.04.044},
-volume = {161},
-year = {2015}
-}
-@article{Townes2019,
-abstract = {Single-cell RNA-Seq (scRNA-Seq) profiles gene expression of individual cells. Recent scRNA-Seq datasets have incorporated unique molecular identifiers (UMIs). Using negative controls, we show UMI counts follow multinomial sampling with no zero inflation. Current normalization procedures such as log of counts per million and feature selection by highly variable genes produce false variability in dimension reduction. We propose simple multinomial methods, including generalized principal component analysis (GLM-PCA) for non-normal distributions, and feature selection using deviance. These methods outperform the current practice in a downstream clustering assessment using ground truth datasets.},
-author = {Townes, F. William and Hicks, Stephanie C. and Aryee, Martin J. and Irizarry, Rafael A.},
-doi = {10.1186/s13059-019-1861-6},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Townes2019.pdf:pdf},
-issn = {1474760X},
-journal = {Genome Biology},
-keywords = {Dimension reduction,GLM-PCA,Gene expression,Principal component analysis,RNA-Seq,Single cell,Variable genes,statistics},
-mendeley-tags = {statistics},
-number = {1},
-pages = {1--16},
-publisher = {Genome Biology},
-title = {{Feature selection and dimension reduction for single-cell RNA-Seq based on a multinomial model}},
-volume = {20},
-year = {2019}
-}
-@article{Gasperini2019,
-abstract = {Over one million candidate regulatory elements have been identified across the human genome, but nearly all are unvalidated and their target genes uncertain. Approaches based on human genetics are limited in scope to common variants and in resolution by linkage disequilibrium. We present a multiplex, expression quantitative trait locus (eQTL)-inspired framework for mapping enhancer-gene pairs by introducing random combinations of CRISPR/Cas9-mediated perturbations to each of many cells, followed by single-cell RNA sequencing (RNA-seq). Across two experiments, we used dCas9-KRAB to perturb 5,920 candidate enhancers with no strong a priori hypothesis as to their target gene(s), measuring effects by profiling 254,974 single-cell transcriptomes. We identified 664 (470 high-confidence) cis enhancer-gene pairs, which were enriched for specific transcription factors, non-housekeeping status, and genomic and 3D conformational proximity to their target genes. This framework will facilitate the large-scale mapping of enhancer-gene regulatory interactions, a critical yet largely uncharted component of the cis-regulatory landscape of the human genome.},
-author = {Gasperini, Molly and Hill, Andrew J. and McFaline-Figueroa, Jos{\'{e}} L. and Martin, Beth and Kim, Seungsoo and Zhang, Melissa D. and Jackson, Dana and Leith, Anh and Schreiber, Jacob and Noble, William S. and Trapnell, Cole and Ahituv, Nadav and Shendure, Jay},
-doi = {10.1016/j.cell.2018.11.029},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Gasperini2019.pdf:pdf},
-issn = {10974172},
-journal = {Cell},
-keywords = {CRISPR,CRISPRi,RNA-seq,biology,crisprQTL,eQTL,enhancer,gene regulation,genetic screen,human genetics,single cell},
-mendeley-tags = {biology},
-number = {1-2},
-pages = {377--390.e19},
-pmid = {30612741},
-title = {{A Genome-wide Framework for Mapping Gene Regulation via Cellular Genetic Screens}},
-volume = {176},
-year = {2019}
-}
-@article{Henriques2018,
-abstract = {Regulation by gene-distal enhancers is critical for cell type-specific and condition-specific patterns of gene expression. Thus, to understand the basis of gene activity in a given cell type or tissue, we must identify the precise locations of enhancers and functionally characterize their behaviors. Here, we demonstrate that transcription is a nearly universal feature of enhancers in Drosophila and mammalian cells and that nascent RNA sequencing strategies are optimal for identification of both enhancers and superenhancers. We dissect the mechanisms governing enhancer transcription and discover remarkable similarities to transcription at protein-coding genes. We show that RNA polymerase II (RNAPII) undergoes regulated pausing and release at enhancers. However, as compared with mRNA genes, RNAPII at enhancers is less stable and more prone to early termination. Furthermore, we found that the level of histone H3 Lys4 (H3K4) methylation at enhancers corresponds to transcriptional activity such that highly active enhancers display H3K4 trimethylation rather than the H3K4 monomethylation considered a hallmark of enhancers. Finally, our work provides insights into the unique characteristics of superenhancers, which stimulate high-level gene expression through rapid pause release; interestingly, this property renders associated genes resistant to the loss of factors that stabilize paused RNAPII.},
-author = {Henriques, Telmo and Scruggs, Benjamin S. and Inouye, Michiko O. and Muse, Ginger W. and Williams, Lucy H. and Burkholder, Adam B. and Lavender, Christopher A. and Fargo, David C. and Adelman, Karen},
-doi = {10.1101/gad.309351.117},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Henriques2018.pdf:pdf},
-issn = {15495477},
-journal = {Genes and Development},
-keywords = {Enhancers,P-TEFb,Pol II pausing,Superenhancers,Termination,Transcription,biology},
-mendeley-tags = {biology},
-number = {1},
-pages = {26--41},
-pmid = {29378787},
-title = {{Widespread transcriptional pausing and elongation control at enhancers}},
-volume = {32},
-year = {2018}
-}
-@article{Fu2014,
-abstract = {We present a simple molecular indexing method for quantitative targeted RNA sequencing, in which mRNAs of interest are selectively captured from complex cDNA libraries and sequenced to determine their absolute concentrations. cDNA fragments are individually labeled so that each molecule can be tracked from the original sample through the library preparation and sequencing process. Multiple copies of cDNA fragments of identical sequence become distinct through labeling, and replicate clones created during PCR amplification steps can be identified and assigned to their distinct parent molecules. Selective capture enables efficient use of sequencing for deep sampling and for the absolute quantitation of rare or transient transcripts that would otherwise escape detection by standard sequencing methods. We have also constructed a set of synthetic barcoded RNA molecules, which can be introduced as controls into the sample preparation mix and used to monitor the efficiency of library construction. The quantitative targeted sequencing revealed extremely low efficiency in standard library preparations, which were further confirmed by using synthetic barcoded RNA molecules. This finding shows that standard library preparation methods result in the loss of rare transcripts and highlights the need for monitoring library efficiency and for developing more efficient sample preparation methods.},
-author = {Fu, Glenn K. and Xu, Weihong and Wilhelmy, Julie and Mindrinos, Michael N. and Davis, Ronald W. and Xiao, Wenzhong and Fodor, Stephen P.A.},
-doi = {10.1073/pnas.1323732111},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/targeted{\_}mrna{\_}seq.pdf:pdf},
-issn = {00278424},
-journal = {Proceedings of the National Academy of Sciences of the United States of America},
-keywords = {CDNA library,Molecular barcoding,RNA-seq},
-number = {5},
-pages = {1891--1896},
-title = {{Molecular indexing enables quantitative targeted RNA sequencing and reveals poor efficiencies in standard library preparations}},
-volume = {111},
-year = {2014}
-}
-@article{Duan2019,
-abstract = {The recently developed single-cell CRISPR screening techniques, independently termed Perturb-Seq, CRISP-seq, or CROP-seq, combine pooled CRISPR screening with single-cell RNA-seq to investigate functional CRISPR screening in a single-cell granularity. Here, we present MUSIC, an integrated pipeline for model-based understanding of single-cell CRISPR screening data. Comprehensive tests applied to all the publicly available data revealed that MUSIC accurately quantifies and prioritizes the individual gene perturbation effect on cell phenotypes with tolerance for the substantial noise that exists in such data analysis. MUSIC facilitates the single-cell CRISPR screening from three perspectives, i.e., prioritizing the gene perturbation effect as an overall perturbation effect, in a functional topic-specific way, and quantifying the relationships between different perturbations. In summary, MUSIC provides an effective and applicable solution to elucidate perturbation function and biologic circuits by a model-based quantitative analysis of single-cell-based CRISPR screening data.},
-author = {Duan, Bin and Zhou, Chi and Zhu, Chengyu and Yu, Yifei and Li, Gaoyang and Zhang, Shihua and Zhang, Chao and Ye, Xiangyun and Ma, Hanhui and Qu, Shen and Zhang, Zhiyuan and Wang, Ping and Sun, Shuyang and Liu, Qi},
-doi = {10.1038/s41467-019-10216-x},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Duan{\_}2019.pdf:pdf},
-isbn = {4146701910},
-issn = {20411723},
-journal = {Nature Communications},
-keywords = {biology,crispr methods},
-mendeley-tags = {biology,crispr methods},
-number = {1},
-pmid = {31110232},
-publisher = {Springer US},
-title = {{Model-based understanding of single-cell CRISPR screening}},
-url = {http://dx.doi.org/10.1038/s41467-019-10216-x},
-volume = {10},
-year = {2019}
-}
-@article{Aragon1992,
-abstract = {Given a sample with mean x̄ and second moment s2, Anscombe in 1950 conjectured that the maximum likelihood equations for the two-parameter negative binomial distribution have a unique solution if and only if s2 {\textgreater} x̄. We give a proof of his conjecture. {\textcopyright} 1992.},
-author = {Aragon, Jorge and Eberly, David and Eberly, Shelly},
-doi = {10.1016/0167-7152(92)90157-Z},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Eberly1991.pdf:pdf},
-issn = {01677152},
-journal = {Statistics and Probability Letters},
-keywords = {Maximum likelihood estimator,Newton's method,negative binomial,negative binomial distribution},
-mendeley-tags = {negative binomial},
-number = {5},
-pages = {375--379},
-title = {{Existence and uniqueness of the maximum likelihood estimator for the two-parameter negative binomial distribution}},
-volume = {15},
-year = {1992}
-}
-@article{Thurtle-Schmidt2018,
-abstract = {Disrupting a gene to determine its effect on an organism's phenotype is an indispensable tool in molecular biology. Such techniques are critical for understanding how a gene product contributes to the development and cellular identity of organisms. The explosion of genomic sequencing technologies combined with recent advances in genome-editing techniques has elevated the possibilities of genetic manipulations in numerous organisms in which these experiments were previously not readily accessible or possible. Introducing the next generation of molecular biologists to these emerging techniques is key in the modern biology classroom. This comprehensive review introduces undergraduates to CRISPR/Cas9 editing and its uses in genetic studies. The goals of this review are to explain how CRISPR functions as a prokaryotic immune system, describe how researchers generate mutations with CRISPR/Cas9, highlight how Cas9 has been adapted for new functions, and discuss ethical considerations of genome editing. Additionally, anticipatory guides and questions for discussion are posed throughout the review to encourage active exploration of these topics in the classroom. Finally, the supplement includes a study guide and practical suggestions to incorporate CRISPR/Cas9 experiments into lab courses at the undergraduate level. {\textcopyright} 2018 The Authors Biochemistry and Molecular Biology Education published by Wiley Periodicals, Inc. on behalf of International Union of Biochemistry and Molecular Biology, 46(2):195–205, 2018.},
-author = {Thurtle-Schmidt, Deborah M. and Lo, Te Wen},
-doi = {10.1002/bmb.21108},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Thurtle2019.pdf:pdf},
-issn = {15393429},
-journal = {Biochemistry and Molecular Biology Education},
-keywords = {CRISPR,Cas9,dCas9},
-number = {2},
-pages = {195--205},
-title = {{Molecular biology at the cutting edge: A review on CRISPR/CAS9 gene editing for undergraduates}},
-volume = {46},
-year = {2018}
-}
-@article{McCarty2020,
-abstract = {Multiplexed CRISPR technologies, in which numerous gRNAs or Cas enzymes are expressed at once, have facilitated powerful biological engineering applications, vastly enhancing the scope and efficiencies of genetic editing and transcriptional regulation. In this review, we discuss multiplexed CRISPR technologies and describe methods for the assembly, expression and processing of synthetic guide RNA arrays in vivo. Applications that benefit from multiplexed CRISPR technologies, including cellular recorders, genetic circuits, biosensors, combinatorial genetic perturbations, large-scale genome engineering and the rewiring of metabolic pathways, are highlighted. We also offer a glimpse of emerging challenges and emphasize experimental considerations for future studies.},
-author = {McCarty, Nicholas S. and Graham, Alicia E. and Studen{\'{a}}, Lucie and Ledesma-Amaro, Rodrigo},
-doi = {10.1038/s41467-020-15053-x},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/mccarty{\_}2020.pdf:pdf},
-issn = {20411723},
-journal = {Nature Communications},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {1},
-pages = {1--13},
-pmid = {32152313},
-publisher = {Springer US},
-title = {{Multiplexed CRISPR technologies for gene editing and transcriptional regulation}},
-url = {http://dx.doi.org/10.1038/s41467-020-15053-x},
-volume = {11},
-year = {2020}
-}
-@article{Hwang2018,
-abstract = {Rapid progress in the development of next-generation sequencing (NGS) technologies in recent years has provided many valuable insights into complex biological systems, ranging from cancer genomics to diverse microbial communities. NGS-based technologies for genomics, transcriptomics, and epigenomics are now increasingly focused on the characterization of individual cells. These single-cell analyses will allow researchers to uncover new and potentially unexpected biological discoveries relative to traditional profiling methods that assess bulk populations. Single-cell RNA sequencing (scRNA-seq), for example, can reveal complex and rare cell populations, uncover regulatory relationships between genes, and track the trajectories of distinct cell lineages in development. In this review, we will focus on technical challenges in single-cell isolation and library preparation and on computational analysis pipelines available for analyzing scRNA-seq data. Further technical improvements at the level of molecular and cell biology and in available bioinformatics tools will greatly facilitate both the basic science and medical applications of these sequencing technologies.},
-author = {Hwang, Byungjin and Lee, Ji Hyun and Bang, Duhee},
-doi = {10.1038/s12276-018-0071-8},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Hwang2018.pdf:pdf},
-issn = {20926413},
-journal = {Experimental and Molecular Medicine},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {8},
-publisher = {Springer US},
-title = {{Single-cell RNA sequencing technologies and bioinformatics pipelines}},
-url = {http://dx.doi.org/10.1038/s12276-018-0071-8},
-volume = {50},
-year = {2018}
-}
-@article{Adamidis1999,
-abstract = {An EM algorithm is proposed for computing estimates of parameters of the negative binomial distribution; the algorithm does not involve further iterations in the M-step, in contrast with the one given in Schader {\&} Schmid (1985). The approach can be applied to the corresponding problem in the logarithmic series distribution. The convergence of the proposed scheme is investigated by simulation, the observed Fisher information is derived and numerical examples based on real data are presented. {\textcopyright} Australian Statistical Publishing Association Inc. 1999. Published by Blackwell Publishers Ltd.},
-author = {Adamidis, Konstantinos},
-doi = {10.1111/1467-842X.00075},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Statistics/Adamidis{\_}1999.pdf:pdf},
-issn = {13691473},
-journal = {Australian and New Zealand Journal of Statistics},
-keywords = {EM algorithm,Logarithmic series distribution,Negative binomial distribution,Poisson-negative binomial distribution,Zero-truncated negative binomial distribution,negative binomial,statistics},
-mendeley-tags = {negative binomial,statistics},
-number = {2},
-pages = {213--221},
-title = {{An EM algorithm for estimating negative binomial parameters}},
-volume = {41},
-year = {1999}
-}
-@article{Adli2018,
-abstract = {CRISPR is becoming an indispensable tool in biological research. Once known as the bacterial immune system against invading viruses, the programmable capacity of the Cas9 enzyme is now revolutionizing diverse fields of medical research, biotechnology, and agriculture. CRISPR-Cas9 is no longer just a gene-editing tool; the application areas of catalytically impaired inactive Cas9, including gene regulation, epigenetic editing, chromatin engineering, and imaging, now exceed the gene-editing functionality of WT Cas9. Here, we will present a brief history of gene-editing tools and describe the wide range of CRISPR-based genome-targeting tools. We will conclude with future directions and the broader impact of CRISPR technologies.},
-author = {Adli, Mazhar},
-doi = {10.1038/s41467-018-04252-2},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/adli2018.pdf:pdf},
-issn = {20411723},
-journal = {Nature Communications},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {1},
-publisher = {Springer US},
-title = {{The CRISPR tool kit for genome editing and beyond}},
-url = {http://dx.doi.org/10.1038/s41467-018-04252-2},
-volume = {9},
-year = {2018}
-}
-@article{Datlinger2017,
-abstract = {CRISPR-based genetic screens are accelerating biological discovery, but current methods have inherent limitations. Widely used pooled screens are restricted to simple readouts including cell proliferation and sortable marker proteins. Arrayed screens allow for comprehensive molecular readouts such as transcriptome profiling, but at much lower throughput. Here we combine pooled CRISPR screening with single-cell RNA sequencing into a broadly applicable workflow, directly linking guide RNA expression to transcriptome responses in thousands of individual cells. Our method for CRISPR droplet sequencing (CROP-seq) enables pooled CRISPR screens with single-cell transcriptome resolution, which will facilitate high-throughput functional dissection of complex regulatory mechanisms and heterogeneous cell populations.},
-author = {Datlinger, Paul and Rendeiro, Andr{\'{e}} F. and Schmidl, Christian and Krausgruber, Thomas and Traxler, Peter and Klughammer, Johanna and Schuster, Linda C. and Kuchler, Amelie and Alpar, Donat and Bock, Christoph},
-doi = {10.1038/nmeth.4177},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/Datlinger2017.pdf:pdf},
-issn = {15487105},
-journal = {Nature Methods},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {3},
-pages = {297--301},
-pmid = {28099430},
-publisher = {Nature Publishing Group},
-title = {{Pooled CRISPR screening with single-cell transcriptome readout}},
-url = {http://dx.doi.org/10.1038/nmeth.4177},
-volume = {14},
-year = {2017}
-}
-@article{Stark2019,
-abstract = {Over the past decade, RNA sequencing (RNA-seq) has become an indispensable tool for transcriptome-wide analysis of differential gene expression and differential splicing of mRNAs. However, as next-generation sequencing technologies have developed, so too has RNA-seq. Now, RNA-seq methods are available for studying many different aspects of RNA biology, including single-cell gene expression, translation (the translatome) and RNA structure (the structurome). Exciting new applications are being explored, such as spatial transcriptomics (spatialomics). Together with new long-read and direct RNA-seq technologies and better computational tools for data analysis, innovations in RNA-seq are contributing to a fuller understanding of RNA biology, from questions such as when and where transcription occurs to the folding and intermolecular interactions that govern RNA function.},
-author = {Stark, Rory and Grzelak, Marta and Hadfield, James},
-doi = {10.1038/s41576-019-0150-2},
-file = {:Users/timbarry/Box/CRISPRScreen/Library/Biology/rna{\_}seq.pdf:pdf},
-issn = {14710064},
-journal = {Nature Reviews Genetics},
-keywords = {biology},
-mendeley-tags = {biology},
-number = {11},
-pages = {631--656},
-pmid = {31341269},
-publisher = {Springer US},
-title = {{RNA sequencing: the teenage years}},
-url = {http://dx.doi.org/10.1038/s41576-019-0150-2},
-volume = {20},
-year = {2019}
-}
-</script>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

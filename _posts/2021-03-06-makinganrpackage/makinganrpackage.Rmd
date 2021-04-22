@@ -12,7 +12,25 @@ output:
 draft: true
 ---
 
-# 1. 
+# 1. Get up-and-running
+
+- Load library(devtools).
+- Call create_package("~/Box/glm-eiv/glmeiv"). This opens a new Rstudio window.
+- Call use_git(); this initializes the git repository, adds some files 
+- Go to Github and open a new repository. It is best for the name of the repository to be the same as that of the package. Do not initialize the repository with anything (i.e., don't check any of the boxes under "Initialize this repository with."
+- Following the instructions on Github, open terminal, `cd` to the package directory, and execute the following commands:
+
+```
+git remote add origin https://github.com/timothy-barry/glmeiv.git
+git branch -M main
+git push -u origin main
+```
+
+This will set the origin and do the initial push.
+
+- Edit the DESCRIPTION. Update the title, author, and description fields.
+- update the license using `use_mit_license()`.
+- `use_readme_rmd()`; update. For starters, I like to copy-and-paste what I wrote in the DESCRIPTION file into the README.md file.
 
 # 2. Add a function.
 
@@ -20,9 +38,10 @@ The basic unit of R is the function; we build packages by gradually adding funct
 
 i. - use `use_r()` to add a new R file.
 - document using Roxygen; if exported, use @export tag; if not, use @noRd. Document several related methods simultaneously; use NULL, then add @Rdname to each function.
+Use `use_package()` to indicate a package is being used.
 ii. `load_all()` to manually load
 iii. `check()`
-iv. `use_test()` to add a test script; or just open an existing one.
+iv. `use_testthat()` to initialize the test directory, and `use_test()` to add a test script.
 
 # 3. Add data to the package
 
@@ -32,6 +51,5 @@ iv. `use_test()` to add a test script; or just open an existing one.
 
 # 4. Create a website
 
-1. Turn package into pkgdown website via `usethis::use_pkgdown()`.
-
-2. Update the site via `pkgdown::build_site()`.
+- Turn package into pkgdown website via `usethis::use_pkgdown()`.
+- Update the site via `pkgdown::build_site()`.
