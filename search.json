@@ -5,7 +5,7 @@
       "title": "Tim's Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-05T14:51:56-05:00"
+      "last_modified": "2021-04-21T20:39:37-04:00"
     },
     {
       "path": "fun.html",
@@ -27,7 +27,7 @@
       "title": "Research",
       "author": [],
       "contents": "\nRecent papers\nSee CV for full list.\nT Barry, X Wang, J Morris, K Roeder, E Katsevich. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv.\nJ Morris, Z Daniloski, J Domingo, T Barry, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: Robustly infer regulatory relationships in single-cell CRISPR screens. [Web] [Github]\nondisc: Fast, universal, and intuitive computing on large-scale single-cell data. [CRAN] [Web] [Github]\n\n\n\n",
-      "last_modified": "2021-04-21T20:36:01-04:00"
+      "last_modified": "2021-04-28T11:58:34-04:00"
     }
   ],
   "collections": ["posts/posts.json"]
