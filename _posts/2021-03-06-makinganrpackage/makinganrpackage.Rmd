@@ -39,7 +39,7 @@ The basic unit of R is the function; we build packages by gradually adding funct
 i. - use `use_r()` to add a new R file.
 - document using Roxygen; if exported, use @export tag; if not, use @noRd. Document several related methods simultaneously; use NULL, then add @Rdname to each function.
 Use `use_package()` to indicate a package is being used.
-ii. `load_all()` to manually load
+ii. `load_all()` to manually load, and `document()` to generate documentation.
 iii. `check()`
 iv. `use_testthat()` to initialize the test directory, and `use_test()` to add a test script.
 
