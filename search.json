@@ -5,7 +5,7 @@
       "title": "Tim's Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-21T20:39:37-04:00"
+      "last_modified": "2021-05-21T21:30:06-04:00"
     },
     {
       "path": "fun.html",
@@ -13,21 +13,21 @@
       "description": "...but it will be fun.",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-05T14:51:56-05:00"
+      "last_modified": "2021-05-21T21:30:06-04:00"
     },
     {
       "path": "index.html",
       "title": "About me",
       "author": [],
       "contents": "\nI am a third-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors Kathryn Roeder and Gene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. My interests are at the intersection of statistics, computer science, and genomics. I work on statistical methods and computational algorithms for the analysis of data produced by new genomic technologies. I am especially interested in problems arising from single-cell regulatory CRISPR screens and large-scale single-cell sequencing data.\n\n\n  \n\n\n\n",
-      "last_modified": "2021-03-05T14:51:57-05:00"
+      "last_modified": "2021-05-21T21:30:06-04:00"
     },
     {
       "path": "research.html",
       "title": "Research",
       "author": [],
       "contents": "\nRecent papers\nSee CV for full list.\nT Barry, X Wang, J Morris, K Roeder, E Katsevich. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv.\nJ Morris, Z Daniloski, J Domingo, T Barry, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: Robustly infer regulatory relationships in single-cell CRISPR screens. [Web] [Github]\nondisc: Fast, universal, and intuitive computing on large-scale single-cell data. [CRAN] [Web] [Github]\n\n\n\n",
-      "last_modified": "2021-04-28T11:58:34-04:00"
+      "last_modified": "2021-05-21T21:31:06-04:00"
     }
   ],
   "collections": ["posts/posts.json"]
