@@ -1,8 +1,21 @@
 Research page
 
-low- and high-dimensional regression models, EM algorithms, resampling methods, and algorithms for efficient out-of-memory and distributed computing.
+My interests center on 
 
-Currently, I am especially interested in CRISPR.
+My methodological and computational interests center on tools that I have found useful in solving applied genomics problems: low- and high-dimensional regression, latent variable models, resampling methods, and out-of-memory and distributed computing. 
+
+
+Methods
+
+
+Algorithms
+
+
+
+Applications
+
+
+I lead the development of several software packages. I like to think carefully about performance, user interfaces, and scalability.
 
 
 Blog ideas

@@ -1,7 +1,7 @@
 ---
-title: "making_an_r_package"
+title: "A streamlined guide to making an R package in 2021"
 description: |
-  A short description of the post.
+  A recipe for quickly making an R package.
 author:
   - name: Tim Barry
     url: https://timothy-barry.github.io
@@ -12,25 +12,36 @@ output:
 draft: true
 ---
 
-# 1. Get up-and-running
+This post contains a short, simple recipe for making an R package. As an example I will create `simulatr`, a package intended to facilitate portable and scalable simulation studies. I will store `simulatr` locally in the directory "~/research_code/simulatr" and remotely on Github under the repository "timothy-barry/simulatr." This post assumes some working knowledge of R and Git/Github.
 
-- Load library(devtools).
-- Call create_package("~/Box/glm-eiv/glmeiv"). This opens a new Rstudio window.
-- Call use_git(); this initializes the git repository, adds some files 
-- Go to Github and open a new repository. It is best for the name of the repository to be the same as that of the package. Do not initialize the repository with anything (i.e., don't check any of the boxes under "Initialize this repository with."
-- Following the instructions on Github, open terminal, `cd` to the package directory, and execute the following commands:
+# 1. Initialization
+
+- Open a new Rstudio window. Call `library(devtools)`.
+- Call `create_package("~/research_code/simulatr")`. This will create a package called `simulatr` in the directory `research_code` and open a new R studio window. 
+- Close the original window and navigate to the new window. Again call `library(devtools)`.
+- Call `use_git()`. This initializes a git repository and adds the relevant files to `.gitignore`.
+- R will ask if it is OK to make a commit; click yes. Answer the subsequent questions according to your preference (the answers do not matter much).
+- Open your browser and navigate to Github. Create a new repository, setting the name of the repository to the name of your package (in this case, "simulatr"). Because you are importing an existing repository, do *not* initialize the repository with a README, gitignore, or license.
+- Open the terminal on your local machine. Change directories to the package directory.
 
 ```
-git remote add origin https://github.com/timothy-barry/glmeiv.git
+cd ~/research_code/simulatr
+```
+Set the remote and make your initial push as follows.
+```
+git remote add origin https://github.com/timothy-barry/simulatr.git
 git branch -M main
 git push -u origin main
 ```
+- Open R studio. Click "DESCRIPTION" in the files pane. Update the fields "Title," "Authors@R", and "Description."
+  - **Title**: a one-line description of what the package does, written in title-case and without periods. For example, "Portable and Scalable Simulations".
+  - **Authors@R**: Your first name, last name, role, email, and ORCID. Of the roles that are available, the most important are "aut" (package author), "cre" (package maintainer), "ctb" (package contributor), and "ths" (thesis advisor). You can add multiple persons by concatenating person constructors using the `c` operator, i.e., `c(person(...), person(...))`.
+  - **Description**: A one-paragraph description of what the package does, emphasizing what makes the package unique. For example, "Simulation studies play a crucial role in the development and assessment of statistical methods. However, writing portable and scalable simulation code is challenging. `Simulatr` decouples the *specification* of a simulation from the *execution* of a simulation, enabling users to develop a simulation study on their laptop and then seamlessly run the simulation at-scale on a distributed computing platform. Supported platforms include high-performance computing clusters and cloud computing services (e.g., Microsoft Azure, Amazon Web Services, etc.)."
 
-This will set the origin and do the initial push.
+- Update the package license. You can use an MIT license by calling `use_mit_license()` in the console.
 
-- Edit the DESCRIPTION. Update the title, author, and description fields.
-- update the license using `use_mit_license()`.
-- `use_readme_rmd()`; update. For starters, I like to copy-and-paste what I wrote in the DESCRIPTION file into the README.md file.
+- Update the README file, which serves as the landing page for the Github repository. Call `use_readme_rmd()` in the console, edit the `README.Rmd` file that appears on the screen, and click "Knit." As a starting point I like to copy and paste the paragraph I wrote for the DESCRIPTION under the initial header of `README.Rmd`.
+
 
 # 2. Add a function.
 

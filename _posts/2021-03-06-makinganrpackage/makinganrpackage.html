@@ -86,376 +86,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Tim Barry: Research</title>
+  <title>A streamlined guide to making an R package in 2021</title>
+  
+  <meta property="description" itemprop="description" content="A recipe for quickly making an R package."/>
   
   
-  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-03-06"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-03-06"/>
+  <meta name="article:author" content="Tim Barry"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Tim Barry: Research"/>
+  <meta property="og:title" content="A streamlined guide to making an R package in 2021"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A recipe for quickly making an R package."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Tim Barry"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Tim Barry: Research"/>
+  <meta property="twitter:title" content="A streamlined guide to making an R package in 2021"/>
+  <meta property="twitter:description" content="A recipe for quickly making an R package."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Research"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["A streamlined guide to making an R package in 2021"]},{"type":"character","attributes":{},"value":["A recipe for quickly making an R package.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["03-06-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["makinganrpackage_files/anchor-4.2.2/anchor.min.js","makinganrpackage_files/bowser-1.9.3/bowser.min.js","makinganrpackage_files/distill-2.2.21/template.v2.js","makinganrpackage_files/jquery-1.11.3/jquery.min.js","makinganrpackage_files/popper-2.6.0/popper.min.js","makinganrpackage_files/tippy-6.2.7/tippy-bundle.umd.min.js","makinganrpackage_files/tippy-6.2.7/tippy-light-border.css","makinganrpackage_files/tippy-6.2.7/tippy.css","makinganrpackage_files/tippy-6.2.7/tippy.umd.min.js","makinganrpackage_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  .distill-site-header {
-  
-  }
-  
-  .distill-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-  
-  .distill-site-header .logo {
-    padding: 0;
-  }
-  
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-  
-  </style>
-  
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1771,54 +1434,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="makinganrpackage_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="makinganrpackage_files/popper-2.6.0/popper.min.js"></script>
+  <link href="makinganrpackage_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="makinganrpackage_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="makinganrpackage_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="makinganrpackage_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="makinganrpackage_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="makinganrpackage_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="makinganrpackage_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  .distill-site-nav {
-    color: #000000;
-    background-color: #EFEFEF;
-    font-weight: 200;
-    font-size: 13pt;
-  }
-  
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .distill-site-nav a:hover {
-    color: black;
-  }
-  
-  .distill-site-header {
-  }
-  
-  .distill-site-footer {
-  }
-  
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-  
-  body {
-    max-width: 1100px;
-    margin: auto;
-   padding: 1em;
-   line-height: 20px ; 
-  }
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -1827,51 +1454,82 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Research","authors":[]}
+{"title":"A streamlined guide to making an R package in 2021","description":"A recipe for quickly making an R package.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-06T00:00:00.000+00:00","citationText":"Barry, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Tim Barry</a>
-</div>
-<div class="nav-right">
-<a href="research.html">Research</a>
-<a href="blog.html">Blog</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Research</h1>
+<h1>A streamlined guide to making an R package in 2021</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>A recipe for quickly making an R package.</p></p>
 </div>
 
+<div class="d-byline">
+  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  
+<br/>03-06-2021
+</div>
 
 <div class="d-article">
-<h1 id="recent-papers">Recent papers</h1>
-<p>See <a href="ResumeCv/timsResume.pdf">CV</a> for full list.</p>
-<ol type="1">
-<li><p><strong>T Barry</strong>, X Wang, J Morris, K Roeder, E Katsevich. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on <a href="https://www.biorxiv.org/content/10.1101/2020.08.13.250092v6">bioRxiv</a>. <em>Reviewers’ choice, American Society of Human Genetics, 2021.</em></p></li>
-<li><p>J Morris, Z Daniloski, J Domingo, <strong>T Barry</strong>, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on <a href="https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1">bioRxiv</a>.</p></li>
+<p>This post contains a short, simple recipe for making an R package. As an example I will create <code>simulatr</code>, a package intended to facilitate portable and scalable simulation studies. I will store <code>simulatr</code> locally in the directory “~/research_code/simulatr” and remotely on Github under the repository “timothy-barry/simulatr.” This post assumes some working knowledge of R and Git/Github.</p>
+<h1 id="initialization">1. Initialization</h1>
+<ul>
+<li>Open a new Rstudio window. Call <code>library(devtools)</code>.</li>
+<li>Call <code>create_package("~/research_code/simulatr")</code>. This will create a package called <code>simulatr</code> in the directory <code>research_code</code> and open a new R studio window.</li>
+<li>Close the original window and navigate to the new window. Again call <code>library(devtools)</code>.</li>
+<li>Call <code>use_git()</code>. This initializes a git repository and adds the relevant files to <code>.gitignore</code>.</li>
+<li>R will ask if it is OK to make a commit; click yes. Answer the subsequent questions according to your preference (the answers do not matter much).</li>
+<li>Open your browser and navigate to Github. Create a new repository, setting the name of the repository to the name of your package (in this case, “simulatr”). Because you are importing an existing repository, do <em>not</em> initialize the repository with a README, gitignore, or license.</li>
+<li>Open the terminal on your local machine. Change directories to the package directory.</li>
+</ul>
+<pre><code>cd ~/research_code/simulatr</code></pre>
+<p>Set the remote and make your initial push as follows.</p>
+<pre><code>git remote add origin https://github.com/timothy-barry/simulatr.git
+git branch -M main
+git push -u origin main</code></pre>
+<ul>
+<li><p>Open R studio. Click “DESCRIPTION” in the files pane. Update the fields “Title,” “<a href="mailto:Authors@R" class="email">Authors@R</a>”, and “Description.”</p>
+<ul>
+<li><strong>Title</strong>: a one-line description of what the package does, written in title-case and without periods. For example, “Portable and Scalable Simulations”.</li>
+<li><strong><a href="mailto:Authors@R" class="email">Authors@R</a></strong>: Your first name, last name, role, email, and ORCID. Of the roles that are available, the most important are “aut” (package author), “cre” (package maintainer), “ctb” (package contributor), and “ths” (thesis advisor). You can add multiple persons by concatenating person constructors using the <code>c</code> operator, i.e., <code>c(person(...), person(...))</code>.</li>
+<li><strong>Description</strong>: A one-paragraph description of what the package does, emphasizing what makes the package unique. For example, “Simulation studies play a crucial role in the development and assessment of statistical methods. However, writing portable and scalable simulation code is challenging. <code>Simulatr</code> decouples the <em>specification</em> of a simulation from the <em>execution</em> of a simulation, enabling users to develop a simulation study on their laptop and then seamlessly run the simulation at-scale on a distributed computing platform. Supported platforms include high-performance computing clusters and cloud computing services (e.g., Microsoft Azure, Amazon Web Services, etc.).”</li>
+</ul></li>
+<li><p>Update the package license. You can use an MIT license by calling <code>use_mit_license()</code> in the console.</p></li>
+<li><p>Update the README file, which serves as the landing page for the Github repository. Call <code>use_readme_rmd()</code> in the console, edit the <code>README.Rmd</code> file that appears on the screen, and click “Knit.” As a starting point I like to copy and paste the paragraph I wrote for the DESCRIPTION under the initial header of <code>README.Rmd</code>.</p></li>
+</ul>
+<h1 id="add-a-function.">2. Add a function.</h1>
+<p>The basic unit of R is the function; we build packages by gradually adding functions.</p>
+<ol type="i">
+<li><ul>
+<li>use <code>use_r()</code> to add a new R file.</li>
+</ul></li>
 </ol>
-<h1 id="software">Software</h1>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="graphics/tessellation_cropped.png" width="60%" style="display: block; margin: auto;" /></p>
-</div>
-<ol type="1">
-<li><p><strong>sceptre</strong>: Robustly infer regulatory relationships in single-cell CRISPR screens. [<a href="https://katsevich-lab.github.io/sceptre/">Web</a>] [<a href="https://github.com/katsevich-lab/sceptre">Github</a>]</p></li>
-<li><p><strong>ondisc</strong>: Fast, universal, and intuitive computing on large-scale single-cell data. [<a href="https://cloud.r-project.org/web/packages/ondisc/index.html">CRAN</a>] [<a href="https://timothy-barry.github.io/ondisc/">Web</a>] [<a href="https://github.com/timothy-barry/ondisc">Github</a>]</p></li>
+<ul>
+<li>document using Roxygen; if exported, use <span class="citation" data-cites="export">@export</span> tag; if not, use <span class="citation" data-cites="noRd">@noRd</span>. Document several related methods simultaneously; use NULL, then add <span class="citation" data-cites="Rdname">@Rdname</span> to each function. Use <code>use_package()</code> to indicate a package is being used.</li>
+</ul>
+<ol start="2" type="i">
+<li><code>load_all()</code> to manually load, and <code>document()</code> to generate documentation.</li>
+<li><code>check()</code></li>
+<li><code>use_testthat()</code> to initialize the test directory, and <code>use_test()</code> to add a test script.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="add-data-to-the-package">3. Add data to the package</h1>
+<ul>
+<li>To add standard .rda data to the package, use <code>use_data_raw()</code>; this will create a directory /data-raw and a file DATASET.R within the directory.</li>
+<li>Modify DATASET.R, creating the data. At the end of the script, use use_data(x,y,z) to save the objects as .rda files in the /data directory. After loading the package, you can access the data using the <code>data</code> function.</li>
+<li>Document the data. Type <code>use_this("data")</code> to create a new file <code>data.R</code> inside the /R directory.</li>
+</ul>
+<h1 id="create-a-website">4. Create a website</h1>
+<ul>
+<li>Turn package into pkgdown website via <code>usethis::use_pkgdown()</code>.</li>
+<li>Update the site via <code>pkgdown::build_site()</code>.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
