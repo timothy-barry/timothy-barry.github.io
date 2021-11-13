@@ -20,14 +20,14 @@
       "title": "About me",
       "author": [],
       "contents": "\nI am a fourth-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised by Professors Kathryn Roeder and Gene Katsevich. Previously, I studied math and computer science at the University of Maryland, College Park. My interests are at the intersection of statistics, computer science, and genomics. I work on statistical methods and computational algorithms for the analysis of data produced by new genomic technologies. I am especially interested in problems arising from single-cell regulatory CRISPR screens and large-scale single-cell sequencing data.\n\n\n  \n\n\n\n",
-      "last_modified": "2021-10-18T17:15:31-04:00"
+      "last_modified": "2021-11-12T19:30:44-05:00"
     },
     {
       "path": "research.html",
       "title": "Research",
       "author": [],
-      "contents": "\nRecent papers\nSee CV for full list.\nT Barry, X Wang, J Morris, K Roeder, E Katsevich. “Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis.” Preprint on bioRxiv. Reviewers’ choice, American Society of Human Genetics, 2021.\nJ Morris, Z Daniloski, J Domingo, T Barry, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on bioRxiv.\nSoftware\n\n\n\nsceptre: Robustly infer regulatory relationships in single-cell CRISPR screens. [Web] [Github]\nondisc: Fast, universal, and intuitive computing on large-scale single-cell data. [CRAN] [Web] [Github]\n\n\n\n",
-      "last_modified": "2021-09-19T18:48:26-04:00"
+      "contents": "\nRecent papers\nT Barry, X Wang, J Morris, K Roeder, E Katsevich. “SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis.” Genome Biology, to appear. bioRxiv. Reviewers’ choice, American Society of Human Genetics conference, 2021.\nJ Morris, Z Daniloski, J Domingo, T Barry, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on bioRxiv. Platform talk, American Society of Human Genetics conference, 2021.\nSee CV for full list of papers and talks.\nSoftware\n\n\n\nsceptre: Robustly infer regulatory relationships in single-cell CRISPR screens. [Web] [Github]\nondisc: Fast, universal, and intuitive computing on large-scale single-cell data. [CRAN] [Web] [Github]\nMentoring\nSongcheng Dai (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Thesis topic: algorithmic and statistical tools for large-scale single-cell data.\n\n\n\n",
+      "last_modified": "2021-11-12T19:28:10-05:00"
     }
   ],
   "collections": ["posts/posts.json"]

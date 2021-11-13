@@ -2,14 +2,14 @@
 title: "Research"
 site: distill::distill_website
 ---
-
 # Recent papers
 
-See [CV](ResumeCv/timsResume.pdf) for full list.
+1. **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." Genome Biology, to appear. [bioRxiv](https://doi.org/10.1101/2020.08.13.250092). <span style="color:blue">Reviewers' choice, American Society of Human Genetics conference, 2021.</span>
 
-1. **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "Conditional resampling improves calibration and sensitivity in single-cell CRISPR screen analysis." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.08.13.250092v6). *Reviewers' choice, American Society of Human Genetics, 2021.*
 
-2. J Morris, Z Daniloski, J Domingo, **T Barry**, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1).
+2. J Morris, Z Daniloski, J Domingo, **T Barry**, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1). <span style="color:blue">Platform talk, American Society of Human Genetics conference, 2021.</span>
+
+See [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
 
 # Software
 
@@ -20,3 +20,7 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 1. **sceptre**: Robustly infer regulatory relationships in single-cell CRISPR screens. [[Web](https://katsevich-lab.github.io/sceptre/)] [[Github](https://github.com/katsevich-lab/sceptre)]
 
 2. **ondisc**: Fast, universal, and intuitive computing on large-scale single-cell data. [[CRAN](https://cloud.r-project.org/web/packages/ondisc/index.html)] [[Web](https://timothy-barry.github.io/ondisc/)] [[Github](https://github.com/timothy-barry/ondisc)]
+
+# Mentoring
+
+- [Songcheng Dai](https://github.com/Samson-Dai) (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Thesis topic: algorithmic and statistical tools for large-scale single-cell data.
