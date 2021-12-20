@@ -4,10 +4,10 @@ site: distill::distill_website
 ---
 # Recent papers
 
-1. **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." Genome Biology, to appear. [bioRxiv](https://doi.org/10.1101/2020.08.13.250092). <span style="color:blue">Reviewers' choice, American Society of Human Genetics conference, 2021.</span>
+1. **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." Genome Biology, 2021. [Journal](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2). <span style="color:blue">(Reviewers' choice, American Society of Human Genetics conference, 2021.)</span>
 
 
-2. J Morris, Z Daniloski, J Domingo, **T Barry**, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1). <span style="color:blue">Platform talk, American Society of Human Genetics conference, 2021.</span>
+2. J Morris, Z Daniloski, J Domingo, **T Barry**, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1). <span style="color:blue">(Platform talk, American Society of Human Genetics conference, 2021.)</span>
 
 See [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
 
@@ -23,4 +23,4 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 
 # Mentoring
 
-- [Songcheng Dai](https://github.com/Samson-Dai) (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Thesis topic: algorithmic and statistical tools for large-scale single-cell data.
+- [Songcheng Dai](https://github.com/Samson-Dai) (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Research topic: algorithmic and statistical tools for large-scale single-cell data.
