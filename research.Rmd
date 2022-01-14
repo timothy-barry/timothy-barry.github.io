@@ -10,7 +10,7 @@ site: distill::distill_website
 
 3. J Morris, Z Daniloski, J Domingo, **T Barry**, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing." Preprint on [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.04.07.438882v1). <span style="color:blue">(Platform talk, American Society of Human Genetics conference, 2021.)</span>
 
-See [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
+See [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en) or  [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
 
 # Software
 
