@@ -19,8 +19,8 @@
       "path": "index.html",
       "title": "About me",
       "author": [],
-      "contents": "\nI am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised jointly by Professors Kathryn Roeder (CMU) and Gene Katsevich (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. My interests are at the intersection of statistics, computer science, and genomics:\nStatistics: regression methodology, selective inference, machine learningComputing: large data, clouds and clusters, out-of-core algorithmsGenomics: applications to CRISPR genome engineering, single-cell data\n\n\n  \n\n\n\n",
-      "last_modified": "2022-01-15T14:34:26-05:00"
+      "contents": "\nI am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised jointly by Professors Kathryn Roeder (CMU) and Gene Katsevich (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. My interests intersect statistics, computer science, and genomics:\nStatistics: regression methodology, selective inference, machine learningComputing: large data, clouds and clusters, out-of-core algorithmsGenomics: applications to CRISPR genome engineering, single-cell sequencing\n\n\n  \n\n\n\n",
+      "last_modified": "2022-01-15T14:42:11-05:00"
     },
     {
       "path": "research.html",
