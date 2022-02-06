@@ -1,9 +1,6 @@
 ---
-title: "Under construction..."
-description: |
-  ...but it will be fun.
+title: "Fun"
+site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+Outside work I like playing piano and programming synthesizers. You can listen to some of my sounds [here on Bandcamp](https://tbarry1.bandcamp.com/music) if you like.

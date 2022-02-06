@@ -5,29 +5,28 @@
       "title": "Tim's Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-21T21:30:06-04:00"
+      "last_modified": "2022-02-06T13:12:14-05:00"
     },
     {
       "path": "fun.html",
-      "title": "Under construction...",
-      "description": "...but it will be fun.",
+      "title": "Fun",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-05-21T21:30:06-04:00"
+      "contents": "\nOutside work I like playing piano and programming synthesizers. You can listen to some of my sounds here on Bandcamp if you like.\n\n\n\n",
+      "last_modified": "2022-02-06T13:12:14-05:00"
     },
     {
       "path": "index.html",
       "title": "About me",
       "author": [],
-      "contents": "\nI am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. I am advised jointly by Professors Kathryn Roeder (CMU) and Gene Katsevich (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. My interests intersect statistics, computer science, and genomics:\nStatistics: regression methodology, selective inferenceComputing: large data, clouds and clusters, out-of-core algorithmsGenomics: applications to CRISPR genome editing, single-cell sequencing\n\n\n  \n\n\n\n",
-      "last_modified": "2022-01-15T20:32:21-05:00"
+      "contents": "\nI am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU). I am advised jointly by Professors Kathryn Roeder (CMU) and Gene Katsevich (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. My interests intersect statistics, computer science, and genomics:\nStatistics: regression methodology, selective inferenceComputing: large data, clouds and clusters, out-of-core algorithmsGenomics: applications to CRISPR genome editing, single-cell sequencing\n\n\n  \n\n\n\n",
+      "last_modified": "2022-02-06T13:12:16-05:00"
     },
     {
       "path": "research.html",
       "title": "Research",
       "author": [],
       "contents": "\nRecent papers\nT Barry, E Katsevich, K Roeder. “Exponential family measurement error models for single-cell CRISPR screens.” arXiv. Replication code.\nT Barry, X Wang, J Morris, K Roeder, E Katsevich. “SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis.” Genome Biology, 2021. Journal. Replication code. (Reviewers’ choice, American Society of Human Genetics conference, 2021.)\nJ Morris, Z Daniloski, J Domingo, T Barry, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. “Discovery of target genes and pathways of blood trait loci using pooled CRISPR screens and single cell RNA sequencing.” Preprint on bioRxiv. (Platform talk, American Society of Human Genetics conference, 2021.)\nSee Google scholar or CV for full list of papers and talks.\nSoftware\n\n\n\nsceptre: Robustly infer regulatory relationships in single-cell CRISPR screens. [Web] [Github]\nondisc: Fast, universal, and intuitive computing on large-scale single-cell data. [CRAN] [Web] [Github]\nMentoring\nSongcheng Dai (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Research topic: algorithmic and statistical tools for large-scale single-cell data.\n\n\n\n",
-      "last_modified": "2022-01-15T14:32:20-05:00"
+      "last_modified": "2022-02-06T13:12:16-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
