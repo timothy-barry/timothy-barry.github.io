@@ -24,4 +24,4 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 
 # Mentoring
 
-- [Songcheng Dai](https://github.com/Samson-Dai) (Computational Biology Masters student at CMU, joint with Kathryn Roeder). Research topic: algorithmic and statistical tools for large-scale single-cell data.
+- [Songcheng Dai](https://github.com/Samson-Dai). Computational Biology Masters student at CMU. Dates: May 2021 --- May 2022. Next position: engineer at GRAIL.
