@@ -4,7 +4,7 @@ site: distill::distill_website
 ---
 # Recent papers
 
-1. **T Barry**, E Katsevich, K Roeder. "Exponential family measurement error models for single-cell CRISPR screens." [arXiv](https://arxiv.org/abs/2201.01879). [Replication code](https://github.com/timothy-barry/glmeiv-manuscript).
+1. **T Barry**, E Katsevich, K Roeder. "Exponential family measurement error models for single-cell CRISPR screens." [arXiv](https://arxiv.org/abs/2201.01879). **Under revision**. [Replication code](https://github.com/timothy-barry/glmeiv-manuscript).
 
 2. **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." **Genome Biology**, 2021. [Journal](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2). [Replication code](https://github.com/Katsevich-Lab/sceptre-manuscript). <span style="color:blue">(Reviewers' choice, American Society of Human Genetics conference, 2021.)</span>
 

@@ -3,6 +3,8 @@ title: "About me"
 site: distill::distill_website
 ---
 
+I like to work in the connective tissue that binds together the allied sciences of statistics, computing, and genomics.
+
 I am a PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU). I am advised jointly by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) (CMU) and [Gene Katsevich](https://ekatsevi.github.io) (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. My interests intersect statistics, computer science, and genomics:
 
 **Statistics**: regression methodology, selective inference \
