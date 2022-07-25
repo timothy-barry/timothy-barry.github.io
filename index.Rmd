@@ -11,7 +11,7 @@ I am a PhD student in the Department of Statistics and Data Science at Carnegie 
 **Computing**: large data, clouds and clusters, out-of-core algorithms \
 **Genomics**: applications to CRISPR genome editing, single-cell sequencing
 
-I am visiting the University of Pennsylvania over the summer of 2022, generously hosted by Gene Katsevich.
+I am visiting the University of Pennsylvania over the summer of 2022, generously hosted by my co-adviser Gene.
 
 <br/>
 <br/>
