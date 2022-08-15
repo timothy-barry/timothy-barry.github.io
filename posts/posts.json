@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2021-03-19-small-and-large-scale-single-cell-sequencing/",
+    "title": "Genomics for Statisticians 3: Small- and large-scale single-cell sequencing",
+    "description": "We overview single-cell RNA sequencing, at both small and large scales.",
+    "author": [
+      {
+        "name": "Tim Barry",
+        "url": "https://timothy-barry.github.io"
+      }
+    ],
+    "date": "2022-08-15",
+    "categories": [
+      "Genomics"
+    ],
+    "contents": "\n1. Single-cell sequencing\nSingle-cell sequencing is a technology that provides a snapshot of\nthe transcriptome (i.e., the set of gene expressions) of a collection of\nindividual cells. We present a brief ovewview of single-cell\nsequencing.\n\n\na) Start with some tissue or collection of cells.\nOften, the tissue consists of cells of many types, and the goal is to\nuse single-cell sequencing to identify those cell types.\n(b) Generate lots of barcoded beads. Each barcoded\nbead consists of two parts: (i) a bead, and (ii) a short oligonucleotide\n(or “oligo”). The oligos are tethered to the bead, like hairs on a\nperson’s head.\nThe oligo is made of up several smaller parts.\nPCR handle – this is required for the PCR and sequencing steps; it\nis common across all oligos on all beads.\nCell barcode – this identifes the cell; importantly, the cell\nbarcode is the same across all oligos on a given bead.\nUMI (unique molecular identifier) – each oligo on a given bead has a\ndistinct UMI. The UMI eliminates bias that arises during the PCR and\nsequencing steps.\nPoly-dt sequece – a long sequence of T nucleotides. This captures\nthe mRNA transcripts, which are polyadenylated after transcription.\n(c) Using a microfluidic device, trap each cell\ninside a droplet along with a barcoded bead.\n(d) Lyse the cells within the droplets.\n(e) The mRNAs bind the oligos. Use reverse\ntranscription to generate cDNAs hybridized to the bead surface.\n(f) Wash the cDNAs away from the beads, and\nsequence in bulk (see this\npost for a review of sequencing).\n(g) Use software (e.g., cellranger) to generate\nthe cell-by-gene expression matrix. This roughly involves (i) collapsing\nall reads with the same UMI into a single read, (ii) determining the\ncell from which a read came, and (iii) mapping the read onto a reference\ngenome to determine the gene from which the read came.\n2. Large-scale single-cell\nsequencing\nThere is a major limitation to standard (or small-scale)\nsingle-cell sequencing: each droplet can contain at most one cell. If\nmultiple cells are captured in a single droplet, then their\ntranscriptomes are impossible to distinguish.\nExperimenters do not have exact control over how many cells are\ncaptured in a droplet; this quantity is Poisson-distributed. By\nexperimental design, the majority of droplets contain zero\ncells.\n\n\nA new strategy called scifi-RNA-seq rectifies this\ninefficiency.\n\n\nThe cells are divided into groups on a microwell plate (i.e., a\nplate with a bunch of wells). The membrane of each cell is permeabilized\n(not lysed), and the entire transcriptome is barcoded with a round-1\nbarcode and reverse transcribed into cDNA. A UMI and PCR handle are also\nadded during this step. In the figure, the round-1 barcodes are shown in\ncolor.\n\nUsing a microfluidic device, capture multiple cells inside a droplet\nalong with a barcoded bead.\n\nLyse the cells inside the droplets.\n\nLigate a round-2 barcode onto the cDNAs. In the figure, the round-2\nbarcodes are represented as shapes.\n\nPool together the cDNAs and sequence them in bulk. Use software to\ngenerate the cell-by-gene expression matrix. Use both the round-1\nand round-2 barcodes to determine the cell from which a\ntranscript came.\n\n3. Applications\nLarge-scale single-cell sequencing enables exciting new\napplications in single-cell CRISPR screens, cell atlases, and population\ngenomics.\nsci-RNA-seq3 (a method related to\nscifi-RNA-seq) was used to generate an atlas of human fetal\ntissue.\n\n\nLarge-scale single-cell sequencing opens new opportunities for\nstatisticians, data scientists, and computer scientists.\n\n\n\n",
+    "preview": "posts/2021-03-19-small-and-large-scale-single-cell-sequencing/human-fetal.png",
+    "last_modified": "2022-08-15T12:00:30-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2020-07-07-generalized-linear-models/",
     "title": "Generalized linear models",
     "description": "A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.",

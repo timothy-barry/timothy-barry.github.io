@@ -1,20 +1,23 @@
 ---
-title: "Small- and large-scale single-cell sequencing"
+title: "Genomics for Statisticians 3: Small- and large-scale single-cell sequencing"
 description: |
-  An overview of standard (i.e., small-scale) and large-scale single-cell sequencing.
+  We overview single-cell RNA sequencing, at both small and large scales.
 author:
   - name: Tim Barry
     url: https://timothy-barry.github.io
-date: 03-19-2021
+date:
 output:
   distill::distill_article:
     self_contained: false
-draft: true
+preview: human-fetal.png
+categories:
+  - Genomics
+draft: false
 ---
 
 # 1. Single-cell sequencing
 
-We present a brief ovewview/review of single-cell sequencing.
+Single-cell sequencing is a technology that provides a snapshot of the transcriptome (i.e., the set of gene expressions) of a collection of individual cells. We present a brief ovewview of single-cell sequencing.
 
 <br/>
 <center>
