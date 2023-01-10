@@ -3,4 +3,4 @@ title: "Fun"
 site: distill::distill_website
 ---
 
-Outside work I like writing for piano, programming synthesizers, and reading about music theory. (I am a total amateur.) You can listen to some of my sounds [here on Bandcamp](https://tbarry1.bandcamp.com/music) if you like.
+Outside work I like writing for piano, programming synthesizers, and reading about music theory. You can listen to some of my sounds [here on Bandcamp](https://tbarry1.bandcamp.com/music) if you like.

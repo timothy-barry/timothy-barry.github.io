@@ -18,77 +18,191 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
   <!--radix_placeholder_meta_tags-->
   <title>Generalized linear models</title>
-  
+
   <meta property="description" itemprop="description" content="A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference."/>
-  
-  
+
+
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-12-03"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-12-03"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-08-23"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-08-23"/>
   <meta name="article:author" content="Tim Barry"/>
-  
+
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Generalized linear models"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference."/>
   <meta property="og:locale" content="en_US"/>
-  
+
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Generalized linear models"/>
   <meta property="twitter:description" content="A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference."/>
-  
+
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
-  
+
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","preview","categories","draft","date"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["12-03-2020"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","preview","categories","draft","date"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["08-23-2022"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["generalized-linear-models_files/bowser-1.9.3/bowser.min.js","generalized-linear-models_files/distill-2.2.21/template.v2.js","generalized-linear-models_files/jquery-1.11.3/jquery.min.js","generalized-linear-models_files/webcomponents-2.0.0/webcomponents.js","log_reg.png","meme.png"]}
+  {"type":"character","attributes":{},"value":["generalized-linear-models_files/anchor-4.2.2/anchor.min.js","generalized-linear-models_files/bowser-1.9.3/bowser.min.js","generalized-linear-models_files/distill-2.2.21/template.v2.js","generalized-linear-models_files/header-attrs-2.14/header-attrs.js","generalized-linear-models_files/jquery-1.11.3/jquery.min.js","generalized-linear-models_files/jquery-3.6.0/jquery-3.6.0.js","generalized-linear-models_files/jquery-3.6.0/jquery-3.6.0.min.js","generalized-linear-models_files/jquery-3.6.0/jquery-3.6.0.min.map","generalized-linear-models_files/popper-2.6.0/popper.min.js","generalized-linear-models_files/tippy-6.2.7/tippy-bundle.umd.min.js","generalized-linear-models_files/tippy-6.2.7/tippy-light-border.css","generalized-linear-models_files/tippy-6.2.7/tippy.css","generalized-linear-models_files/tippy-6.2.7/tippy.umd.min.js","generalized-linear-models_files/webcomponents-2.0.0/webcomponents.js","log_reg.png","meme.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-  
+
   <style type="text/css">
-  
+
   body {
     background-color: white;
   }
-  
+
   .pandoc-table {
     width: 100%;
   }
-  
+
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-  
+
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-  
+
   .pagedtable-footer {
     font-size: 15px;
   }
-  
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
   .html-widget {
     margin-bottom: 2.0em;
   }
-  
+
   .l-screen-inset {
     padding-right: 16px;
   }
-  
+
   .l-screen .caption {
     margin-left: 10px;
   }
-  
+
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -96,43 +210,130 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .shaded-content {
     background: white;
   }
-  
+
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-  
+
   .hidden {
     display: none !important;
   }
-  
+
   d-article {
+    padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-  
+
   d-appendix {
     padding-top: 30px;
   }
-  
+
   d-article>p>img {
     width: 100%;
   }
-  
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-  
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -140,128 +341,103 @@
     padding: 18px;
     box-sizing: border-box;
   }
-  
-  /* CSS for table of contents */
-  
-  .d-toc {
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
     color: rgba(0,0,0,0.8);
-    font-size: 0.8em;
-    line-height: 1em;
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
   }
-  
-  .d-toc-header {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
     margin-top: 0;
-    margin-bottom: 1.3em;
+    margin-bottom: 1em;
   }
-  
-  .d-toc a {
-    border-bottom: none;
+
+  .d-contents li {
+    list-style-type: none
   }
-  
-  .d-toc ul {
+
+  .d-contents nav > ul {
     padding-left: 0;
   }
-  
-  .d-toc li>ul {
-    padding-top: 0.8em;
-    padding-left: 16px;
-    margin-bottom: 0.6em;
+
+  .d-contents ul {
+    padding-left: 1em
   }
-  
-  .d-toc ul,
-  .d-toc li {
-    list-style-type: none;
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
   }
-  
-  .d-toc li {
-    margin-bottom: 0.9em;
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
   }
-  
-  .d-toc-separator {
-    margin-top: 20px;
-    margin-bottom: 2em;
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-  
-  .d-article-with-toc {
-    border-top: none;
-    padding-top: 0;
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
   }
-  
-  
-  
-  /* Tweak code blocks (note that this CSS is repeated above in an injection
-     into the d-code shadow dom) */
-  
-  d-code {
-    overflow-x: auto !important;
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
   }
-  
-  pre.d-code code.d-code {
-    padding-left: 10px;
-    font-size: 12px;
-    border-left: 2px solid rgba(0,0,0,0.1);
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
   }
-  
-  pre.text-output {
-  
-    font-size: 12px;
-    color: black;
-    background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-  
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-  
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
   }
-  
-  @media(min-width: 768px) {
-  
-  d-code {
-    overflow-x: visible !important;
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
   }
-  
-  pre.d-code code.d-code  {
-      padding-left: 18px;
-      font-size: 14px;
-  }
-  pre.text-output {
-    font-size: 14px;
-  }
-  }
-  
+
+
   /* Figure */
-  
+
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-  
-  .figure img {
-    width: 100%;
-  }
-  
+
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-  
+
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -269,21 +445,42 @@
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-  
-  
-  
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
   /* Tweak 1000px media break to show more text */
-  
+
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -299,11 +496,11 @@
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-  
+
     .grid {
       grid-column-gap: 16px;
     }
-  
+
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -312,7 +509,7 @@
       font-size: 13px;
     }
   }
-  
+
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -328,16 +525,16 @@
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-  
+
     .grid {
       grid-column-gap: 32px;
     }
   }
-  
-  
+
+
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-  
+
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -354,111 +551,401 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
-  
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
   /* Social footer */
-  
+
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-  
+
   .disqus-comments {
     margin-right: 30px;
   }
-  
+
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-  
+
   #disqus_thread {
     margin-top: 30px;
   }
-  
+
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-  
+
   .article-sharing a:hover {
     border-bottom: none;
   }
-  
+
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .subscribe p {
     margin-bottom: 0.5em;
   }
-  
-  
+
+
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-  
-  
+
+
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .custom p {
     margin-bottom: 0.5em;
   }
-  
-  
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-  
+
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-  
+
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-  
+
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-  
+
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-  
+
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-  
+
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-  
-  
+
+
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -470,11 +957,11 @@
     padding-top: 40px;
     padding-bottom: 48px;
   }
-  
+
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-  
+
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -491,7 +978,7 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -511,14 +998,14 @@
     max-width: 900px;
   }
   }
-  
+
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-  
+
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -529,21 +1016,27 @@
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
   </style>
-  
+
   <script type="application/javascript">
-  
+
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -552,13 +1045,20 @@
       return window.load_distill_framework === undefined;
     }
   }
-  
+
   // show body when load is complete
   function on_load_complete() {
-  
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
     // set body to visible
     document.body.style.visibility = 'visible';
-  
+
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -571,54 +1071,39 @@
         });
       });
     }
-  
+
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-  
+
   function init_distill() {
-  
+
     init_common();
-  
+
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-  
+
     // create d-title
     $('.d-title').changeElementType('d-title');
-  
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-  
+
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-  
+
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-  
+
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-  
-    // create d-bibliography
-    var bibliography = $('<d-bibliography></d-bibliography>');
-    $('#distill-bibliography').wrap(bibliography);
-  
+
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
-    // replace citations with <d-cite>
-    $('.citation').each(function(i, val) {
-      appendix = true;
-      var cites = $(this).attr('data-cites').split(" ");
-      var dt_cite = $('<d-cite></d-cite>');
-      dt_cite.attr('key', cites.join());
-      $(this).replaceWith(dt_cite);
-    });
-    // remove refs
-    $('#refs').remove();
-  
+
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -634,49 +1119,31 @@
     });
     // remove footnotes
     $('.footnotes').remove();
-  
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
     $('h3.appendix').each(function(i, val) {
       var id = $(this).attr('id');
-      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-  
+
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
-    // replace code blocks with d-code
-    $('pre>code').each(function(i, val) {
-      var code = $(this);
-      var pre = code.parent();
-      var clz = "";
-      var language = pre.attr('class');
-      if (language) {
-        // map unknown languages to "clike" (without this they just dissapear)
-        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
-                                 "javascript", "js", "julia", "lua", "markdown",
-                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
-          language = "clike";
-        language = ' language="' + language + '"';
-        var dt_code = $('<d-code block' + language + clz + '></d-code>');
-        dt_code.text(code.text());
-        pre.replaceWith(dt_code);
-      } else {
-        code.addClass('text-output').unwrap().changeElementType('pre');
-      }
-    });
-  
+
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-  
+
       // capture layout
       var layout = $(this).attr('data-layout');
-  
+
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('d-code, pre.text-output, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -687,39 +1154,60 @@
           $(this).wrap(layout_div);
         }
       });
-  
-  
+
+
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-  
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
     // load distill framework
     load_distill_framework();
-  
+
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-  
+
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-  
+
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-  
-      // table of contents
-      if (have_authors) // adjust border if we are in authors
-        $('.d-toc').parent().addClass('d-article-with-toc');
-  
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-  
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-  
+
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -731,11 +1219,11 @@
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-  
+
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-  
+
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -755,61 +1243,102 @@
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-  
+
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-  
-      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
-      $('d-code').each(function(i, val) {
-        var style = document.createElement('style');
-        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
-                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
-        if (this.shadowRoot)
-          this.shadowRoot.appendChild(style);
-      });
-  
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-  
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
+
       // clear polling timer
       clearInterval(tid);
-  
+
       // show body now that everything is ready
       on_load_complete();
     }
-  
+
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-  
+
   }
-  
+
   function init_downlevel() {
-  
+
     init_common();
-  
+
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-  
+
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-  
+
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-  
+
     // remove toc
-    $('.d-toc-header').remove();
-    $('.d-toc').remove();
-    $('.d-toc-separator').remove();
-  
+    $('.d-contents').remove();
+
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -817,65 +1346,67 @@
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-  
-  
+
+
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-  
+
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-  
+
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-  
+
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-  
+
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-  
+
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-  
+
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-  
+
     $('body').addClass('downlevel');
-  
+
     on_load_complete();
   }
-  
-  
+
+
   function init_common() {
-  
+
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-  
+
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-  
+
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-  
+
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-  
+
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -884,35 +1415,35 @@
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-  
+
       }
     });
-  
+
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-  
+
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
-  
+
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-  
+
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-  
+
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-  
+
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -926,18 +1457,24 @@
       }
     });
   }
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-  
+
   </script>
-  
+
   <!--/radix_placeholder_distill-->
-  <script src="generalized-linear-models_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="generalized-linear-models_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="generalized-linear-models_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="generalized-linear-models_files/popper-2.6.0/popper.min.js"></script>
+  <link href="generalized-linear-models_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="generalized-linear-models_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="generalized-linear-models_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="generalized-linear-models_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="generalized-linear-models_files/bowser-1.9.3/bowser.min.js"></script>
   <script src="generalized-linear-models_files/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="generalized-linear-models_files/distill-2.2.21/template.v2.js"></script>
@@ -952,7 +1489,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-12-03T00:00:00.000-05:00","citationText":"Barry, 2020"}
+{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-23T00:00:00.000-04:00","citationText":"Barry, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -963,106 +1500,545 @@
 
 <div class="d-title">
 <h1>Generalized linear models</h1>
-<p><p>A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.</p></p>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt-tag">Statistics</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>A dive into the theory behind GLMs. This post covers the GLM
+model, canonical and non-canonical link functions, optimization of the
+log-likelihood, and inference.</p></p>
 </div>
 
 <div class="d-byline">
-  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  Tim Barry <a href="https://timothy-barry.github.io"
+class="uri">https://timothy-barry.github.io</a> 
   
-<br/>12-03-2020
+<br/>08-23-2022
 </div>
 
 <div class="d-article">
-<p>This post is my effort to once and for all understand GLMs. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference.</p>
+<p>This post is my effort to once and for all understand GLMs. I explore
+various topics, including canonical and non-canonical link functions,
+optimization of the log likelihood, and inference.</p>
 <h2 id="exponential-family-review">Exponential family review</h2>
-<p>Let <span class="math inline">\(\{P_\theta\}, \theta \in \Theta \subset \mathbb{R}\)</span> be a family of distributions. Recall that <span class="math inline">\(\{P_\theta\}\)</span> belongs to the 1-parameter exponential family if its density can be written as <span class="math display">\[f(y | \theta) = e^{ \eta(\theta) T(y) - \psi(\theta)} h(y).\]</span></p>
-<p>We can reparameterize the exponential family so that its density is in canonical form: <span class="math display">\[f(y|\eta) = e^{ \eta T(y) - \psi(\eta)}h(y).\]</span> In this post we will assume the data <span class="math inline">\(\{y_1, \dots, y_n\}\)</span> come from a slightly restricted version of the exponential family. Specifically, we will assume the <span class="math inline">\(y_i\)</span>s have density <span class="math display">\[f(y_i | \eta_i) = e^{\eta_i y_i - \psi(\eta_i)}h(y_i),\]</span> i.e., we will assume the sufficient statistic <span class="math inline">\(T(y_i)\)</span> is the identity. This slightly narrower class encompasses the most important distributions for statistical modeling, including the binomial, exponential, Poisson, Bernoulli, negative binomial (assuming fixed number of failures), and normal (assuming unit variance) distributions. Note that the function <span class="math inline">\(h\)</span> is not a function of the unknown parameter <span class="math inline">\(\eta_i\)</span> and thus will show up as a constant in the log-likelihood. The only function that contains information (relevant to inference) about the distribution is the cumulant generating function <span class="math inline">\(\psi\)</span>. Thus, we can identify exponential families (with identity sufficient statistic) with their corresponding canonical-form cumulant generating function.</p>
+<p>Let <span class="math inline">\(\{P_\theta\}, \theta \in \Theta
+\subset \mathbb{R}\)</span> be a family of distributions. Recall that
+<span class="math inline">\(\{P_\theta\}\)</span> belongs to the
+1-parameter exponential family if its density can be written as <span
+class="math display">\[f(y|\theta) = e^{ \theta T(y) -
+\psi(\theta)}h(y),\]</span> where <span
+class="math inline">\(\theta\)</span> is called the canonical parameter.
+In this post we will assume the data <span class="math inline">\(\{y_1,
+\dots, y_n\}\)</span> come from a slightly restricted version of the
+exponential family. Specifically, we will assume the <span
+class="math inline">\(y_i\)</span>s have density <span
+class="math display">\[f(y_i | \theta_i) = e^{\theta_i y_i -
+\psi(\theta_i)}h(y_i),\]</span> i.e., we will assume the sufficient
+statistic <span class="math inline">\(T(y_i)\)</span> is the identity.
+This slightly narrower class encompasses the most important
+distributions for statistical modeling, including the binomial,
+exponential, Poisson, Bernoulli, negative binomial (assuming fixed
+number of failures), and normal (assuming unit variance) distributions.
+Note that the function <span class="math inline">\(h\)</span> is not a
+function of the unknown parameter <span
+class="math inline">\(\theta_i\)</span> and thus will show up as a
+constant in the log-likelihood. The only function that contains
+information (relevant to inference) about the distribution is the
+cumulant generating function <span class="math inline">\(\psi\)</span>.
+Thus, we can identify exponential families (with identity sufficient
+statistic) with their corresponding canonical-form cumulant generating
+function.</p>
 <h2 id="glm-model">GLM model</h2>
-<p>We observe independent (but not necessarily identically-distributed) tuples <span class="math inline">\(\{(y_1, x_1), \dots, (y_n, x_n)\},\)</span> where <span class="math inline">\(y_i \in \mathbb{R}\)</span> and <span class="math inline">\(x_i \in \mathbb{R}^p\)</span>. Assume the <span class="math inline">\(y_i\)</span>s are drawn from a one-parameter exponential family with identity sufficient statistic and possibly different canonical parameters: <span class="math display">\[ y_i \sim f(y_i|\eta_i) = e^{ \eta_i y_i - \psi(\eta_i)}h(y).\]</span> Assume the <span class="math inline">\(x_i\)</span>s are fixed and known. Recall that in exponential families, there exists a bijective map between the natural parameter and the mean. Thus, the observations <span class="math inline">\(\{y_1, \dots, y_n\}\)</span> have means <span class="math inline">\(\{ \mu_1, \dots, \mu_n \}.\)</span></p>
-<p>We must link the responses <span class="math inline">\(y_i\)</span> to the covariates <span class="math inline">\(x_i\)</span>. Assume there exists a strictly increasing and differentiable function <span class="math inline">\(g: \mathbb{R} \to \mathbb{R}\)</span> and an unknown vector <span class="math inline">\(\beta \in \mathbb{R}^p\)</span> such that <span class="math display">\[ g(\mu_i) = \langle x_i, \beta \rangle \]</span> for all <span class="math inline">\(i \in \{ 1, \dots, n \}\)</span>. The function <span class="math inline">\(g\)</span> is called the <strong>link function</strong>, and the function <span class="math inline">\(g^{-1}\)</span> is called the <strong>inverse link function</strong>. With these various pieces in place, we can frame our statistical problem as follows: given data <span class="math inline">\(\{(y_i, x_i)\}_{i=1}^n\)</span>, a link function <span class="math inline">\(g\)</span>, and an exponential family density <span class="math inline">\(f\)</span>, estimate the unknown parameter <span class="math inline">\(\beta\)</span>. We will estimate <span class="math inline">\(\beta\)</span> and obtain associated standard errors through MLE.</p>
+<p>We observe independent (but not necessarily identically-distributed)
+tuples <span class="math inline">\(\{(y_1, x_1), \dots, (y_n,
+x_n)\},\)</span> where <span class="math inline">\(y_i \in
+\mathbb{R}\)</span> and <span class="math inline">\(x_i \in
+\mathbb{R}^p\)</span>. Assume the <span
+class="math inline">\(y_i\)</span>s are drawn from a one-parameter
+exponential family with identity sufficient statistic and possibly
+different canonical parameters: <span class="math display">\[ y_i \sim
+f(y_i|\theta_i) = e^{ \theta_i y_i - \psi(\theta_i)}h(y).\]</span>
+Assume the <span class="math inline">\(x_i\)</span>s are fixed and
+known. Recall that in exponential families, there exists a bijective map
+between the natural parameter and the mean. Thus, the observations <span
+class="math inline">\(\{y_1, \dots, y_n\}\)</span> have means <span
+class="math inline">\(\{ \mu_1, \dots, \mu_n \}.\)</span></p>
+<p>We must link the responses <span class="math inline">\(y_i\)</span>
+to the covariates <span class="math inline">\(x_i\)</span>. Assume there
+exists a strictly increasing and differentiable function <span
+class="math inline">\(g: \mathbb{R} \to \mathbb{R}\)</span> and an
+unknown vector <span class="math inline">\(\beta \in
+\mathbb{R}^p\)</span> such that <span class="math display">\[ g(\mu_i) =
+\langle x_i, \beta \rangle \]</span> for all <span
+class="math inline">\(i \in \{ 1, \dots, n \}\)</span>. The function
+<span class="math inline">\(g\)</span> is called the <strong>link
+function</strong>, and the function <span
+class="math inline">\(g^{-1}\)</span> is called the <strong>inverse link
+function</strong>. We sometimes use the symbol <span
+class="math inline">\(\eta_i\)</span> to denote the linear component of
+the model, i.e. <span class="math inline">\(\eta_i = \langle x_i, \beta
+\rangle\)</span>. With these various pieces in place, we can frame our
+statistical problem as follows: given data <span
+class="math inline">\(\{(y_i, x_i)\}_{i=1}^n\)</span>, a link function
+<span class="math inline">\(g\)</span>, and an exponential family
+density <span class="math inline">\(f\)</span>, estimate the unknown
+parameter <span class="math inline">\(\beta\)</span>. We will estimate
+<span class="math inline">\(\beta\)</span> and obtain associated
+standard errors through MLE.</p>
 <h2 id="canonical-link-function">Canonical link function</h2>
-<p>For a given exponential family, there exists a special link function called the <strong>canonical link function</strong> that imbues the GLM with very nice mathematical properties. Use of the canonical link is entirely optional; however, when given the option, people generally choose to use the canonical link given its nice properties.</p>
-<p>The canonical link function is the link function that results from setting the linear component of the model (<span class="math inline">\(\langle x_i, \beta_i \rangle\)</span>) equal to the natural parameter (<span class="math inline">\(\eta_i\)</span>). In math, the canonical link function is that function <span class="math inline">\(g_c\)</span> that satisfies <span class="math display">\[g_c(\mu_i) = \langle x_i, \beta \rangle = \eta_i.\]</span> We can express the canonical link function in terms of known quantities. Recall that for an exponential family in canonical form (with identity sufficient statistic), we have <span class="math inline">\(\psi&#39;(\eta_i) = \mathbb{E}[Y_i] = \mu_i.\)</span> Therefore, by the definition of <span class="math inline">\(g_c\)</span> above, we obtain <span class="math inline">\(g_c = [\psi&#39;]^{-1}.\)</span> That is, the canonical link function is equal to the inverse of the derivative of <span class="math inline">\(\psi\)</span>.</p>
-<p>The main advantage of using the canonical link function is that the canonical link renders the canonical parameter of the joint distribution <span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> equal to <span class="math inline">\(\beta\)</span>.</p>
-<p><strong>Theorem</strong>: <em>Suppose we model the mean <span class="math inline">\(\mu_i\)</span> of <span class="math inline">\(y_i\)</span> using the canonical link function, i.e. <span class="math inline">\(g_c(\mu_i) = \langle x_i,\beta \rangle\)</span>. Then the joint density of <span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> is a p-parameter exponential family with canonical parameter <span class="math inline">\(\beta\)</span>.</em></p>
-<p><strong>Proof sketch</strong>: Define <span class="math inline">\(\eta = X \beta\)</span>, where <span class="math inline">\(\eta = [\eta_1, \dots, \eta_n]^T \in \mathbb{R}^n\)</span> and <span class="math inline">\(X\)</span> is the <span class="math inline">\(n \times p\)</span> design matrix of observations. Let <span class="math inline">\([S_1(y), \dots, S_p(y)]^T\)</span> denote the <span class="math inline">\(p\)</span>-dimensional product of the matrix-vector multiplication <span class="math inline">\(X^T y\)</span>. Observe that <span class="math display">\[ \sum_{i=1}^n \eta_i y_i = \sum_{i=1}^n x_i^T \beta y_i = \beta^T X^T y = \langle \beta, [S_1(y), \dots, S_p(y)]^T \rangle.\]</span> Next, define <span class="math inline">\(\phi: \mathbb{R}^p \to \mathbb{R}\)</span> by <span class="math display">\[\phi(\beta) = \sum_{i=1}^n \psi(x_i^T \beta) = \sum_{i=1}^n \psi(\eta_i).\]</span> Finally, define <span class="math display">\[H(y) = \prod_{i=1}^n h(y_i).\]</span> We can express the joint density <span class="math inline">\(f_c\)</span> of <span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> as <span class="math display">\[f_c(y|\beta) = e^{ \sum_{i=1}^n \eta_i y_i - \psi(\eta_i)}\prod_{i=1}^n h(y_i) = \left( e^{\langle \beta, [S_1(y), \dots, S_p(y)]^T \rangle - \phi(\beta)}\right) H(y).\]</span> <span class="math inline">\(\square\)</span></p>
-<p>We see that <span class="math inline">\(f_c\)</span> is a <span class="math inline">\(p\)</span>-dimensional exponential family density in canonical form. We have that</p>
+<p>For a given exponential family, there exists a special link function
+called the <strong>canonical link function</strong> that imbues the GLM
+with very nice mathematical properties. Use of the canonical link is
+entirely optional; however, when given the option, people generally
+choose to use the canonical link given its nice properties.</p>
+<p>The canonical link function is the link function that results from
+setting the linear component of the model <span
+class="math inline">\(\langle x_i, \beta_i \rangle\)</span> equal to the
+natural parameter (<span class="math inline">\(\theta_i\)</span>). In
+math, the canonical link function is that function <span
+class="math inline">\(g_c\)</span> that satisfies <span
+class="math display">\[g_c(\mu_i) = \langle x_i, \beta \rangle =
+\theta_i.\]</span> We can express the canonical link function in terms
+of known quantities. Recall that for an exponential family in canonical
+form (with identity sufficient statistic), we have <span
+class="math inline">\(\psi&#39;(\theta_i) = \mathbb{E}[Y_i] =
+\mu_i.\)</span> Therefore, by the definition of <span
+class="math inline">\(g_c\)</span> above, we obtain <span
+class="math inline">\(g_c = [\psi&#39;]^{-1}.\)</span> That is, the
+canonical link function is equal to the inverse of the derivative of
+<span class="math inline">\(\psi\)</span>.</p>
+<p>The main advantage of using the canonical link function is that the
+canonical link renders the canonical parameter of the joint distribution
+<span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> equal to
+<span class="math inline">\(\beta\)</span>.</p>
+<p><strong>Theorem</strong>: <em>Suppose we model the mean <span
+class="math inline">\(\mu_i\)</span> of <span
+class="math inline">\(y_i\)</span> using the canonical link function,
+i.e. <span class="math inline">\(g_c(\mu_i) = \langle x_i,\beta
+\rangle\)</span>. Then the joint density of <span
+class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> is a p-parameter
+exponential family with canonical parameter <span
+class="math inline">\(\beta\)</span>.</em></p>
+<p><strong>Proof sketch</strong>: Define <span
+class="math inline">\(\theta = X \beta\)</span>, where <span
+class="math inline">\(\theta = [\theta_1, \dots, \theta_n]^T \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(X\)</span> is the
+<span class="math inline">\(n \times p\)</span> design matrix of
+observations. Let <span class="math inline">\([S_1(y), \dots,
+S_p(y)]^T\)</span> denote the <span
+class="math inline">\(p\)</span>-dimensional product of the
+matrix-vector multiplication <span class="math inline">\(X^T y\)</span>.
+Observe that <span class="math display">\[ \sum_{i=1}^n \theta_i y_i =
+\sum_{i=1}^n x_i^T \beta y_i = \beta^T X^T y = \langle \beta, [S_1(y),
+\dots, S_p(y)]^T \rangle.\]</span> Next, define <span
+class="math inline">\(\phi: \mathbb{R}^p \to \mathbb{R}\)</span> by
+<span class="math display">\[\phi(\beta) = \sum_{i=1}^n \psi(x_i^T
+\beta) = \sum_{i=1}^n \psi(\theta_i).\]</span> Finally, define <span
+class="math display">\[H(y) = \prod_{i=1}^n h(y_i).\]</span> We can
+express the joint density <span class="math inline">\(f_c\)</span> of
+<span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> as <span
+class="math display">\[f_c(y|\beta) = e^{ \sum_{i=1}^n \theta_i y_i -
+\psi(\theta_i)}\prod_{i=1}^n h(y_i) = \left( e^{\langle \beta, [S_1(y),
+\dots, S_p(y)]^T \rangle - \phi(\beta)}\right) H(y).\]</span> <span
+class="math inline">\(\square\)</span></p>
+<p>We see that <span class="math inline">\(f_c\)</span> is a <span
+class="math inline">\(p\)</span>-dimensional exponential family density
+in canonical form. We have that</p>
 <ul>
-<li><span class="math inline">\(\beta\)</span> is the <span class="math inline">\(p\)</span>-dimensional canonical parameter</li>
-<li><span class="math inline">\([S_1(y), \dots, S_p(y)]^T\)</span> is the p-dimensional sufficient statistic</li>
-<li><span class="math inline">\(\phi\)</span> is the cumulant generating function</li>
+<li><span class="math inline">\(\beta\)</span> is the <span
+class="math inline">\(p\)</span>-dimensional canonical parameter</li>
+<li><span class="math inline">\([S_1(y), \dots, S_p(y)]^T\)</span> is
+the p-dimensional sufficient statistic</li>
+<li><span class="math inline">\(\phi\)</span> is the cumulant generating
+function</li>
 <li><span class="math inline">\(H\)</span> is the carrier density.</li>
 </ul>
-<p>The density <span class="math inline">\(f_c(y|\beta)\)</span> inherits all the nice properties of a <span class="math inline">\(p\)</span>-dimensional exponential family density in canonical form, including convexity of the log-likelihood and equality of the observed and Fisher information matrices:</p>
+<p>The density <span class="math inline">\(f_c(y|\beta)\)</span>
+inherits all the nice properties of a <span
+class="math inline">\(p\)</span>-dimensional exponential family density
+in canonical form, including convexity of the log-likelihood and
+equality of the observed and Fisher information matrices:</p>
 <ol type="1">
-<li><p><strong>Convexity</strong>. The log-likelihood for <span class="math inline">\(\beta\)</span> is a concave function defined over a convex set. Typically, the log-likelihood for <span class="math inline">\(\beta\)</span> is strictly concave (although this depends on <span class="math inline">\(\phi\)</span>). Thus, the MLE for <span class="math inline">\(\beta\)</span> exists, (typically) is unique, and is easy to compute.</p></li>
-<li><p><strong>Equality of observed and Fisher information matrices</strong>. The observed and Fisher information matrices for <span class="math inline">\(\beta\)</span> coincide. This fact simplifies some aspects of GLM fitting and inference, as we will see.</p></li>
+<li><p><strong>Convexity</strong>. The log-likelihood for <span
+class="math inline">\(\beta\)</span> is a concave function defined over
+a convex set. Typically, the log-likelihood for <span
+class="math inline">\(\beta\)</span> is strictly concave (although this
+depends on <span class="math inline">\(\phi\)</span>). Thus, the MLE for
+<span class="math inline">\(\beta\)</span> exists, (typically) is
+unique, and is easy to compute.</p></li>
+<li><p><strong>Equality of observed and Fisher information
+matrices</strong>. The observed and Fisher information matrices for
+<span class="math inline">\(\beta\)</span> coincide. This fact
+simplifies some aspects of GLM fitting and inference, as we will
+see.</p></li>
 </ol>
 <h2 id="non-canonical-link-function">Non-canonical link function</h2>
-<p>We can use a link function that is non-canonical. Consider the same setup as before (i.e., the problem setup as presented in the <em>GLM model</em> section.) Given an exponential family distribution, a link function, and set of data, our goal is to estimate the unknown parameter <span class="math inline">\(\beta\)</span> of the GLM through MLE.</p>
-<p>We begin by introducing some notation. Let <span class="math inline">\(h : \mathbb{R} \to \mathbb{R}\)</span> be the function that maps the linear predictor into the canonical parameter, i.e. <span class="math display">\[h( \langle x_i, \beta \rangle ) = \eta_i.\]</span> The function <span class="math inline">\(h\)</span> is simply the identity function when we use the canonical link. In general, we can express <span class="math inline">\(h\)</span> in terms of <span class="math inline">\(g\)</span> and <span class="math inline">\(\psi\)</span>: <span class="math display">\[ h( \langle x_i, \beta \rangle) = \eta_i = [\psi&#39;]^{-1}(\mu_i) = [\psi&#39;]^{-1}(g^{-1}(\langle x_i, \beta \rangle)).\]</span> Thus, <span class="math inline">\(h = [\psi&#39;]^{-1} \circ g^{-1}.\)</span></p>
-<p>At this point we have defined a lot of functions. There are three functions in particular that are relevant to our analysis: the cumulant generating function <span class="math inline">\(\psi\)</span>, the link function <span class="math inline">\(g\)</span>, and the above-defined function <span class="math inline">\(h\)</span>. We review the definitions and properties of these functions in the list below.</p>
+<p>We can use a link function that is non-canonical. Consider the same
+setup as before (i.e., the problem setup as presented in the <em>GLM
+model</em> section.) Given an exponential family distribution, a link
+function, and set of data, our goal is to estimate the unknown parameter
+<span class="math inline">\(\beta\)</span> of the GLM through MLE.</p>
+<p>We begin by introducing some notation. Let <span
+class="math inline">\(h : \mathbb{R} \to \mathbb{R}\)</span> be the
+function that maps the linear predictor into the canonical parameter,
+i.e. <span class="math display">\[h( \langle x_i, \beta \rangle ) =
+\theta_i.\]</span> The function <span class="math inline">\(h\)</span>
+is simply the identity function when we use the canonical link. In
+general, we can express <span class="math inline">\(h\)</span> in terms
+of <span class="math inline">\(g\)</span> and <span
+class="math inline">\(\psi\)</span>: <span class="math display">\[ h(
+\langle x_i, \beta \rangle) = \theta_i = [\psi&#39;]^{-1}(\mu_i) =
+[\psi&#39;]^{-1}(g^{-1}(\langle x_i, \beta \rangle)).\]</span> Thus,
+<span class="math inline">\(h = [\psi&#39;]^{-1} \circ
+g^{-1}.\)</span></p>
+<p>At this point we have defined a lot of functions. There are three
+functions in particular that are relevant to our analysis: the cumulant
+generating function <span class="math inline">\(\psi\)</span>, the link
+function <span class="math inline">\(g\)</span>, and the above-defined
+function <span class="math inline">\(h\)</span>. We review the
+definitions and properties of these functions in the list below.</p>
 <ol type="1">
 <li>Function <span class="math inline">\(\psi\)</span></li>
 </ol>
 <ul>
-<li>Definition: the cumulant generating function of the exponential family in canonical form.</li>
-<li>Properties: <span class="math inline">\(\psi&#39;(\eta_i) = \mu_i\)</span> and <span class="math inline">\(\psi&#39;&#39;(\eta_i) = \sigma_i^2\)</span>, where <span class="math inline">\(\sigma_i^2 = \mathbb{V}(y_i)\)</span>.</li>
+<li>Definition: the cumulant generating function of the exponential
+family in canonical form.</li>
+<li>Properties: <span class="math inline">\(\psi&#39;(\theta_i) =
+\mu_i\)</span> and <span class="math inline">\(\psi&#39;&#39;(\theta_i)
+= \sigma_i^2\)</span>, where <span class="math inline">\(\sigma_i^2 =
+\mathbb{V}(y_i)\)</span>.</li>
 </ul>
 <ol start="2" type="1">
 <li>Function <span class="math inline">\(g\)</span></li>
 </ol>
 <ul>
-<li>Definition: the function that maps the mean to the linear component, i.e. <span class="math inline">\(g(\mu_i) = \langle x_i, \beta \rangle\)</span>.</li>
-<li>Properties: The canonical link function <span class="math inline">\(g_c\)</span> satisfies <span class="math inline">\(g_c = [\psi&#39;]^{-1}\)</span>.</li>
+<li>Definition: the function that maps the mean to the linear component,
+i.e. <span class="math inline">\(g(\mu_i) = \langle x_i, \beta
+\rangle\)</span>.</li>
+<li>Properties: The canonical link function <span
+class="math inline">\(g_c\)</span> satisfies <span
+class="math inline">\(g_c = [\psi&#39;]^{-1}\)</span>.</li>
 </ul>
 <ol start="3" type="1">
 <li>Function <span class="math inline">\(h\)</span></li>
 </ol>
 <ul>
-<li>Definition: the function that maps the linear component to the canonical parameter, i.e. <span class="math inline">\(h(\langle x_i, \beta \rangle) = \eta_i\)</span>.</li>
-<li>Properties: <span class="math inline">\(h\)</span> can be expressed in terms of <span class="math inline">\(\psi\)</span> and <span class="math inline">\(g\)</span> as <span class="math inline">\(h = [\psi&#39;]^{-1} \circ g^{-1}\)</span>. When <span class="math inline">\(g\)</span> is the canonical link, <span class="math inline">\(h\)</span> is the identity.</li>
+<li>Definition: the function that maps the linear component to the
+canonical parameter, i.e. <span class="math inline">\(h(\langle x_i,
+\beta \rangle) = \theta_i\)</span>.</li>
+<li>Properties: <span class="math inline">\(h\)</span> can be expressed
+in terms of <span class="math inline">\(\psi\)</span> and <span
+class="math inline">\(g\)</span> as <span class="math inline">\(h =
+[\psi&#39;]^{-1} \circ g^{-1}\)</span>. When <span
+class="math inline">\(g\)</span> is the canonical link, <span
+class="math inline">\(h\)</span> is the identity.</li>
 </ul>
-<p>With these definitions in hand, we can express the log-likelihood of the model (up to a constant) as follows: <span class="math display">\[\mathcal{L}(\beta;y,X) = \sum_{i=1}^n \eta_i y_i - \psi(\eta_i) = \sum_{i=1}^n y_i \cdot h(\langle x_i, \beta \rangle) - \psi( h(\langle x_i, \beta \rangle)).\]</span> For optimization and inference purposes, we need to compute the gradient and Hessian of the log-likelihood. Recall that the gradient of the log-likelihood is the score statistic, the Hessian of the log-likelihood is the negative observed information matrix, and the expected Hessian of the log-likelihood is the negative Fisher information matrix. We need to define some matrices and vectors to express these quantities compactly. Yes, this is painful, but it is necessary. Define the matrices</p>
+<p>With these definitions in hand, we can express the log-likelihood of
+the model (up to a constant) as follows: <span
+class="math display">\[\mathcal{L}(\beta;y,X) = \sum_{i=1}^n \theta_i
+y_i - \psi(\theta_i) = \sum_{i=1}^n y_i \cdot h(\langle x_i, \beta
+\rangle) - \psi( h(\langle x_i, \beta \rangle)).\]</span> For
+optimization and inference purposes, we need to compute the gradient and
+Hessian of the log-likelihood. Recall that the gradient of the
+log-likelihood is the score statistic, the Hessian of the log-likelihood
+is the negative observed information matrix, and the expected Hessian of
+the log-likelihood is the negative Fisher information matrix. We need to
+define some matrices and vectors to express these quantities compactly.
+Yes, this is painful, but it is necessary. Define the matrices</p>
 <p><span class="math display">\[
 \begin{cases}
-\Delta = \textrm{diag}\left\{ h&#39;( \langle x_i, \beta \rangle ) \right\}_{i=1}^n \\
-\Delta&#39; = \textrm{diag}\left\{ h&#39;&#39;( \langle x_i, \beta \rangle) \right\}_{i=1}^n \\
-V = \textrm{diag}\left\{ \psi&#39;&#39;(\eta_i) \right\}_{i=1}^n \\
+\Delta = \textrm{diag}\left\{ h&#39;( \langle x_i, \beta \rangle )
+\right\}_{i=1}^n \\
+\Delta&#39; = \textrm{diag}\left\{ h&#39;&#39;( \langle x_i, \beta
+\rangle) \right\}_{i=1}^n \\
+V = \textrm{diag}\left\{ \psi&#39;&#39;(\theta_i) \right\}_{i=1}^n \\
 H = \textrm{diag}\left\{ y_i - \mu_i \right\}_{i=1}^n \\
 W = \Delta V \Delta.
 \end{cases}
-\]</span> Also, define the vector <span class="math inline">\(s = [ y_1 - \mu_1, \dots, y_n - \mu_n]^T.\)</span> We can show through calculus (use the chain rule!) that <span class="math display">\[ \nabla \mathcal{L}(\beta) = X^T \Delta s\]</span> and <span class="math display">\[ \nabla^2 \mathcal{L}(\beta) = - X^T (\Delta V \Delta - \Delta&#39;H ) X.\]</span></p>
-<p>Suppose we use the canonical link function. Then <span class="math inline">\(h\)</span> is the identity, implying <span class="math inline">\(h&#39;\)</span> is identically equal to <span class="math inline">\(1\)</span> and <span class="math inline">\(h&#39;&#39;\)</span> is identically equal to <span class="math inline">\(0\)</span>. Thus, <span class="math inline">\(\Delta = I\)</span> and <span class="math inline">\(\Delta&#39; = 0\)</span>, yielding a simpler expression for the observed information matrix: <span class="math display">\[\nabla^2 \mathcal{L}(\beta) = -X^TWX.\]</span></p>
-<p>We can compute the Fisher information matrix <span class="math inline">\(I(\beta)\)</span> by taking the expectation of the observed information matrix: <span class="math display">\[ I(\beta) = - \mathbb{E} \left[ \nabla^2 \mathcal{L}(\beta) \right] = X^T ( \Delta V \Delta - \Delta&#39; \mathbb{E}[H])X = X^T ( \Delta V \Delta)X = X^TWX.\]</span></p>
-<p>Note that the observed and Fisher matrices coincide if we use the canonical link function (as predicted by exponential family theory).</p>
-<p>We make a brief digression to discuss the log-likelihood of weighted GLMs. Let <span class="math inline">\(T_1, \dots, T_n &gt; 0\)</span> be given scalar weights. We can generalize the log-likelihood of the GLM slightly by multiplying the <span class="math inline">\(i\)</span>th term by <span class="math inline">\(T_i\)</span>: <span class="math display">\[ \mathcal{L}(\beta) = \sum_{i=1}^n  T_i \left[ y_i \cdot h(\langle x_i, \beta \rangle) - \psi( h(\langle x_i, \beta \rangle)) \right].\]</span> We might do this if we consider some observations to be more “important” than others. Let <span class="math inline">\(T = \textrm{diag} \{ T_i \}_{i=1}^n\)</span> be the diagonal matrix of weights. It is easy to show that the gradient <span class="math inline">\(\nabla \mathcal{L}\)</span> and Hessian <span class="math inline">\(\nabla^2 \mathcal{L}\)</span> of the weighted log-likelihood are <span class="math inline">\(\nabla \mathcal{L}(\beta) = X^T T \Delta s\)</span> and <span class="math inline">\(\nabla^2 \mathcal{L}(\beta) = - X^T T (\Delta V \Delta - \Delta&#39;H ) X\)</span>, respectively.</p>
+\]</span> Also, define the vector <span class="math inline">\(s = [ y_1
+- \mu_1, \dots, y_n - \mu_n]^T.\)</span> We can show through calculus
+(use the chain rule!) that <span class="math display">\[ \nabla
+\mathcal{L}(\beta) = X^T \Delta s\]</span> and <span
+class="math display">\[ \nabla^2 \mathcal{L}(\beta) = - X^T (\Delta V
+\Delta - \Delta&#39;H ) X.\]</span></p>
+<p>Suppose we use the canonical link function. Then <span
+class="math inline">\(h\)</span> is the identity, implying <span
+class="math inline">\(h&#39;\)</span> is identically equal to <span
+class="math inline">\(1\)</span> and <span
+class="math inline">\(h&#39;&#39;\)</span> is identically equal to <span
+class="math inline">\(0\)</span>. Thus, <span
+class="math inline">\(\Delta = I\)</span> and <span
+class="math inline">\(\Delta&#39; = 0\)</span>, yielding a simpler
+expression for the observed information matrix: <span
+class="math display">\[\nabla^2 \mathcal{L}(\beta) =
+-X^TWX.\]</span></p>
+<p>We can compute the Fisher information matrix <span
+class="math inline">\(I(\beta)\)</span> by taking the expectation of the
+observed information matrix: <span class="math display">\[ I(\beta) = -
+\mathbb{E} \left[ \nabla^2 \mathcal{L}(\beta) \right] = X^T ( \Delta V
+\Delta - \Delta&#39; \mathbb{E}[H])X = X^T ( \Delta V \Delta)X =
+X^TWX.\]</span></p>
+<p>Note that the observed and Fisher matrices coincide if we use the
+canonical link function (as predicted by exponential family theory).</p>
+<p>We make a brief digression to discuss the log-likelihood of weighted
+GLMs. Let <span class="math inline">\(T_1, \dots, T_n &gt; 0\)</span> be
+given scalar weights. We can generalize the log-likelihood of the GLM
+slightly by multiplying the <span class="math inline">\(i\)</span>th
+term by <span class="math inline">\(T_i\)</span>: <span
+class="math display">\[ \mathcal{L}(\beta) = \sum_{i=1}^n  T_i \left[
+y_i \cdot h(\langle x_i, \beta \rangle) - \psi( h(\langle x_i, \beta
+\rangle)) \right].\]</span> We might do this if we consider some
+observations to be more “important” than others. Let <span
+class="math inline">\(T = \textrm{diag} \{ T_i \}_{i=1}^n\)</span> be
+the diagonal matrix of weights. It is easy to show that the gradient
+<span class="math inline">\(\nabla \mathcal{L}\)</span> and Hessian
+<span class="math inline">\(\nabla^2 \mathcal{L}\)</span> of the
+weighted log-likelihood are <span class="math inline">\(\nabla
+\mathcal{L}(\beta) = X^T T \Delta s\)</span> and <span
+class="math inline">\(\nabla^2 \mathcal{L}(\beta) = - X^T T (\Delta V
+\Delta - \Delta&#39;H ) X\)</span>, respectively.</p>
 <h2 id="optimization">Optimization</h2>
-<p>We can optimize the log likelihood through one of three related methods: Newton-Raphson, Fisher scoring, or iteratively reweighted least squares. We discuss these methods seriatim.</p>
-<p><strong>Newton-Raphson</strong>: Newton-Raphson is a general optimization algorithm. Let <span class="math inline">\(f: \mathbb{R}^p \to \mathbb{R}\)</span> be a twice continuously differentiable, concave function. The following iterative algorithm converges to the global maximum of <span class="math inline">\(f\)</span>: <span class="math display">\[ x^{(k+1)} \leftarrow x^{(k)} - [\nabla^2 f(x^{(k)})]^{-1} [ \nabla f(x^{(k)})].\]</span> To use this algorithm to optimize <span class="math inline">\(\mathcal{L},\)</span> substitute the negative observed information matrix for <span class="math inline">\(\nabla^2 f(x^{(k)})\)</span> and the score statistic for <span class="math inline">\(\nabla f(x^{(k)})\)</span>: <span class="math display">\[ \beta^{(k+1)} \leftarrow \beta^{(k)} + \left[ X^T (\Delta V \Delta - \Delta&#39;H ) X \right]^{-1} X^T \Delta s |_{\beta = \beta^{(k)}}.\]</span></p>
-<p><strong>Fisher scoring</strong>: The Fisher information matrix is the expected observed information matrix. It turns out that we can replace the observed information matrix with the Fisher information matrix in the Newton-Raphson algorithm and retain global convergence. Making this substitution, we obtain <span class="math display">\[ \beta^{(k+1)} \leftarrow \beta^{(k)} + [ X^T W X]^{-1} [ X^T \Delta s]|_{ \beta = \beta^{(k)} }.\]</span> This modified algorithm is known as the Fisher scoring algorithm.</p>
-<p><strong>Iteratively reweighted least squares</strong>. We can rewrite the Fisher scoring algorithm in a clever way to derive a fast implementation of the algorithm. Define <span class="math display">\[\tilde{y} = [g&#39;(\mu_1)y_1, \dots, g&#39;(\mu_n)y_n]^T\]</span> and <span class="math display">\[\tilde{\mu} = [g&#39;(\mu_1) \mu_1, \dots, g&#39;(\mu_n)\mu_n]^T.\]</span> We begin with a lemma.</p>
-<p><strong>Lemma</strong>: <span class="math inline">\(\Delta s = W(\tilde{y} - \tilde{\mu})\)</span>.</p>
-<p><strong>Proof</strong>: Recall that <span class="math inline">\(g^{-1}(t) = \psi&#39;(h(t)).\)</span> By the inverse derivative theorem, <span class="math display">\[ \frac{1}{g&#39;(g^{-1}(t))} = \psi&#39;&#39;(h(t))h&#39;(t).\]</span> Plugging in <span class="math inline">\(\langle X_i, \beta \rangle\)</span> for <span class="math inline">\(t\)</span>, we find <span class="math display">\[ \begin{multline} \frac{1}{g&#39;(g^{-1}(\langle X_i, \beta \rangle))} = \psi&#39;&#39;(h(\langle X_i, \beta \rangle)) h&#39;(\langle X_i, \beta \rangle) \iff \psi&#39;&#39;(\eta_i) = \frac{1}{ g&#39;(\mu_i) h&#39;( \langle X_i, \beta \rangle)} .\end{multline}\]</span> Next, note that <span class="math inline">\(W = \Delta V \Delta = \textrm{diag}\left\{ h&#39;( \langle X_i, \beta \rangle )^2 \psi&#39;&#39;(\eta_i) \right\}_{i=1}^n.\)</span> Plugging in the expression we derived for <span class="math inline">\(\psi&#39;&#39;(\eta_i)\)</span> above, we obtain <span class="math display">\[ W = \textrm{diag}\left\{ \frac{h&#39;(\langle X_i, \beta \rangle)}{ g&#39;(\mu_i) } \right\}_{i=1}^n.\]</span> Finally, it is clear that <span class="math display">\[\begin{multline}
-\Delta s = \textrm{diag}\{ h&#39;(\langle X_i, \beta \rangle)\}_{i=1}^n ([ y_1 - \mu_1, \dots, y_n - \mu_n]) \\ = \textrm{diag}\left\{ \frac{h&#39;(\langle X_i, \beta \rangle)}{ g&#39;(\mu_i) } \right\}_{i=1}^n ( g&#39;(\mu_1)[y_1 - \mu_1], \dots, g&#39;(\mu_n)[y_n - \mu_n]) = W(\tilde{y} - \tilde{\mu}).
+<p>We can optimize the log likelihood through one of three related
+methods: Newton-Raphson, Fisher scoring, or iteratively reweighted least
+squares. We discuss these methods seriatim.</p>
+<p><strong>Newton-Raphson</strong>: Newton-Raphson is a general
+optimization algorithm. Let <span class="math inline">\(f: \mathbb{R}^p
+\to \mathbb{R}\)</span> be a twice continuously differentiable, concave
+function. The following iterative algorithm converges to the global
+maximum of <span class="math inline">\(f\)</span>: <span
+class="math display">\[ x^{(k+1)} \leftarrow x^{(k)} - [\nabla^2
+f(x^{(k)})]^{-1} [ \nabla f(x^{(k)})].\]</span> To use this algorithm to
+optimize <span class="math inline">\(\mathcal{L},\)</span> substitute
+the negative observed information matrix for <span
+class="math inline">\(\nabla^2 f(x^{(k)})\)</span> and the score
+statistic for <span class="math inline">\(\nabla f(x^{(k)})\)</span>:
+<span class="math display">\[ \beta^{(k+1)} \leftarrow \beta^{(k)} +
+\left[ X^T (\Delta V \Delta - \Delta&#39;H ) X \right]^{-1} X^T \Delta s
+|_{\beta = \beta^{(k)}}.\]</span></p>
+<p><strong>Fisher scoring</strong>: The Fisher information matrix is the
+expected observed information matrix. It turns out that we can replace
+the observed information matrix with the Fisher information matrix in
+the Newton-Raphson algorithm and retain global convergence. Making this
+substitution, we obtain <span class="math display">\[ \beta^{(k+1)}
+\leftarrow \beta^{(k)} + [ X^T W X]^{-1} [ X^T \Delta s]|_{ \beta =
+\beta^{(k)} }.\]</span> This modified algorithm is known as the Fisher
+scoring algorithm.</p>
+<p><strong>Iteratively reweighted least squares</strong>. We can rewrite
+the Fisher scoring algorithm in a clever way to derive a fast
+implementation of the algorithm. Define <span
+class="math display">\[\tilde{y} = [g&#39;(\mu_1)y_1, \dots,
+g&#39;(\mu_n)y_n]^T\]</span> and <span
+class="math display">\[\tilde{\mu} = [g&#39;(\mu_1) \mu_1, \dots,
+g&#39;(\mu_n)\mu_n]^T.\]</span> We begin with a lemma.</p>
+<p><strong>Lemma</strong>: <span class="math inline">\(\Delta s =
+W(\tilde{y} - \tilde{\mu})\)</span>.</p>
+<p><strong>Proof</strong>: Recall that <span
+class="math inline">\(g^{-1}(t) = \psi&#39;(h(t)).\)</span> By the
+inverse derivative theorem, <span class="math display">\[
+\frac{1}{g&#39;(g^{-1}(t))} = \psi&#39;&#39;(h(t))h&#39;(t).\]</span>
+Plugging in <span class="math inline">\(\langle X_i, \beta
+\rangle\)</span> for <span class="math inline">\(t\)</span>, we find
+<span class="math display">\[ \begin{multline}
+\frac{1}{g&#39;(g^{-1}(\langle X_i, \beta \rangle))} =
+\psi&#39;&#39;(h(\langle X_i, \beta \rangle)) h&#39;(\langle X_i, \beta
+\rangle) \iff \psi&#39;&#39;(\theta_i) = \frac{1}{ g&#39;(\mu_i) h&#39;(
+\langle X_i, \beta \rangle)} .\end{multline}\]</span> Next, note that
+<span class="math inline">\(W = \Delta V \Delta = \textrm{diag}\left\{
+h&#39;( \langle X_i, \beta \rangle )^2 \psi&#39;&#39;(\theta_i)
+\right\}_{i=1}^n.\)</span> Plugging in the expression we derived for
+<span class="math inline">\(\psi&#39;&#39;(\theta_i)\)</span> above, we
+obtain <span class="math display">\[ W = \textrm{diag}\left\{
+\frac{h&#39;(\langle X_i, \beta \rangle)}{ g&#39;(\mu_i) }
+\right\}_{i=1}^n.\]</span> Finally, it is clear that <span
+class="math display">\[\begin{multline}
+\Delta s = \textrm{diag}\{ h&#39;(\langle X_i, \beta \rangle)\}_{i=1}^n
+([ y_1 - \mu_1, \dots, y_n - \mu_n]) \\ = \textrm{diag}\left\{
+\frac{h&#39;(\langle X_i, \beta \rangle)}{ g&#39;(\mu_i) }
+\right\}_{i=1}^n ( g&#39;(\mu_1)[y_1 - \mu_1], \dots, g&#39;(\mu_n)[y_n
+- \mu_n]) = W(\tilde{y} - \tilde{\mu}).
 \end{multline}\]</span> <span class="math inline">\(\square\)</span></p>
-<p>Returning to the optimization problem, we can rewrite Fisher’s scoring algorithm as <span class="math display">\[ \beta^{(k+1)} \leftarrow \beta^{(k)} + (X^TWX)^{-1} X^T \Delta s\\ = (X^TWX)^{-1} X^TW(\tilde{y} - \tilde{\mu}) \\ = (X^TWX)^{-1} X^TW(\tilde{y} - \tilde{\mu} + X\beta^{(k)}).\]</span></p>
-<p>Recall the weighted least squares problem. Given an objective function <span class="math inline">\(f: \mathbb{R}^p \to \mathbb{R}\)</span> defined by <span class="math display">\[ f(\beta) = (y - X \beta) W (y - X\beta)\]</span> for an <span class="math inline">\(n \times p\)</span> design matrix <span class="math inline">\(X\)</span>, a diagonal matrix of weights <span class="math inline">\(W\)</span>, and a response vector <span class="math inline">\(y\)</span>, the global minimizer is <span class="math display">\[ \hat{\beta} = (X^TWX)^{-1}X^TWy.\]</span> We can use a weighted least squares solver to compute <span class="math inline">\(\beta^{(k+1)}\)</span>: set the design matrix equal to <span class="math inline">\(X\)</span>, the diagonal matrix of weights equal to <span class="math inline">\(W\)</span>, and the response vector equal to <span class="math inline">\(\tilde{y} - \tilde{\mu} + X\beta^{(k)}\)</span>. This procedure is called iteratively reweighted least squares (IRLS).</p>
-<p>R uses IRLS to implement the <em>glm</em> function. R initializes the parameter <span class="math inline">\(\beta^{(0)}\)</span> to a random value. R then repeatedly solves weighted least squares problems until the sequence <span class="math inline">\(\{ \beta^{(0)}, \beta^{(1)}, \dots \}\)</span> converges.</p>
+<p>Returning to the optimization problem, we can rewrite Fisher’s
+scoring algorithm as <span class="math display">\[ \beta^{(k+1)}
+\leftarrow \beta^{(k)} + (X^TWX)^{-1} X^T \Delta s\\ = (X^TWX)^{-1}
+X^TW(\tilde{y} - \tilde{\mu}) \\ = (X^TWX)^{-1} X^TW(\tilde{y} -
+\tilde{\mu} + X\beta^{(k)}).\]</span></p>
+<p>Recall the weighted least squares problem. Given an objective
+function <span class="math inline">\(f: \mathbb{R}^p \to
+\mathbb{R}\)</span> defined by <span class="math display">\[ f(\beta) =
+(y - X \beta) W (y - X\beta)\]</span> for an <span
+class="math inline">\(n \times p\)</span> design matrix <span
+class="math inline">\(X\)</span>, a diagonal matrix of weights <span
+class="math inline">\(W\)</span>, and a response vector <span
+class="math inline">\(y\)</span>, the global minimizer is <span
+class="math display">\[ \hat{\beta} = (X^TWX)^{-1}X^TWy.\]</span> We can
+use a weighted least squares solver to compute <span
+class="math inline">\(\beta^{(k+1)}\)</span>: set the design matrix
+equal to <span class="math inline">\(X\)</span>, the diagonal matrix of
+weights equal to <span class="math inline">\(W\)</span>, and the
+response vector equal to <span class="math inline">\(\tilde{y} -
+\tilde{\mu} + X\beta^{(k)}\)</span>. This procedure is called
+iteratively reweighted least squares (IRLS).</p>
+<p>R uses IRLS to implement the <em>glm</em> function. R initializes the
+parameter <span class="math inline">\(\beta^{(0)}\)</span> to a random
+value. R then repeatedly solves weighted least squares problems until
+the sequence <span class="math inline">\(\{ \beta^{(0)}, \beta^{(1)},
+\dots \}\)</span> converges.</p>
+<h2 id="alternate-notation">Alternate notation</h2>
+<p>Sometimes, the score vector is expressed using slightly different
+notation. Define the function <span class="math inline">\(V\)</span> by
+<span class="math inline">\(V(\mu_i) := \mathbb{V}(y_i),\)</span> i.e.,
+<span class="math inline">\(V\)</span> takes as an argument the mean
+<span class="math inline">\(\mu_i\)</span> and outputs the variance of
+<span class="math inline">\(\mathbb{V}(y_i)\)</span> of <span
+class="math inline">\(y_i\)</span>. Given that <span
+class="math inline">\(\mu_i = \psi&#39;(\theta_i)\)</span>, we can use
+implicit differentiation to express <span
+class="math inline">\(V(\mu_i)\)</span> as follows:</p>
+<p><span class="math display">\[V(\mu_i) = \frac{d\mu_i}{d\theta_i} =
+\psi&#39;&#39;(\theta_i) = \mathbb{V}(y_i),\]</span> i.e., <span
+class="math inline">\(V(\mu_i)\)</span> is the differential of <span
+class="math inline">\(\mu_i\)</span> with respect to <span
+class="math inline">\(\theta_i\)</span>. Next, recalling that <span
+class="math inline">\(g(\mu_i) = \eta_i\)</span> (where <span
+class="math inline">\(\eta_i\)</span>) is the linear component of the
+model, we consider the following, additional implicit derivative: <span
+class="math display">\[ \frac{d \eta_i}{d \mu_i} =
+g&#39;(\mu_i).\]</span> Using this alternate notation, we can express
+the diagonal entries of the weight matrix <span
+class="math inline">\(W\)</span> as follows: <span
+class="math display">\[W_i =
+\frac{1}{V(\mu_i)(d\eta_i/d\mu_i)^2}.\]</span> This expression for <span
+class="math inline">\(W_i\)</span> coincides with our previous
+expression for <span class="math inline">\(W_i\)</span>, i.e., <span
+class="math display">\[W_i = h&#39;(\eta_i)^2
+\psi&#39;&#39;(\theta_i).\]</span> This holds for the following reason:
+recall from the previous lemma that <span
+class="math display">\[\psi&#39;&#39;(\theta_i) = \frac{1}{g&#39;(\mu_i)
+h&#39;(\eta_i)}.\]</span> Thus,</p>
+<p><span class="math display">\[\psi&#39;&#39;(\theta_i) =
+\frac{1}{g&#39;(\mu_i) h&#39;(\eta_i)} \iff \psi&#39;&#39;(\theta_i)^2 =
+\frac{1}{g&#39;(\mu_i)^2 h&#39;(\eta_i)^2} \]</span> <span
+class="math display">\[ \iff \frac{1}{\psi&#39;&#39;(\theta_i)
+g&#39;(\mu_i)^2} = h&#39;(\eta_i)^2 \psi&#39;&#39;(\theta_i) \iff
+\frac{1}{ V(\mu_i) (d \eta_i/d \mu_i)^2} =
+h&#39;(\eta_i)^2\psi&#39;&#39;(\theta_i).\]</span> Define the matrix
+<span class="math inline">\(M\)</span> by <span
+class="math inline">\(\textrm{diag} \left\{ d\eta_i/d\mu_i
+\right\}_{i=1}^n.\)</span> Then we can express the score vector as <span
+class="math display">\[ \nabla \mathcal{L}(\beta) = X^T WM (y -
+\mu),\]</span> because <span class="math display">\[W_i M_i =
+\frac{1}{V(\mu_i) (d\eta_i/d\mu_i)} = h&#39;(\eta_i) =
+\Delta_i,\]</span> again by the lemma. Under this formulation the Fisher
+information matrix <span class="math inline">\(I(\beta) = X^T W
+X\)</span> remains unchanged.</p>
+<p>Using this alternate notation, the <span
+class="math inline">\(r\)</span>th Fisher scoring iteration can be
+written as <span class="math display">\[\hat{\beta}^{(r+1)} \leftarrow
+\hat{\beta}^{(r)} + (X^T W X)^{-1}X^T W M (y - \hat{\mu}),\]</span>
+where all terms on the right hand side have been evaluated at <span
+class="math inline">\(\beta = \hat{\beta}^{(r)}\)</span>. Define the
+<span class="math inline">\(r\)</span>th “working response vector” <span
+class="math inline">\(z^{(r)}\)</span> as <span
+class="math display">\[z^{(r)} = \hat{\eta}^{(r)} + M(y -
+\hat{\mu}^{(r)}) = X \hat{\beta}^{(r)} + M(y -
+\hat{\mu}^{(r)}).\]</span> We can write the <span
+class="math inline">\(r\)</span>th scoring iteration in terms of <span
+class="math inline">\(z^{(r)}\)</span> as follows:</p>
+<p><span class="math display">\[ \hat{\beta}^{(r)} + (X^TWX)^{-1}X^TWM(y
+- \hat{\mu}^{(r)}) = (X^TWX)^{-1}(X^TWX) \hat{\beta}^{(r)} +
+(X^TWX)^{-1}X^TW M(y - \hat{\mu}^{(r)})\]</span> <span
+class="math display">\[=  (X^TWX)^{-1} X^TW ( X \hat{\beta}^{(r)} + M(y
+- \hat{\mu}^{(r)}))  = (X^TWX)^{-1} X^TWz.\]</span></p>
+<p>The <span class="math inline">\(r\)</span>th iteration of the
+procedure therefore reduces to the least squares problem <span
+class="math display">\[ \hat{\beta}^{(r+1)} \leftarrow
+(X^TWX)^{-1}X^TWz^{(r)}.\]</span> We proceed until we converge upon the
+MLE <span class="math inline">\(\hat{\beta}\)</span>, recomputing the
+weight matrix <span class="math inline">\(W\)</span> and the working
+response vector <span class="math inline">\(z\)</span> at each step
+using our updated estimates for <span
+class="math inline">\(\beta\)</span>.</p>
 <h2 id="inference">Inference</h2>
-<p>We can construct standard errors for the estimated parameter <span class="math inline">\(\hat{\beta}\)</span> using MLE asymptotics. Recall that <span class="math inline">\(I(\beta)\)</span> is the Fisher information matrix of the model evaluated at <span class="math inline">\(\beta\)</span>. If the number of samples <span class="math inline">\(n\)</span> is large, we have the approximation <span class="math display">\[ \hat{\beta} \sim N_p(\beta, [I(\hat{\beta})]^{-1}).\]</span> We can compute <span class="math inline">\(I(\hat{\beta})\)</span> according to the formula <span class="math inline">\(I(\hat{\beta}) = X^T W(\hat{\beta})X,\)</span> where <span class="math inline">\(W(\hat{\beta})\)</span> is the weight matrix evaluated at <span class="math inline">\(\hat{\beta}\)</span>. Note that R returns the matrix <span class="math inline">\(W(\hat{\beta})\)</span> as part of the <em>glm</em> output.</p>
+<h3 id="wald">Wald</h3>
+<p>We can obtain Wald standard errors and <span
+class="math inline">\(p\)</span>-values for the estimated parameter
+<span class="math inline">\(\hat{\beta}\)</span> using MLE asymptotics.
+Recall that <span class="math inline">\(I(\beta)\)</span> is the Fisher
+information matrix of the model evaluated at <span
+class="math inline">\(\beta\)</span>. If the number of samples <span
+class="math inline">\(n\)</span> is large, we have the approximation
+<span class="math display">\[ \hat{\beta} \sim N_p(\beta,
+[I(\hat{\beta})]^{-1}).\]</span> We can compute <span
+class="math inline">\(I(\hat{\beta})\)</span> according to the formula
+<span class="math inline">\(I(\hat{\beta}) = X^T
+W(\hat{\beta})X,\)</span> where <span
+class="math inline">\(W(\hat{\beta})\)</span> is the weight matrix
+evaluated at <span class="math inline">\(\hat{\beta}\)</span>. Note that
+R returns the matrix <span class="math inline">\(W(\hat{\beta})\)</span>
+as part of the <em>glm</em> output.</p>
+<h3 id="score">Score</h3>
+<p>We can use a score test to test whether a new predictor should be
+added to an existing (i.e., already-fitted) GLM. Let <span
+class="math inline">\(z\)</span>, <span
+class="math inline">\(W\)</span>, and <span
+class="math inline">\(\hat{\eta}\)</span> denote the final (converged)
+values of the working response vector, weight matrix, and linear
+component vector, respectively. Let the “working residuals” <span
+class="math inline">\(e = [e_1, \dots, e_n]\)</span> be defined by <span
+class="math display">\[e_i = z_i - \hat{\eta}_i,\]</span> i.e., <span
+class="math inline">\(e_i\)</span> is the <span
+class="math inline">\(i\)</span>th residual of the weighted least
+squares regression of <span class="math inline">\(z\)</span> onto the
+columns of <span class="math inline">\(X\)</span> using weights <span
+class="math inline">\(W\)</span>. Let <span class="math inline">\(X_2
+\in \mathbb{R}^n\)</span> be a new column of predictors. Let <span
+class="math inline">\(E_2\)</span> be the vector of residuals that we
+obtain after regressing <span class="math inline">\(X_2\)</span> on the
+columns of <span class="math inline">\(X\)</span> with weights <span
+class="math inline">\(W\)</span>: <span class="math display">\[E_2 :=
+X_2 - X(X^T W X)^{-1} X^T W X_2.\]</span> The z-score test statistic is
+then</p>
+<p><span class="math display">\[Z = \frac{E_2^T W e}{\sqrt{E_2^T W
+E_2}}.\]</span> Under the null hypothesis <span class="math inline">\(Z
+\sim N(0,1)\)</span> for large <span class="math inline">\(n\)</span>.
+Note that <span class="math inline">\(e\)</span> is only a function of
+the fitted GLM (and thus remains unchanged if we decide to test new
+vectors <span class="math inline">\(X_2\)</span>). <span
+class="math inline">\(E_2\)</span>, by contrast, is a function of both
+the fitted GLM <em>and</em> the new vector of predictors.</p>
+<p>In R we can obtain the working residuals vector <span
+class="math inline">\(e\)</span> from a fitted GLM object
+<code>fit</code> via <code>fit$residuals</code>; likewise, we can obtain
+the working weights <span class="math inline">\(W\)</span> via
+<code>fit$weights</code>.</p>
+<p>We can</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>This ends our three-part mini series on exponential families, information matrices, and GLMs. We saw that GLMs, though old, are an elegant, general, and powerful method for modeling and inference. In later posts we will see how GLMs can be used to model genomic and genetic data, with an eye toward single-cell and bulk-tissue RNA-seq.</p>
+<p>This ends our three-part mini series on exponential families,
+information matrices, and GLMs. We saw that GLMs, though old, are an
+elegant, general, and powerful method for modeling and inference. In
+later posts we will see how GLMs can be used to model genomic and
+genetic data, with an eye toward single-cell and bulk-tissue
+RNA-seq.</p>
 <center>
 <p><img src="meme.png" id="id" class="class" style="width:40.0%" /></p>
 <em>9gag</em>
 </center>
 <h2 id="references">References</h2>
 <ol type="1">
-<li><a href="http://statweb.stanford.edu/~ckirby/brad/STATS305B_Part-3_corrected-2.pdf">Lecture Notes</a> provided by Professor Bradley Efron.</li>
-<li><a href="https://ocw.mit.edu/courses/mathematics/18-650-statistics-for-applications-fall-2016/lecture-slides/MIT18_650F16_GLM.pdf">Lecture Notes</a> provided by Professor Philippe Rigollet.</li>
-<li>Ibrahim, Joseph G. <a href="https://amstat.tandfonline.com/doi/abs/10.1080/01621459.1990.10474938?casa_token=vfq9cW4fofUAAAAA:hA7ZDlyPg_IYhhMRyWlKu3pVaKXHma1PPOfLySP40mFUPb4sQoZINn7fPTfuGKxTXZhcoAhzxch3#.XwqISC2z1TY">“Incomplete data in generalized linear models.”</a> Journal of the American Statistical Association 85.411 (1990): 765-769.</li>
+<li><a
+href="http://statweb.stanford.edu/~ckirby/brad/STATS305B_Part-3_corrected-2.pdf">Lecture
+Notes</a> provided by Professor Bradley Efron.</li>
+<li><a
+href="https://ocw.mit.edu/courses/mathematics/18-650-statistics-for-applications-fall-2016/lecture-slides/MIT18_650F16_GLM.pdf">Lecture
+Notes</a> provided by Professor Philippe Rigollet.</li>
+<li>Ibrahim, Joseph G. <a
+href="https://amstat.tandfonline.com/doi/abs/10.1080/01621459.1990.10474938?casa_token=vfq9cW4fofUAAAAA:hA7ZDlyPg_IYhhMRyWlKu3pVaKXHma1PPOfLySP40mFUPb4sQoZINn7fPTfuGKxTXZhcoAhzxch3#.XwqISC2z1TY">“Incomplete
+data in generalized linear models.”</a> Journal of the American
+Statistical Association 85.411 (1990): 765-769.</li>
 </ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
