@@ -7,7 +7,7 @@ I am a fifth-year PhD student in the Department of Statistics and Data Science a
 
 **Statistics**: robust inference, selective inference \
 **Genomics**: single-cell applications, especially single-cell CRISPR screens \
-**Computing**: large data, clouds and clusters \
+**Computing**: large data, clouds and clusters, out-of-core computing \
 
 **Update January 2023**: I am on the postdoc job market seeking positions in statistical and computational genomics.
 
