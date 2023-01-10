@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-08-23"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-08-23"/>
+<meta property="article:published" itemprop="datePublished" content="2023-01-10"/>
+<meta property="article:created" itemprop="dateCreated" content="2023-01-10"/>
 <meta name="article:author" content="Tim Barry"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","preview","categories","draft","date"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["08-23-2022"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","preview","categories","draft","editor_options","date"]}},"value":[{"type":"character","attributes":{},"value":["Generalized linear models"]},{"type":"character","attributes":{},"value":["A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["log_reg.png"]},{"type":"character","attributes":{},"value":["Statistics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]},{"type":"character","attributes":{},"value":["01-10-2023"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1873,7 +1873,7 @@ body {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-23T00:00:00.000-04:00","citationText":"Barry, 2022"}
+{"title":"Generalized linear models","description":"A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2023-01-10T00:00:00.000-05:00","citationText":"Barry, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1911,7 +1911,7 @@ log-likelihood, and inference.</p></p>
   Tim Barry <a href="https://timothy-barry.github.io"
 class="uri">https://timothy-barry.github.io</a> 
   
-<br/>08-23-2022
+<br/>01-10-2023
 </div>
 
 <div class="d-article">
@@ -2009,14 +2009,14 @@ canonical link function is equal to the inverse of the derivative of
 canonical link renders the canonical parameter of the joint distribution
 <span class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> equal to
 <span class="math inline">\(\beta\)</span>.</p>
-<p><strong>Theorem</strong>: <em>Suppose we model the mean <span
+<p><strong>Theorem</strong>: <em>Suppose we model the mean</em> <span
 class="math inline">\(\mu_i\)</span> of <span
 class="math inline">\(y_i\)</span> using the canonical link function,
 i.e. <span class="math inline">\(g_c(\mu_i) = \langle x_i,\beta
 \rangle\)</span>. Then the joint density of <span
 class="math inline">\(y = (y_1, \dots, y_n)^T\)</span> is a p-parameter
 exponential family with canonical parameter <span
-class="math inline">\(\beta\)</span>.</em></p>
+class="math inline">\(\beta\)</span>.</p>
 <p><strong>Proof sketch</strong>: Define <span
 class="math inline">\(\theta = X \beta\)</span>, where <span
 class="math inline">\(\theta = [\theta_1, \dots, \theta_n]^T \in
@@ -2079,7 +2079,7 @@ function, and set of data, our goal is to estimate the unknown parameter
 <p>We begin by introducing some notation. Let <span
 class="math inline">\(h : \mathbb{R} \to \mathbb{R}\)</span> be the
 function that maps the linear predictor into the canonical parameter,
-i.e. <span class="math display">\[h( \langle x_i, \beta \rangle ) =
+i.e. <span class="math display">\[h( \langle x_i, \beta \rangle ) =
 \theta_i.\]</span> The function <span class="math inline">\(h\)</span>
 is simply the identity function when we use the canonical link. In
 general, we can express <span class="math inline">\(h\)</span> in terms
@@ -2122,7 +2122,7 @@ class="math inline">\(g_c = [\psi&#39;]^{-1}\)</span>.</li>
 </ol>
 <ul>
 <li>Definition: the function that maps the linear component to the
-canonical parameter, i.e. <span class="math inline">\(h(\langle x_i,
+canonical parameter, i.e. <span class="math inline">\(h(\langle x_i,
 \beta \rangle) = \theta_i\)</span>.</li>
 <li>Properties: <span class="math inline">\(h\)</span> can be expressed
 in terms of <span class="math inline">\(\psi\)</span> and <span
@@ -2408,8 +2408,9 @@ the fitted GLM <em>and</em> the new vector of predictors.</p>
 class="math inline">\(e\)</span> from a fitted GLM object
 <code>fit</code> via <code>fit$residuals</code>; likewise, we can obtain
 the working weights <span class="math inline">\(W\)</span> via
-<code>fit$weights</code>.</p>
-<p>We can</p>
+<code>fit$weights</code>. We can use the function
+<code>glm.scoretest()</code> from the package <strong>statmod</strong>
+to run a score test on a fitted GLM.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>This ends our three-part mini series on exponential families,
 information matrices, and GLMs. We saw that GLMs, though old, are an
@@ -2419,7 +2420,7 @@ genetic data, with an eye toward single-cell and bulk-tissue
 RNA-seq.</p>
 <center>
 <p><img src="meme.png" id="id" class="class" style="width:40.0%" /></p>
-<em>9gag</em>
+<p><em>9gag</em></p>
 </center>
 <h2 id="references">References</h2>
 <ol type="1">
