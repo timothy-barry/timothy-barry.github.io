@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 JAN 2023 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 JAN 2023 13:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,10 +382,10 @@ b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
 b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 
-Output written on timsResume.pdf (2 pages, 57745 bytes).
+Output written on timsResume.pdf (2 pages, 57833 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
