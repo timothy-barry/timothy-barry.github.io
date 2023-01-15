@@ -3,24 +3,30 @@ title: "About me"
 site: distill::distill_website
 ---
 
-I am a fifth-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU).  I am fortunate to be advised by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) (CMU) and [Gene Katsevich](https://ekatsevi.github.io) (University of Pennsylvania). I like to work within the connective tissue that binds together the allied sciences of statistics, genomics, and computing. My interests are as follows:
-
-**Statistics**: robust inference, selective inference \
-**Genomics**: single-cell applications, especially single-cell CRISPR screens \
-**Computing**: large data, clouds and clusters, out-of-core computing \
-
-**Update January 2023**: I am on the postdoc job market seeking positions in statistical and computational genomics.
-
-<br/>
-<br/>
-<center>
-![](pic_circle.png){#id .class width=50% height=50%}
-\center
-
 ```{r setup, include=FALSE}
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
-[<i class="fa fa-envelope fa-3x"></i>](email.html)
-[<i class="fas fa-file fa-3x"></i>](ResumeCv/timsResume.pdf)
-[<i class="fa fa-github fa-3x"></i>](https://github.com/Timothy-Barry)
+
+::: {.floatting}
+
+```{r out.width='25%', out.extra='style="float:right; padding:10px"', echo = FALSE}
+knitr::include_graphics("tim.jpeg")
+```
+
+I am a fifth-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU).  I am fortunate to be advised by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) (CMU) and [Gene Katsevich](https://ekatsevi.github.io) (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. I like to work within the connective tissue that binds together the allied sciences of statistics, genomics, and computing. My current interests are as follows:
+
+**Statistics**: robust inference, regression methodology \
+**Genomics**: single-cell CRISPR screens \
+**Computing**: large data, clouds and clusters \
+:::
+
+
+Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and [CV](ResumeCv/timsResume.pdf). I am excited to chat/work with biologists; do shoot an email or open a Github issue to get in touch.
+
+## News
+
+**January 2023**: I am on the postdoc job market seeking positions in statistical and computational genomics.
+
+**Summer 2022**: I am a visiting student researcher at the University of Pennsylvania, generously hosted by my co-advisor Gene.
+
