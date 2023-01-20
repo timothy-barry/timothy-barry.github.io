@@ -1,5 +1,5 @@
 ---
-title: "Tim's Blog"
+title: "The Random Lounge (Tim's blog)"
 site: distill::distill_website
 listing: posts
 ---
