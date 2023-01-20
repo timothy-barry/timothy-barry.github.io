@@ -17,9 +17,9 @@ editor_options:
     wrap: 72
 ---
 
-This post is my effort to once and for all understand GLMs. I explore
-various topics, including canonical and non-canonical link functions,
-optimization of the log likelihood, and inference.
+This post is meant to be a reasonably self-contained exposition of GLM theory. I explore various topics, including canonical and non-canonical link functions, optimization of the log likelihood, and inference.
+
+This post originally was written in 2020. Motivated by our recent work on robust association testing via resampling score statistics, I added a new section about GLM score tests.
 
 ## Exponential family review
 
