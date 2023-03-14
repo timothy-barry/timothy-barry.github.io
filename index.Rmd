@@ -10,7 +10,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ::: {.floatting}
 
 ```{r out.width='22%', out.extra='style="float:right; padding:10px"', echo = FALSE}
-knitr::include_graphics("tim_higher_res.png")
+knitr::include_graphics("tim.jpeg")
 ```
 I am a fifth-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU).  I am fortunate to be advised by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) (CMU) and [Gene Katsevich](https://ekatsevi.github.io) (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. I like to work within the connective tissue that binds together the allied sciences of statistics, genomics, and computing. My current interests are as follows. **Statistics**: robust inference, regression methodology; **Genomics**: single-cell applications, especially single-cell CRISPR screens; **Computing**: large data, clouds, clusters.
 :::
@@ -19,7 +19,7 @@ Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and
 
 ## News
 
-**January 2023**: I am on the postdoc job market seeking positions in statistical and computational genomics.
+**2023+**: My postdoc search has concluded. I will complete a six month postdoc with my coadvisor Gene from June 2023-December 2023. I will then join the Harvard Biostatistics Department as a postdoc in January 2024, working with Xihong Lin.
 
 **Summer 2022**: I am a visiting student researcher at the University of Pennsylvania, generously hosted by my co-advisor Gene.
 
