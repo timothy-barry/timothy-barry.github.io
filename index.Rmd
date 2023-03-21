@@ -19,7 +19,6 @@ Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and
 
 ## News
 
-**2023+**: My postdoc search has concluded. I will complete a six month postdoc with my coadvisor Gene from June 2023-December 2023. I will then join the Harvard Biostatistics Department as a postdoc in January 2024, working with Xihong Lin.
+**2023+**: My postdoc search has concluded. I will complete a six month postdoc with my advisor Gene from June 2023-December 2023. I will then join the Harvard Biostatistics Department as a postdoc in January 2024, working with Xihong Lin.
 
 **Summer 2022**: I am a visiting student researcher at the University of Pennsylvania, generously hosted by my co-advisor Gene.
-
