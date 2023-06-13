@@ -5,7 +5,7 @@ site: distill::distill_website
 
 # Recent papers
 
--   **T Barry**, K Mason, E Katsevich, K Roeder. "Robust differential expression testing for single-cell CRISPR screens at low multiplicity of infection," 2023. [[BioRxiv preprint]](https://www.biorxiv.org/content/10.1101/2023.05.15.540875v1) [[Replication code]](https://github.com/Katsevich-Lab/sceptre2-manuscript). [(Mihaela Serban Memorial Award, American Statistical Association, Pittsburgh chapter)]{style="color:blue"}
+-   **T Barry**, K Mason, E Katsevich, K Roeder. "Robust differential expression testing for single-cell CRISPR screens at low multiplicity of infection," 2023. [[BioRxiv preprint]](https://www.biorxiv.org/content/10.1101/2023.05.15.540875v2) [[Replication code]](https://github.com/Katsevich-Lab/sceptre2-manuscript). [(Mihaela Serban Memorial Award, American Statistical Association, Pittsburgh chapter)]{style="color:blue"}
 
 -   **T Barry**, E Katsevich, K Roeder. "Exponential family measurement error models for single-cell CRISPR screens," 2022. Revisions at *Biostatistics*. [[arXiv preprint]](https://arxiv.org/abs/2201.01879) [[Replication code]](https://github.com/timothy-barry/glmeiv-manuscript).
 
