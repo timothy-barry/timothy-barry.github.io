@@ -7,18 +7,14 @@ site: distill::distill_website
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
-::: {.floatting}
+I am a postdoctoral researcher in the Department of Statistics at the University of Pennsylvania, working with [Gene Katsevich](https://ekatsevi.github.io) (although I am physically based in Boston from July 2023). Previously, I completed my PhD in Statistics at Carnegie Mellon University under the joint supervision of [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) and Gene Katsevich. I will be joining the Harvard Biostatistics Department as a postdoctoral researcher in January 2024, where I will work with [Xihong Lin](https://content.sph.harvard.edu/xlin/index.html).
 
-```{r out.width='22%', out.extra='style="float:right; padding:10px"', echo = FALSE}
-knitr::include_graphics("tim.jpeg")
-```
-I am a fifth-year PhD student in the Department of Statistics and Data Science at Carnegie Mellon University (CMU).  I am fortunate to be advised by Professors [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) (CMU) and [Gene Katsevich](https://ekatsevi.github.io) (University of Pennsylvania). Previously, I studied math and computer science at the University of Maryland, College Park. I like to work within the connective tissue that binds together the allied sciences of statistics, genomics, and computing. My current interests are as follows. **Statistics**: robust inference, regression methodology; **Genomics**: single-cell applications, especially single-cell CRISPR screens; **Computing**: large data, clouds, clusters.
-:::
+I like to work within the connective tissue that binds together the sciences of genomics, statistics, and computing. Most of my research is motivated by the goal of [understanding noncoding variation in the human genome](https://arxiv.org/pdf/2307.13708.pdf). I am especially interested in the following areas.
 
-Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and [CV](ResumeCv/timsResume.pdf). I am excited to chat/work with biologists; do shoot an email or open a Github issue to get in touch.
+-   **Genomics**: single-cell applications, in particular single-cell CRISPR screens
 
-## News
+-   **Statistics**: independence and conditional independence testing, robust inference, measurement error
 
-**2023+**: My postdoc search has concluded. I will complete a six month postdoc with my advisor Gene from June 2023-December 2023. I will then join the Harvard Biostatistics Department as a postdoc in January 2024, working with Xihong Lin.
+-   **Computing**: algorithms and data structures for single-cell data, clouds and clusters
 
-**Summer 2022**: I am a visiting student researcher at the University of Pennsylvania, generously hosted by my co-advisor Gene.
+Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and [CV](ResumeCv/timsResume.pdf). I am excited to chat/work with biologists. Feel free to shoot an email or open a Github issue to get in touch.
