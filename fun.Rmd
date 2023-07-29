@@ -3,4 +3,4 @@ title: "Fun"
 site: distill::distill_website
 ---
 
-Outside work I like playing piano and programming synthesizers. You can listen to some of my sounds [here on Bandcamp](https://tbarry1.bandcamp.com/music) if you like. I was one third of a Jazz/electronica band in Pittsburgh (alongside [these](https://www.stat.cmu.edu/~mcstanle/) [guys](https://ianws.org/)); I have been looking for new bandmates since I moved to Boston.
+Outside work I like playing piano and programming synthesizers. You can listen to some of my sounds [here on Bandcamp](https://tbarry1.bandcamp.com/music) if you like. I was one third of a jazz/electronica band in Pittsburgh (alongside [these](https://www.stat.cmu.edu/~mcstanle/) [guys](https://ianws.org/)); I have been looking for new bandmates since I moved to Boston.
