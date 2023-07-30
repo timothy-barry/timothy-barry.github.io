@@ -13,7 +13,7 @@ I like to work within the connective tissue that binds together the statistical,
 
 -   **Genomics**: single-cell applications, in particular single-cell CRISPR screens
 
--   **Statistics**: independence and conditional independence testing, robust inference, measurement error
+-   **Statistics**: independence and conditional independence testing, robust methods, measurement error
 
 -   **Computing**: algorithms and data structures for single-cell data, clouds and clusters
 
