@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JUL 2023 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 AUG 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,67 +340,65 @@ Overfull \hbox (5.20528pt too wide) in paragraph at lines 127--135
 [][] 
  []
 
+[1
 
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Overfull \hbox (5.20528pt too wide) in paragraph at lines 138--142
 [][] 
  []
 
-[1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 148
 .
 LaTeX Font Info:    No file OMScmss.fd. on input line 148.
-
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 148.
 
 
-Overfull \hbox (5.20528pt too wide) in paragraph at lines 156--168
+Overfull \hbox (5.20528pt too wide) in paragraph at lines 156--170
 [][] 
  []
 
 
-Overfull \hbox (5.20528pt too wide) in paragraph at lines 179--184
+Overfull \hbox (5.20528pt too wide) in paragraph at lines 181--186
 [][] 
  []
 
 
-Overfull \hbox (5.20528pt too wide) in paragraph at lines 188--195
+Overfull \hbox (5.20528pt too wide) in paragraph at lines 190--197
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./timsResume.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `timsResume.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
  5770 strings out of 492649
  84154 string characters out of 6129622
- 193317 words of memory out of 5000000
+ 192317 words of memory out of 5000000
  9627 multiletter control sequences out of 15000+600000
  8105 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,9n,37p,513b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,37p,513b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pf
 b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
 b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 
-Output written on timsResume.pdf (2 pages, 59813 bytes).
+Output written on timsResume.pdf (2 pages, 59906 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
