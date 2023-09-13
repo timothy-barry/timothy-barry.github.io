@@ -7,7 +7,7 @@ site: distill::distill_website
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
-I am a postdoctoral researcher in the Department of Statistics at the University of Pennsylvania, working with [Gene Katsevich](https://ekatsevi.github.io) (although I am physically based in Boston from July 2023). Previously, I completed my PhD in Statistics at Carnegie Mellon University under the joint supervision of [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) and Gene Katsevich. I will be joining the Harvard Biostatistics Department as a postdoctoral researcher in January 2024, where I will work with [Xihong Lin](https://content.sph.harvard.edu/xlin/index.html).
+I am a postdoctoral researcher in the Department of Statistics at the University of Pennsylvania, working with [Gene Katsevich](https://ekatsevi.github.io) (although I am physically based in Boston from July 2023). Previously, I completed my PhD in Statistics at Carnegie Mellon University under the joint supervision of [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) and Gene Katsevich. I will be joining the Harvard Biostatistics Department as a postdoctoral researcher in January 2024, where I will be advised by [Xihong Lin](https://content.sph.harvard.edu/xlin/index.html).
 
 I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. Most of my research is motivated by the goal of [understanding noncoding variation in the human genome](https://arxiv.org/pdf/2307.13708.pdf). I am especially interested in the following areas.
 
