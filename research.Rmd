@@ -15,6 +15,10 @@ site: distill::distill_website
 
 See [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en) or [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
 
+# Book
+
+**T Barry**, J Deutsch, E Katsevich. "Hands-on single-cell CRISPR screen analysis," 2023. [[eBook preprint]](https://timothy-barry.github.io/sceptre-book/)
+
 # Software
 
 ```{r pressure, echo=FALSE, out.width = '60%', fig.align="center"}
