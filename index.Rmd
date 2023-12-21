@@ -17,4 +17,4 @@ I like to work within the connective tissue that binds together the statistical,
 
 -   **Computing**: algorithms and data structures for single-cell data, clouds and clusters
 
-Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and [CV](ResumeCv/timsResume.pdf). I am excited to chat/work with biologists. Feel free to shoot an email or open a Github issue to get in touch.
+Here are my [email](email.html), [Github](https://github.com/Timothy-Barry), and [CV](ResumeCv/cv.pdf). I am excited to chat/work with biologists. Feel free to shoot an email or open a Github issue to get in touch.
