@@ -13,7 +13,7 @@ site: distill::distill_website
 
 -   **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." **Genome Biology**, 2021. [[Journal]](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2) [[Replication code]](https://github.com/Katsevich-Lab/sceptre-manuscript). [(Reviewers' choice, American Society of Human Genetics conference)]{style="color:blue"}
 
-See [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en) or [CV](ResumeCv/timsResume.pdf) for full list of papers and talks.
+Also see [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en).
 
 # Book
 
@@ -29,6 +29,6 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 
     -   Example studies that use this method: [Science 2023](https://www.science.org/doi/10.1126/science.adh7699), [Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02898-w)
 
-2.  [**ondisc**](https://timothy-barry.github.io/ondisc/): Large-scale computing on single-cell data
+2.  [**ondisc**](https://timothy-barry.github.io/ondisc/) (beta): Large-scale computing on single-cell data
 
     <!-- Mentoring Songcheng Dai. Computational Biology Masters student at CMU. Dates: May 2021 — May 2022. Next position: engineer at GRAIL. -->
