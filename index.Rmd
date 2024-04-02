@@ -26,6 +26,6 @@ I am a postdoctoral researcher in the Department of Biostatistics at Harvard Uni
 
 -   Genomics: CRISPR experiments, in particular single-cell CRISPR screens
 
--   Computing: data structures and algorithms for scalable single-cell analysis, clouds and clusters, large language models
+-   Computing: data structures and algorithms for large-scale single-cell analysis, clouds and clusters
 
 Feel free to shoot me an email at tbarry@hsph.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).

@@ -5,19 +5,17 @@ site: distill::distill_website
 
 # Recent papers
 
--   **T Barry**, K Mason, K Roeder, E Katsevich. "Robust differential expression testing for single-cell CRISPR screens at low multiplicity of infection," 2023. [[BioRxiv preprint]](https://www.biorxiv.org/content/10.1101/2023.05.15.540875v2) [[Replication code]](https://github.com/Katsevich-Lab/sceptre2-manuscript). [(Mihaela Serban Memorial Award, American Statistical Association, Pittsburgh chapter)]{style="color:blue"}
+-   **T Barry**, K Mason, K Roeder, E Katsevich. "Robust differential expression testing for single-cell CRISPR screens at low multiplicity of infection," **Genome Biology**, to appear. [[BioRxiv preprint]](https://www.biorxiv.org/content/10.1101/2023.05.15.540875v2) [[Replication code]](https://github.com/Katsevich-Lab/sceptre2-manuscript). [(Mihaela Serban Memorial Award, American Statistical Association, Pittsburgh chapter)]{style="color:blue"}
 
 -   **T Barry**, K Roeder, E Katsevich. "Exponential family measurement error models for single-cell CRISPR screens." **Biostatistics**, to appear. [[arXiv preprint]](https://arxiv.org/abs/2201.01879) [[Replication code]](https://github.com/timothy-barry/glmeiv-manuscript).
 
--   J Morris, C Caragine, Z Daniloski, J Domingo, **T Barry**, L Lu, K Davis, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways at GWAS loci by pooled single-cell CRISPR screens." **Science**, 2023. [[Journal]](https://www.science.org/doi/10.1126/science.adh7699).
-
 -   **T Barry**, X Wang, J Morris, K Roeder, E Katsevich. "SCEPTRE improves calibration and sensitivity in single-cell CRISPR screen analysis." **Genome Biology**, 2021. [[Journal]](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2) [[Replication code]](https://github.com/Katsevich-Lab/sceptre-manuscript). [(Reviewers' choice, American Society of Human Genetics conference)]{style="color:blue"}
 
-Also, see [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en) and [Github](https://github.com/timothy-barry).
+-   J Morris, C Caragine, Z Daniloski, J Domingo, **T Barry**, L Lu, K Davis, M Ziosi, D Glinos, S Hao, E Mimitou, P Smibert, K Roeder, E Katsevich, T Lappalainen, N Sanjana. "Discovery of target genes and pathways at GWAS loci by pooled single-cell CRISPR screens." **Science**, 2023. [[Journal]](https://www.science.org/doi/10.1126/science.adh7699).
 
 # Book
 
-**T Barry**, J Deutsch, E Katsevich. "Hands-on single-cell CRISPR screen analysis," 2023. [[eBook preprint]](https://timothy-barry.github.io/sceptre-book/)
+**T Barry**, J Deutsch, E Katsevich. "Hands-on single-cell CRISPR screen analysis," updated April 2024. [[ebook preprint]](https://timothy-barry.github.io/sceptre-book/)
 
 # Software
 
@@ -25,10 +23,11 @@ Also, see [Google scholar](https://scholar.google.com/citations?user=Jrjax-AAAAA
 knitr::include_graphics("graphics/tessellation_cropped.png")
 ```
 
-1.  [**sceptre**](https://katsevich-lab.github.io/sceptre/): Statistically rigorous, massively scalable, and user-friendly single-cell CRISPR screen data analysis.
+-   [**sceptre**](https://katsevich-lab.github.io/sceptre/): statistically rigorous, massively scalable single-cell CRISPR screen analysis
+-   [**ondisc**](https://timothy-barry.github.io/ondisc/): out-of-core and cluster-scale computing on single-cell data
 
-    -   Example studies that use this method: [Science 2023](https://www.science.org/doi/10.1126/science.adh7699), [Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02898-w)
+**Broader use of these tools**
 
-2.  [**ondisc**](https://timothy-barry.github.io/ondisc/) (beta): Large-scale computing on single-cell data
+-   Industry: [10x Genomics](https://www.10xgenomics.com/analysis-guides/single-cell-crispr-screen-analysis-with-sceptre) (main commercial supplier of single-cell CRISPR screen kits)
 
-    <!-- Mentoring Songcheng Dai. Computational Biology Masters student at CMU. Dates: May 2021 — May 2022. Next position: engineer at GRAIL. -->
+-   Research studies: [Morris et al., Science 2023](https://www.science.org/doi/10.1126/science.adh7699); [Tuano et al., Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02898-w)
