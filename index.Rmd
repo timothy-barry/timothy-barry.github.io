@@ -18,7 +18,7 @@ d-title {
 knitr::include_graphics("pic_3b.jpg")
 ```
 
-I am a postdoctoral researcher in the Department of Biostatistics at Harvard University, advised by [Xihong Lin](https://content.sph.harvard.edu/xlin/index.html). Previously, I obtained my PhD in Statistics at Carnegie Mellon University under the joint supervision of [Kathryn Roeder](http://www.stat.cmu.edu/~roeder/) and [Eugene Katsevich](https://ekatsevi.github.io). I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in the following areas.
+I am a postdoctoral researcher in the Department of Biostatistics at Harvard University, advised by Xihong Lin. Previously, I obtained my PhD in Statistics at Carnegie Mellon University under the joint supervision of Kathryn Roeder and Eugene Katsevich. I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in the following areas.
 
 :::
 
