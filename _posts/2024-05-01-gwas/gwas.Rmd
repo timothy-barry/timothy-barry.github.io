@@ -15,7 +15,7 @@ draft: false
 preview: size_vs_maf.png
 ---
 
-The time has come: I am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.
+After years of observing from the outside, I am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.
 
 ## Molecular genetics background
 
@@ -114,7 +114,7 @@ We fit the model via MLE, yielding an estimate $\hat{\beta}$ for $\beta$ and a p
 
 The regression analysis yields a set of $p$ p-values $p_1, \dots, p_p$. We obtain a discovery set via a very simple procedure: we call all SNPs whose p-value falls below the threshold of $5 \cdot 10^{-8}$ as discoveries. Some more recent GWAS analyses apply a BH correction to the p-values to produce a discovery set, but this does not appear to be the norm.
 
-### Takeaways and limitations of GWAS
+## Takeaways and limitations of GWAS
 
 GWAS have identified hundreds of thousands of SNPs associated with hundreds of traits and diseases, yielding several interesting (and perhaps surprising) insights about the architecture of complex traits. For example, most traits are highly polygenic, i.e., they are influenced by tens of thousands (or more) of SNPs spread aross the genome. Additionally, the vast majority ($>95\%$) of significant SNPs lie in noncoding regions of the genome. These noncoding SNPs are thought to contribute to disease by modulating the expression of one more or disease-relevant genes.
 
