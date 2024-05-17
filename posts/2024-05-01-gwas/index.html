@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2024-05-01"/>
-<meta property="article:created" itemprop="dateCreated" content="2024-05-01"/>
+<meta property="article:published" itemprop="datePublished" content="2024-05-02"/>
+<meta property="article:created" itemprop="dateCreated" content="2024-05-02"/>
 <meta name="article:author" content="Tim Barry"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","draft","preview"]}},"value":[{"type":"character","attributes":{},"value":["Genome-wide association studies"]},{"type":"character","attributes":{},"value":["An overview of genome-wide association studies."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["05-01-2024"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Genomics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["size_vs_maf.png"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","draft","preview"]}},"value":[{"type":"character","attributes":{},"value":["Genome-wide association studies"]},{"type":"character","attributes":{},"value":["An overview of genome-wide association studies."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["05-02-2024"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Genomics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["size_vs_maf.png"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1905,7 +1905,7 @@ body {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Genome-wide association studies","description":"An overview of genome-wide association studies.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2024-05-01T00:00:00.000-04:00","citationText":"Barry, 2024"}
+{"title":"Genome-wide association studies","description":"An overview of genome-wide association studies.","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2024-05-02T00:00:00.000-04:00","citationText":"Barry, 2024"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1941,11 +1941,11 @@ body {
 <div class="d-byline">
   Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
   
-<br/>05-01-2024
+<br/>05-02-2024
 </div>
 
 <div class="d-article">
-<p>After years of observing from the outside, I am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.</p>
+<p>After years of observing from the outside, I finally am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.</p>
 <h2 id="molecular-genetics-background">Molecular genetics background</h2>
 <p>The human genome consists of a set of 6 billion letters (or <em>nucleotides</em>). Each nucleotide can take one of four values: A, T, G, or C. An individual’s set of nucleotides can be arranged into two non-overlapping “strings” of nucleotides. One of these nucleotide strings is inherited from one’s mother, and the other is inherited from one’s father. The strings are “homologous” in the sense that they are the same length (to first approximation) and can be thought of as a pair. The strings can be arranged linearly side-by-side. For example, in the example genome depicted in Figure 1, there is an “A” nucleotide (inherited from the mom) and a “G” nucleotide (inherited from the dad) at the second position from the left. We call a continuous region of the genome a <em>locus</em>. A locus can consist of a single nucleotide or a range of contiguous nucleotides.</p>
 <p>The genome is partitioned into distinct physical pieces called chromosomes; there are 22 non-sex related chromosomes, or <em>autosomes</em>, and two sex-related chromosomes in the human genome. (We focus only on the autosomes in this blog post.) The genomic coordinate of a given locus is specified by the chromosome of the locus and the position along the chromosome at which the locus is located. For example, “chr1:150000” refers to the nucleotide on chromosome 1 located at position 150,000. Note that the notation “chr1:150000” does not refer specifically to either the maternal chromosome (i.e., the chromosome inherited from the mom) or the paternal chromosome (i.e., the chromosome inherited from the dad).</p>
@@ -2020,6 +2020,10 @@ body {
 <p>We fit the model via MLE, yielding an estimate <span class="math inline">\(\hat{\beta}\)</span> for <span class="math inline">\(\beta\)</span> and a p-value <span class="math inline">\(p\)</span> for a test of the null hypothesis <span class="math inline">\(H_0: \beta = 0\)</span>. (This p-value typically is obtained via Wald or likelihood ratio test.) If the trait is continuous, then we fit a linear regression model rather than a logistic regression model to the data.</p>
 <h3 id="multiple-testing-correction">Multiple testing correction</h3>
 <p>The regression analysis yields a set of <span class="math inline">\(p\)</span> p-values <span class="math inline">\(p_1, \dots, p_p\)</span>. We obtain a discovery set via a very simple procedure: we call all SNPs whose p-value falls below the threshold of <span class="math inline">\(5 \cdot 10^{-8}\)</span> as discoveries. Some more recent GWAS analyses apply a BH correction to the p-values to produce a discovery set, but this does not appear to be the norm.</p>
+<h3 id="software">Software</h3>
+<p>The most common statistical software package for carrying out a GWAS is <a href="https://www.cog-genomics.org/plink/">PLINK</a>. PLINK implements all the methods described above in highly efficient C code.</p>
+<h3 id="summary-statistics">Summary statistics</h3>
+<p>Unfortunately, due to privacy concerns, it is quite challenging and cumbersome to obtain access to GWAS data. (In particular, the SNP matrix contains highly sensitive genetic information.) GWAS studies typically publish <em>summary statistics</em> in place of the raw data. The summary statistics include the p-value, estimated regression coefficient <span class="math inline">\(\hat{\beta}\)</span>, and estimated standard error of the regression coefficient <span class="math inline">\(\sqrt{\widehat{V(\hat{\beta})}}\)</span> for each SNP. Researchers can use the summary statistics to conduct secondary analyses of GWAS data.</p>
 <h2 id="takeaways-and-limitations-of-gwas">Takeaways and limitations of GWAS</h2>
 <p>GWAS have identified hundreds of thousands of SNPs associated with hundreds of traits and diseases, yielding several interesting (and perhaps surprising) insights about the architecture of complex traits. For example, most traits are highly polygenic, i.e., they are influenced by tens of thousands (or more) of SNPs spread aross the genome. Additionally, the vast majority (<span class="math inline">\(&gt;95\%\)</span>) of significant SNPs lie in noncoding regions of the genome. These noncoding SNPs are thought to contribute to disease by modulating the expression of one more or disease-relevant genes.</p>
 <p>Despite their success, GWAS present several limitations, two of which we highlight here. First, due to LD (i.e., multicolinearity among the SNPs), it is challenging to identify a causal SNP among a set of SNPs in close physical proximity to one another. Second, it is unclear <em>how</em> SNPs in noncoding regions in the genome impact the phenotype. In particular, the gene (or genes) through which most noncoding SNP exert their effect is unknown. These limitations have impeded the translation of GWAS results into therapeutics for genetic diseases. In future blog posts I will explore genomic technologies (e.g., eQTLs studies, CRISPR experiments) and analytic tools that have been developed to overcome the limitations of GWAS.</p>

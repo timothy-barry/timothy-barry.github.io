@@ -15,7 +15,7 @@ draft: false
 preview: size_vs_maf.png
 ---
 
-After years of observing from the outside, I am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.
+After years of observing from the outside, I finally am getting into the genetics space (more on that later). This post is an overview of the most fundamental of topics in genetics: genome-wide association studies (GWAS). First, I provide some background on molecular genetics. Then, I discuss the methodology underlying GWAS. Finally, I conclude with a discussion of the successes and limitations of GWAS.
 
 ## Molecular genetics background
 
@@ -113,6 +113,14 @@ We fit the model via MLE, yielding an estimate $\hat{\beta}$ for $\beta$ and a p
 ### Multiple testing correction
 
 The regression analysis yields a set of $p$ p-values $p_1, \dots, p_p$. We obtain a discovery set via a very simple procedure: we call all SNPs whose p-value falls below the threshold of $5 \cdot 10^{-8}$ as discoveries. Some more recent GWAS analyses apply a BH correction to the p-values to produce a discovery set, but this does not appear to be the norm.
+
+### Software
+
+The most common statistical software package for carrying out a GWAS is [PLINK](https://www.cog-genomics.org/plink/). PLINK implements all the methods described above in highly efficient C code.
+
+### Summary statistics
+
+Unfortunately, due to privacy concerns, it is quite challenging and cumbersome to obtain access to GWAS data. (In particular, the SNP matrix contains highly sensitive genetic information.) GWAS studies typically publish *summary statistics* in place of the raw data. The summary statistics include the p-value, estimated regression coefficient $\hat{\beta}$, and estimated standard error of the regression coefficient $\sqrt{\widehat{V(\hat{\beta})}}$ for each SNP. Researchers can use the summary statistics to conduct secondary analyses of GWAS data.
 
 ## Takeaways and limitations of GWAS
 
