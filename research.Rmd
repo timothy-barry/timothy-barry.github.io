@@ -30,4 +30,4 @@ knitr::include_graphics("graphics/tessellation_cropped.png")
 
 -   Industry: [10x Genomics](https://www.10xgenomics.com/analysis-guides/single-cell-crispr-screen-analysis-with-sceptre) (main commercial supplier of single-cell CRISPR screen kits)
 
--   Research studies: [Morris et al., Science 2023](https://www.science.org/doi/10.1126/science.adh7699); [Tuano et al., Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02898-w)
+-   Example research: [Chardon et al., Nat. Com. 2024](https://www.nature.com/articles/s41467-024-52490-4); [Morris et al., Science 2023](https://www.science.org/doi/10.1126/science.adh7699)
