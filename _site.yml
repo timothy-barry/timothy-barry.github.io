@@ -9,8 +9,6 @@ navbar:
       href: research.html
     - text: "Blog"
       href: blog.html
-    - text: "Fun"
-      href: fun.html
   search: false
 output: 
   distill::distill_article:
