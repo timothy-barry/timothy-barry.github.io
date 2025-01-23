@@ -22,10 +22,10 @@ I am a postdoctoral researcher in the Department of Biostatistics at Harvard Uni
 
 :::
 
--   Statistics: independence and conditional independence testing, robust methods, measurement error
+-   Statistics: independence and conditional independence testing, multiple testing
 
--   Genomics: CRISPR experiments, in particular single-cell CRISPR screens
+-   Genomics: single-cell genomics, CRISPR experiments
 
--   Computing: data structures and algorithms for large-scale single-cell analysis, clouds and clusters
+-   Computing: clouds and clusters, efficient algorithms for genomics
 
-Feel free to shoot me an email at tbarry@hsph.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).
+Additionally, I increasingly am interested in exploring how emerging deep learning models can be leveraged to predict the effect of unseen genetic perturbations or interventions. Feel free to shoot me an email at tbarry@hsph.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).
