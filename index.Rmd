@@ -15,7 +15,7 @@ d-title {
 
 ::: {.floatting}
 ```{r out.width='25%', out.extra='style="float:right; padding:10px"', echo=FALSE, fig.align='right'}
-knitr::include_graphics("pic_3b.jpg")
+knitr::include_graphics("pic_3a.jpg")
 ```
 
 I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in the following areas.

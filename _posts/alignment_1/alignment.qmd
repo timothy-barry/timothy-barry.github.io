@@ -1,0 +1,21 @@
+---
+title: "Alignment"
+format: html
+editor: visual
+---
+
+# FILE TYPES
+
+**FASTA**: A `fasta` file is a plain text file that stores a reference genome, such as the human reference genome (e.g., `hg38.fa`). A FASTA file comprises one or more "sequences;" in the case of the human reference genome, each sequence is a chromosome. Each sequence begins with a header of the form `>1 dna:chromosome chromosome:GRCh37:1:1:249250621:1`, i.e. a `>` symbol followed by a description. On the following line is the sequence, which consists of A, T, G, and C, where N stands for "any base."
+
+A `fastq` file is a plain text file of reads. Each read begins with an identifier (`@DJB775P1:248:D0MDGACXX:7:1202:17534:49549`), followed by the read (`CAGTGGTATCAACGCAGAGTAAGCAGTGGTATCAACGCAAGATCGGAAGAGC`), followed by a plus sign (`+`), followed by the base-wise quality score (`JJJJIIJJJJJEHIJJJHHHHHHFFFFDDDDDEDDDDDDDDDDDDDDDD@DD`).
+
+# Working with `.fasta` files
+
+We can perform operations on `.fasta` files using `samtools`, `bwa`, and `bedtools`.
+
+`samtools faidx` creates a simple index that enables us to access the reference genome by position. `samtools faidx` creates an auxiliary file, `hg19.fasta.fai`, that stores (1) sequence name (e.g., `8`), (2) sequence length (e.g., `146364022`), (3) offset from start of file (e.g., `1410206056`), and (4) bases per line. After having created this file, we can randomly access into the reference genome by genomic coordinate as so:
+
+`samtools faidx hg19.fasta 8:10000-10050` ,
+
+where the coordinates are 1-based with respect to the start of the chromosome.
