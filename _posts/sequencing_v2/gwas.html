@@ -88,376 +88,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Tim Barry: The Random Lounge (Tim's blog)</title>
+  <title>Next generation sequencing (2025 version)</title>
+
+  <meta property="description" itemprop="description" content="A dive into library design, multiplexing, barcoding, and sequencing"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2025-07-29"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-07-29"/>
+  <meta name="article:author" content="Tim Barry"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Tim Barry: The Random Lounge (Tim&#39;s blog)"/>
+  <meta property="og:title" content="Next generation sequencing (2025 version)"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A dive into library design, multiplexing, barcoding, and sequencing"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Tim Barry"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Tim Barry: The Random Lounge (Tim&#39;s blog)"/>
+  <meta property="twitter:title" content="Next generation sequencing (2025 version)"/>
+  <meta property="twitter:description" content="A dive into library design, multiplexing, barcoding, and sequencing"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["The Random Lounge (Tim's blog)"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","draft","preview"]}},"value":[{"type":"character","attributes":{},"value":["Next generation sequencing (2025 version)"]},{"type":"character","attributes":{},"value":["A dive into library design, multiplexing, barcoding, and sequencing\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tim Barry"]},{"type":"character","attributes":{},"value":["https://timothy-barry.github.io"]}]}]},{"type":"character","attributes":{},"value":["07-29-2025"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Genomics"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["umi_library.png"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["~$figs.pptx","figs/Slide1.png","figs/Slide10.png","figs/Slide11.png","figs/Slide13.png","figs/Slide14.png","figs/Slide2.png","figs/Slide3.png","figs/Slide4.png","figs/Slide5.png","figs/Slide6.png","figs/Slide7.png","figs/Slide8.png","figs/Slide9.png","figs/umi_library.png","figs.pptx","gwas_files/anchor-4.2.2/anchor.min.js","gwas_files/bowser-1.9.3/bowser.min.js","gwas_files/distill-2.2.21/template.v2.js","gwas_files/header-attrs-2.29/header-attrs.js","gwas_files/jquery-3.6.0/jquery-3.6.0.js","gwas_files/jquery-3.6.0/jquery-3.6.0.min.js","gwas_files/jquery-3.6.0/jquery-3.6.0.min.map","gwas_files/popper-2.6.0/popper.min.js","gwas_files/tippy-6.2.7/tippy-bundle.umd.min.js","gwas_files/tippy-6.2.7/tippy-light-border.css","gwas_files/tippy-6.2.7/tippy.css","gwas_files/tippy-6.2.7/tippy.umd.min.js","gwas_files/webcomponents-2.0.0/webcomponents.js","umi_library.png"]}
   </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1837,407 +1500,58 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="gwas_files/header-attrs-2.29/header-attrs.js"></script>
+  <script src="gwas_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="gwas_files/popper-2.6.0/popper.min.js"></script>
+  <link href="gwas_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="gwas_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="gwas_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="gwas_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="gwas_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="gwas_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="gwas_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  .distill-site-nav {
-    color: #000000;
-    background-color: #EFEFEF;
-    font-weight: 200;
-    font-size: 13pt;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: black;
-  }
-
-  .distill-site-header {
-  }
-
-  .distill-site-footer {
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  body {
-    max-width: 1100px;
-    margin: auto;
-   padding: 1em;
-   line-height: 20px ; 
-  }
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"The Random Lounge (Tim's blog)","authors":[]}
+{"title":"Next generation sequencing (2025 version)","description":"A dive into library design, multiplexing, barcoding, and sequencing","authors":[{"author":"Tim Barry","authorURL":"https://timothy-barry.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-07-29T00:00:00.000-04:00","citationText":"Barry, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Tim Barry</a>
-</div>
-<div class="nav-right">
-<a href="research.html">Research</a>
-<a href="blog.html">Blog</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="The Random Lounge (Tim&#39;s blog)">The Random Lounge (Tim's blog)</h1>
-<a href="posts/sequencing_v2/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">July 29, 2025</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/sequencing_v2/umi_library.png"/>
-</div>
-<div class="description">
-<h2>Next generation sequencing (2025 version)</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>A dive into library design, multiplexing, barcoding, and sequencing</p>
-</div>
-</a>
-<a href="posts/2024-05-01-gwas/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">May 2, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2024-05-01-gwas/size_vs_maf.png"/>
-</div>
-<div class="description">
-<h2>Genome-wide association studies</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>An overview of genome-wide association studies.</p>
-</div>
-</a>
-<a href="posts/2020-07-07-generalized-linear-models/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Statistics"]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 19, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2020-07-07-generalized-linear-models/log_reg.png"/>
-</div>
-<div class="description">
-<h2>Generalized linear models</h2>
-<div class="dt-tags">
-<div class="dt-tag">Statistics</div>
-</div>
-<p>A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.</p>
-</div>
-</a>
-<a href="posts/2021-03-19-small-and-large-scale-single-cell-sequencing/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 15, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-03-19-small-and-large-scale-single-cell-sequencing/human-fetal.png"/>
-</div>
-<div class="description">
-<h2>Genomics for Statisticians 3: Small- and large-scale single-cell sequencing</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>We overview single-cell RNA sequencing, at both small and large scales.</p>
-</div>
-</a>
-<a href="posts/2020-06-03-second-generation-sequencing/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 11, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2020-06-03-second-generation-sequencing/next_gen_3_crop.png"/>
-</div>
-<div class="description">
-<h2>Genomics for statisticians 2: Next-generation sequencing, polymerase chain reaction</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>DNA sequencing lies at the core of modern genomic assays. Here, we discuss next-generation sequencing and the related technology of polymerase chain reaction.</p>
-</div>
-</a>
-<a href="posts/2020-06-22-exponential-families/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Statistics"]}</script>
-<div class="metadata">
-<div class="publishedDate">July 12, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-06-22-exponential-families/happy_normal.jpg"/>
-</div>
-<div class="description">
-<h2>Exponential families</h2>
-<div class="dt-tags">
-<div class="dt-tag">Statistics</div>
-</div>
-<p>The exponential family is a mathematical abstraction that unifies common parametric probability distributions. In this post we review the definition and basic properties of exponential families.</p>
-</div>
-</a>
-<a href="posts/2020-06-16-gamma-poisson-nb/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Statistics"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 16, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-06-16-gamma-poisson-nb/picsvg.png"/>
-</div>
-<div class="description">
-<h2>Gamma, Poisson, and negative binomial distributions</h2>
-<div class="dt-tags">
-<div class="dt-tag">Statistics</div>
-</div>
-<p>The gamma, Poisson, and negative binomial distributions are used extensively in genomics. In this post we review these distributions and their connections to one another. We also cover the various (and somewhat confusing) parameterizations of these distributions.</p>
-</div>
-</a>
-<a href="posts/2020-05-27-enhancers/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">May 27, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-05-27-enhancers/Nucleosome.jpg"/>
-</div>
-<div class="description">
-<h2>Genomics for statisticians 1: Enhancers</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>Enhancers are segments of DNA that increase the expression of a nearby gene. This post provides an overview enhancer biology and detection of enhancers at scale.</p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#category:Articles">Articles</a>
-<span class="category-count">(8)</span>
-</li>
-<li>
-<a href="#category:Genomics">Genomics</a>
-<span class="category-count">(5)</span>
-</li>
-<li>
-<a href="#category:Statistics">Statistics</a>
-<span class="category-count">(3)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>The Random Lounge (Tim’s blog)</h1>
+<h1>Next generation sequencing (2025 version)</h1>
 
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt-tag">Genomics</div>
+</div>
 <!--/radix_placeholder_categories-->
-
+<p><p>A dive into library design, multiplexing, barcoding, and sequencing</p></p>
 </div>
 
+<div class="d-byline">
+  Tim Barry <a href="https://timothy-barry.github.io" class="uri">https://timothy-barry.github.io</a> 
+  
+<br/>07-29-2025
+</div>
 
 <div class="d-article">
+<p>Next generation sequencing enables scientists to accurately and cost-efficiently determine the base-pair sequence of a fragment of DNA. Next generation sequencing forms the basis of much of contemporary genomics, from identifying genetic variants to quantifying gene expression to profiling the editing activity of CRISPR systems. This blog post is meant to provide a fairly in-depth exposition of Illumina next-generation sequencing. It is a followup to my earlier blog post on next-generation sequencing from 2020. (Reading the earlier blog post is not required to understand this one.)</p>
+<p>Next-generation sequencing comprises several steps: DNA shearing and adapter ligation, polymerase chain reaction, and base calling. Multiplexing and molecular barcoding enable us to sequence multiple experiments in parallel and nuetralize biases arising from polymerase chain reaction, respectively. We discuss these topics in some detail below.</p>
+<h1 id="dna-and-polymerase-redux">DNA and polymerase redux</h1>
+<p>Recall that DNA is a double-stranded</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

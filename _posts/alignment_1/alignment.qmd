@@ -19,3 +19,32 @@ We can perform operations on `.fasta` files using `samtools`, `bwa`, and `bedtoo
 `samtools faidx hg19.fasta 8:10000-10050` ,
 
 where the coordinates are 1-based with respect to the start of the chromosome.
+
+# Alignment
+
+## Barcode alignment
+
+We need some notion of distance between strings. Let $s_1$ and $s_2$ be equal-length strings; $s_1 = \omega_1 \omega_2 \dots \omega_n$ and $s_2 = \tau_1 \tau_2 \dots \tau_n$, where the $\omega_i$s and $\tau_i$s are the characters of the string. The Hamming distance $H(s_1, s_2)$ is the number of locations at which $s_1$ and $s_2$ differ, i.e.
+
+$$
+H(s_1, s_2) = \sum_{i=1}^n \mathbf{I}(\omega_i \neq \tau_i)
+$$
+
+To check whether a given subsequence matches a barcode, we can compute the Hamming distance; if the distance between the subsequence and barcode is less than or equal to (e.g.) one, then we say the subsequence matches the barcode.
+
+## Short read alignment
+
+-   BWA uses soft clipping; if one portion of the sequence maps to a location in the genome and the other does not, BWA will ignore the latter portion in aligning. Thus, it may not be necessary to trim adapters, etc.
+
+    After aligning and creating the SAM file, there are three key operations: (1) convert SAM to BAM, a binary representation of the SAM file, (2) sort the BAM file, and (3) index the BAM file.
+
+    ```         
+    # Step 1: Convert SAM to BAM
+    samtools view -bS ./aligned/test.sam > ./aligned/test.bam
+
+    # Step 2: Sort the BAM file
+    samtools sort -o ./aligned/test.st.bam ./aligned/test.bam
+
+    # Step 3: Index the sorted BAM file
+    samtools index ./aligned/test.st.bam
+    ```

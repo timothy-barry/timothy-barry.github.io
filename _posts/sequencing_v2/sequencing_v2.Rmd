@@ -1,0 +1,24 @@
+---
+title: "Next generation sequencing (2025 version)"
+description: |
+  A dive into library design, multiplexing, barcoding, and sequencing
+author:
+  - name: Tim Barry
+    url: https://timothy-barry.github.io
+date:
+output:
+  distill::distill_article:
+    self_contained: false
+categories:
+  - Genomics
+draft: false
+preview: umi_library.png
+---
+
+Next generation sequencing enables scientists to accurately and cost-efficiently determine the base-pair sequence of a fragment of DNA. Next generation sequencing forms the basis of much of contemporary genomics, from identifying genetic variants to quantifying gene expression to profiling the editing activity of CRISPR systems. This blog post is meant to provide a fairly in-depth exposition of Illumina next-generation sequencing. It is a followup to my earlier blog post on next-generation sequencing from 2020. (Reading the earlier blog post is not required to understand this one.)
+
+Next-generation sequencing comprises several steps: DNA shearing and adapter ligation, polymerase chain reaction, and base calling. Multiplexing and molecular barcoding enable us to sequence multiple experiments in parallel and nuetralize biases arising from polymerase chain reaction, respectively. We discuss these topics in some detail below.
+
+# DNA review
+
+Recall that DNA is a double-stranded molecule made up of nucleotide bases. A strand of DNA has a "direction" or "orientation" --- one end of the stand is labeled the **5' end**, and the other end is labeled the **3' end**. A strand of DNA its reverse complement are oriented in opposite directions.
