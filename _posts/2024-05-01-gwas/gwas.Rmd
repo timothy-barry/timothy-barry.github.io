@@ -24,10 +24,12 @@ The human genome consists of a set of 6 billion letters (or *nucleotides*). Each
 The genome is partitioned into distinct physical pieces called chromosomes; there are 22 non-sex related chromosomes, or *autosomes*, and two sex-related chromosomes in the human genome. (We focus only on the autosomes in this blog post.) The genomic coordinate of a given locus is specified by the chromosome of the locus and the position along the chromosome at which the locus is located. For example, "chr1:150000" refers to the nucleotide on chromosome 1 located at position 150,000. Note that the notation "chr1:150000" does not refer specifically to either the maternal chromosome (i.e., the chromosome inherited from the mom) or the paternal chromosome (i.e., the chromosome inherited from the dad).
 
 <br/>
-<center>
-![Figure 1: Cartoon of an individual's genome](genome_1.png){#id .class width=100% height=100%}
-</center>
 
+<center>
+
+![Figure 1: Cartoon of an individual's genome](genome_1.png){#id .class width="100%" height="100%"}
+
+</center>
 
 At a given single-nucleotide locus, there may or may not be variation in the population. For example, all individuals in the population may have a "G" nucleotide on both their maternal and paternal chromosome at a given position. (That is to say, *all* chromosomes in a population may have the same nucleotide at one position.) On the other hand, at certain locations in the genome, there may be variation across the chromosomes of a population. For example, at a given single-nucleotide locus, half of chromosomes may have an "A" nucleotide and the other half of chromosomes may have a "C" nucleotide. Single-nucleotide loci for which there is variation across chromosomes are called *single-nucleotide polymorphisms* (or SNPs). The different nucleotides present at a given SNP are called *alleles*. We typically assume that a given SNP is *biallelic*, i.e., that it comes in two versions, for example "A" or "C." We label one of the alleles the *reference* allele and the other allele the *alternative* allele; this labeling is arbitrary. If an individual has two copies of the same allele (at a given location), we say that the individual is *homozygous* (at that location); by contrast, if an individual has one copy of the reference allele and one copy of the alternative allele, we say that the individual is *heterozygous* (at that location).
 
@@ -44,8 +46,11 @@ The process by which a diploid cell divides to form haploid daughter cells is ca
 As a result of genetic recombination, SNPs that are in close physical proximity tend to be inherited together, while SNPs that are far away (or on different chromosomes) tend to be inherited (approximately) independently of one another. This phenomenon --- i.e., the phenomenon by which nearby SNPs are inherited together --- is called *linkage disequilibrium (LD)*. An *LD block* is a segment of the genome in which there is minimal genetic recombination. LD has important implications for the correlation structure of SNPs, as we will see.
 
 <br/>
+
 <center>
-![Figure 2: Sexual reproduction and recombination](sex_repro.png){#id .class width=100% height=100%}
+
+![Figure 2: Sexual reproduction and recombination](sex_repro.png){#id .class width="100%" height="100%"}
+
 </center>
 
 ## Hardy-Weinberg equilibrium
@@ -59,15 +64,21 @@ Suppose we use a SNP array to measure each of $p$ SNPs on a set of $n$ individua
 Consider a given biallelic SNP. The *major allele* (resp, *minor allele*) is the allele that occurs more (resp., less) frequently in the population. (Note that the major and minor alleles are conceptually distinct from the reference and alternative alleles; in other words, the major allele could be *either* the reference allele *or* the alternative allele, and the same goes for the minor allele.) The *minor allele frequency* is the frequency of the minor allele in the population. We can use the SNP matrix to estimate the MAF of a given SNP. Let $X_1, \dots, X_n$ denote the entries of the $j$th column of $M$ (i.e., the column of $M$ corresponding to SNP $j$). An estimate for the minor allele frequency is $$\widehat{\textrm{MAF}} = \min \left\{\frac{\sum_{i=1}^n X_i}{2n}, 1 -  \frac{\sum_{i=1}^n X_i}{2n} \right\}.$$ (Observe that $\sum_{i=1}^n X_i$ is the number of copies of the alternative allele across individuals, while $2n$ is the total number of alleles.)
 
 <br/>
+
 <center>
-![Figure 3: An example SNP matrix](snp_matrix.png){#id .class width=80%}
+
+![Figure 3: An example SNP matrix](snp_matrix.png){#id .class width="80%"}
+
 </center>
 
 A *rare variant* is a SNP whose minor allele frequency is small, where "small" operationally is defined as $1\%$. By contrast, a *common variant* is a SNP that is not a rare variant. Typically, we filter out rare variants in a GWAS, as the "effective sample size" of rare variants is insufficiently large to enable well-powered inference. However, as GWAS sample sizes increase, rare variant analysis is becoming increasingly practical. Rare variants typically exert a larger effect on the phenotype than common variants (Figure 4). In other words, as the MAF of a SNP increases, its effect size on the phenotype generally decreases. This phenomenon occurs because natural selection tends to remove alleles with large, deleterious effects from the gene pool. Rare variants are especially interesting in the context of drug discovery, as their alteration potentially could lead to especially large changes to the phenotype. A special type of rare variant is a *de novo variant*. A de novo variant is a variant that appears for the first time in the germ cell of a parent (and is not present in the somatic cells of the parent). De novo variants result from mutations in a sperm or egg cell.
 
 <br/>
+
 <center>
-![Figure 4: Common vs. rare variant effect sizes](size_vs_maf.png){#id .class width=60%}
+
+![Figure 4: Common vs. rare variant effect sizes](size_vs_maf.png){#id .class width="60%"}
+
 </center>
 
 Due to linkage disequilibrium, SNPs that are in close physical proximity tend to be highly correlated with one another (across individuals in a population). Let $\Sigma = (1/n) X X^T$ denote the empirical correlation matrix of the SNPs. Let $\Sigma_{i,j}$ denote the correlation between SNPs $i$ and $j$. A very rough model for $\Sigma$ is as follows. If SNPs $i$ and $j$ are in the same LD block, then $\Sigma_{i,j}$ is big (e.g., $\Sigma_{i,j} \approx 0.99$); on the other hand, if SNPs $i$ and $j$ are in different LD blocks, then $\Sigma_{i,j}$ is fairly small (e.g., $\Sigma_{i,j} \approx 0.15$). (SNPs in different LD blocks tend to be weakly but positively correlated due to population stratification, which we will discuss shortly.)
@@ -83,16 +94,18 @@ There are five main steps involved in carrying out a GWAS: performing quality co
 In practice the SNP matrix typically does not look quite like the SNP matrix depicted in Figure 3. Rather, some of the entries are missing due to technical errors in the genotyping process. A more realistic SNP matrix is shown in Figure 5. A subset of the entries is missing, as denoted by "NA." The quality control step involves removing low-quality SNPs (columns) and subjects (rows) from the analysis. (Not all quality control steps relate to missingness.)
 
 <br/>
+
 <center>
-![Figure 5: Example of a SNP matrix with missingness.](snp_matrix_2.png){#id .class width=80%}
+
+![Figure 5: Example of a SNP matrix with missingness.](snp_matrix_2.png){#id .class width="80%"}
+
 </center>
 
-- **SNPs and subjects with many missing values**. Some SNPs and subjects may have a large proportion of missing values. A common practice is to exclude SNPs and subjects whose missingness exceeds 10%.
-- **Heterozygosity check**. If a given subject is heterozygous on most alleles (i.e., the subject has a very large fraction of 1's and a comparatively small fraction of 0's and 2's), there likely were technical problems in genotyping that subject. Subjects with very high heterozygosity typically are removed from the analysis.
-- **Minor allele frequency filtering**. Recall that we can estimate the minor allele frequency of a given SNP via $\widehat{MAF}$. SNPs with a very low minor allele frequency have a small "effective sample size" and thus are challenging to perform statistical inference on. We typically remove SNPs whose minor allele frequency is below 10%.
-- **Hardy-Weinberg equilibrium filtering**. Recall that most SNPs in the population follow Hardy-Weinberg equilibrium, i.e. the number of alternative alleles that a given subject possesses is approximately binomially distributed. SNPs that deviate from Hardy-Weinberg equilibrium likely were measured incorrectly and thus are removed. We can check for Hardy-Weinberg equilibrium by running a binomial goodness of fit test on the data for each SNP.
-- **Additional QC checks**. Additional QC checks sometimes are performed, such as checking for relatedness of subjects to ensure (approximate) independence across samples.
-
+-   **SNPs and subjects with many missing values**. Some SNPs and subjects may have a large proportion of missing values. A common practice is to exclude SNPs and subjects whose missingness exceeds 10%.
+-   **Heterozygosity check**. If a given subject is heterozygous on most alleles (i.e., the subject has a very large fraction of 1's and a comparatively small fraction of 0's and 2's), there likely were technical problems in genotyping that subject. Subjects with very high heterozygosity typically are removed from the analysis.
+-   **Minor allele frequency filtering**. Recall that we can estimate the minor allele frequency of a given SNP via $\widehat{MAF}$. SNPs with a very low minor allele frequency have a small "effective sample size" and thus are challenging to perform statistical inference on. We typically remove SNPs whose minor allele frequency is below 10%.
+-   **Hardy-Weinberg equilibrium filtering**. Recall that most SNPs in the population follow Hardy-Weinberg equilibrium, i.e. the number of alternative alleles that a given subject possesses is approximately binomially distributed. SNPs that deviate from Hardy-Weinberg equilibrium likely were measured incorrectly and thus are removed. We can check for Hardy-Weinberg equilibrium by running a binomial goodness of fit test on the data for each SNP.
+-   **Additional QC checks**. Additional QC checks sometimes are performed, such as checking for relatedness of subjects to ensure (approximate) independence across samples.
 
 ### SNP imputation
 
@@ -132,6 +145,6 @@ Despite their success, GWAS present several limitations, two of which we highlig
 
 This post is based on a couple excellent references on GWAS.
 
-- The [GWAS lecture notes](https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/) by Prof Matti Pirinen.
+-   The [GWAS lecture notes](https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/) by Prof Matti Pirinen.
 
-- The [GWAS tutorial](https://pbreheny.github.io/adv-gwas-tutorial/) by Prof Patrick Breheny.
+-   The [GWAS tutorial](https://pbreheny.github.io/adv-gwas-tutorial/) by Prof Patrick Breheny.

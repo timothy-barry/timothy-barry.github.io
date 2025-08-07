@@ -27,4 +27,4 @@ I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts G
 
 -   **Computing**: efficient algorithms for genomics, clouds and clusters
 
-Feel free to shoot me an email at tbarry5@mgh.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).
+Feel free to shoot me an email at timothy.barry@childrens.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).
