@@ -18,6 +18,6 @@ d-title {
 knitr::include_graphics("pic_3a.jpg")
 ```
 
-I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in statistical problems arising in the context of CRISPR screen analysis and CRISPR therapeutic development.
+I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in statistical problems arising in the context of CRISPR screen analysis and CRISPR therapeutic development. Areas of methodological focus include independence and conditional independence testing, multiple testing, efficient algorithms for genomics, and (more recently) deep learning.
 
-Feel free to shoot me an email at timothy.barry@childrens.harvard.edu. Also, here is my [CV](ResumeCv/cv.pdf).
+timothy.barry@childrens.harvard.edu, [CV](ResumeCv/cv.pdf)
