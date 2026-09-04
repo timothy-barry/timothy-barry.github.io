@@ -1819,6 +1819,34 @@ body {
  padding: 1em;
  line-height: 20px ; 
 }
+
+.about-photo {
+  float: right;
+  display: block;
+  width: 260px;
+  max-width: 32%;
+  height: auto;
+  margin: 0 0 16px 28px;
+}
+
+.about-float > p:first-child {
+  margin: 0;
+}
+
+.about-float > p:nth-of-type(2) {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .about-photo {
+    float: none;
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    margin: 0 0 12px 0;
+  }
+}
+
 </style>
 <!--/radix_placeholder_site_in_header-->
 

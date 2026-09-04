@@ -455,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
@@ -1837,7 +1837,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -1882,6 +1882,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
    padding: 1em;
    line-height: 20px ; 
   }
+
+  .about-photo {
+    float: right;
+    display: block;
+    width: 260px;
+    max-width: 32%;
+    height: auto;
+    margin: 0 0 16px 28px;
+  }
+
+  .about-float > p:first-child {
+    margin: 0;
+  }
+
+  .about-float > p:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 700px) {
+    .about-photo {
+      float: none;
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      margin: 0 0 12px 0;
+    }
+  }
+
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1907,7 +1935,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="research.html">Research</a>
 <a href="blog.html">Blog</a>
-<a href="fun.html">Fun</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>

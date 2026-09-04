@@ -13,13 +13,10 @@ d-title {
   }
 ```
 
-::: {.floatting}
-```{r out.width='25%', out.extra='style="float:right; padding:10px"', echo=FALSE, fig.align='right'}
-knitr::include_graphics("pic_3a.jpg")
-```
+<div class="about-float">
+<img class="about-photo" src="pic_3a.jpg" alt="Tim Barry">
 
-I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I work in statistical genomics, with a focus on statistical problems arising in CRISPR screen analysis and CRISPR therapeutic development. 
+<p>I am a postdoctoral researcher at Boston Children's Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I work in statistical genomics, with a focus on problems arising in CRISPR genome engineering applications.</p>
 
-Methodologically, I am interested in independence and conditional independence testing, multiple testing, efficient algorithms for genomics, and (more recently) deep learning.
-
-timothy.barry@childrens.harvard.edu, [CV](ResumeCv/cv.pdf)
+ I am on the faculty job market in fall 2026. <p><a href="mailto:timothy.barry@childrens.harvard.edu">timothy.barry@childrens.harvard.edu</a>, <a href="ResumeCv/cv.pdf">CV</a>, <a href="https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en">Scholar</a></p>
+</div>

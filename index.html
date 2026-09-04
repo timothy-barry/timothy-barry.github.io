@@ -1884,6 +1884,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
    padding: 1em;
    line-height: 20px ; 
   }
+
+  .about-photo {
+    float: right;
+    display: block;
+    width: 260px;
+    max-width: 32%;
+    height: auto;
+    margin: 0 0 16px 28px;
+  }
+
+  .about-float > p:first-child {
+    margin: 0;
+  }
+
+  .about-float > p:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 700px) {
+    .about-photo {
+      float: none;
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      margin: 0 0 12px 0;
+    }
+  }
+
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1934,14 +1962,17 @@ d-title {
   }
 </style>
 </div>
-<div class="floatting">
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="pic_3a.jpg" width="25%" style="float:right; padding:10px" style="display: block; margin: auto 0 auto auto;" /></p>
+<div class="about-float">
+<p><img class="about-photo" src="pic_3a.jpg" alt="Tim Barry"></p>
+<p>
+I am a postdoctoral researcher at Boston Children’s Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I work in statistical genomics, with a focus on problems arising in CRISPR genome engineering applications.
+</p>
+I am on the faculty job market in fall 2026.
+<p>
+<a href="mailto:timothy.barry@childrens.harvard.edu">timothy.barry@childrens.harvard.edu</a>, <a href="ResumeCv/cv.pdf">CV</a>, <a href="https://scholar.google.com/citations?user=Jrjax-AAAAAJ&hl=en">Scholar</a>
+</p>
 </div>
-<p>I am a postdoctoral researcher at Boston Children’s Hospital and Massachusetts General Hospital, advised by Dan Bauer, Luca Pinello, and Danilo Pellin. I obtained my PhD in Statistics at Carnegie Mellon University. I like to work within the connective tissue that binds together the statistical, biological, and computational sciences. I am especially interested in statistical problems arising in the context of CRISPR screen analysis and CRISPR therapeutic development. Areas of methodological focus include independence and conditional independence testing, multiple testing, efficient algorithms for genomics, and (more recently) deep learning.</p>
-<p><a href="mailto:timothy.barry@childrens.harvard.edu" class="email">timothy.barry@childrens.harvard.edu</a>, <a href="ResumeCv/cv.pdf">CV</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -11,7 +11,7 @@ output:
     self_contained: false
 categories:
   - Genomics
-draft: false
+draft: true
 preview: umi_library.png
 ---
 
@@ -34,4 +34,3 @@ DNA is a double-stranded molecule composed of four types of nucleotide bases: A 
 Polymerase is an enzyme that synthesizes a new DNA strand complementary to a template strand. To begin synthesis, a short segment of DNA complementary to the template strand --- *the primer* --- must be bound to the template strand. Polymerase then "extends" this primer, synthesizing the full complementary strand in the 5' to 3' direction. Importantly, polymerse only can add bases in the 5' to 3' direction. The biology of polymerase underlies DNA replication, DNA transcription, and next generation sequencing.
 
 # DNA shearing and tagmentation
-

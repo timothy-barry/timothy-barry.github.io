@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -1882,6 +1882,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
    padding: 1em;
    line-height: 20px ; 
   }
+
+  .about-photo {
+    float: right;
+    display: block;
+    width: 260px;
+    max-width: 32%;
+    height: auto;
+    margin: 0 0 16px 28px;
+  }
+
+  .about-float > p:first-child {
+    margin: 0;
+  }
+
+  .about-float > p:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 700px) {
+    .about-photo {
+      float: none;
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      margin: 0 0 12px 0;
+    }
+  }
+
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -2069,25 +2097,6 @@ function init_posts_list() {
 <p>A dive into the theory behind GLMs. This post covers the GLM model, canonical and non-canonical link functions, optimization of the log-likelihood, and inference.</p>
 </div>
 </a>
-<a href="posts/sequencing_v2/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
-<div class="metadata">
-<div class="publishedDate">July 29, 2025</div>
-<div class="dt-authors">
-<div class="dt-author">Tim Barry</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/sequencing_v2/umi_library.png"/>
-</div>
-<div class="description">
-<h2>Next generation sequencing (2025 version)</h2>
-<div class="dt-tags">
-<div class="dt-tag">Genomics</div>
-</div>
-<p>A dive into library design, multiplexing, barcoding, and sequencing</p>
-</div>
-</a>
 <a href="posts/2024-05-01-gwas/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["Genomics"]}</script>
 <div class="metadata">
@@ -2154,7 +2163,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img data-src="posts/2020-06-22-exponential-families/happy_normal.jpg"/>
+<img src="posts/2020-06-22-exponential-families/happy_normal.jpg"/>
 </div>
 <div class="description">
 <h2>Exponential families</h2>
@@ -2209,11 +2218,11 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(8)</span>
+<span class="category-count">(7)</span>
 </li>
 <li>
 <a href="#category:Genomics">Genomics</a>
-<span class="category-count">(5)</span>
+<span class="category-count">(4)</span>
 </li>
 <li>
 <a href="#category:Statistics">Statistics</a>
