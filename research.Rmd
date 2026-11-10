@@ -27,11 +27,6 @@ site: distill::distill_website
 knitr::include_graphics("graphics/tessellation_cropped.png")
 ```
 
--   [**sceptre**](https://katsevich-lab.github.io/sceptre/): statistically rigorous, massively scalable single-cell CRISPR screen analysis
+-   [**sceptre**](https://katsevich-lab.github.io/sceptre/): statistically rigorous, massively scalable single-cell CRISPR screen analysis [(Endorsed by [10x Genomics](https://www.10xgenomics.com/analysis-guides/single-cell-crispr-screen-analysis-with-sceptre))]{style="color:blue"}
 -   [**ondisc**](https://timothy-barry.github.io/ondisc/): out-of-core and cluster-scale computing on single-cell data
 
-**Broader use of these tools**
-
--   Industry: [10x Genomics](https://www.10xgenomics.com/analysis-guides/single-cell-crispr-screen-analysis-with-sceptre) (main commercial supplier of single-cell CRISPR screen kits)
-
--   Example research: [Chardon et al., Nat. Com. 2024](https://www.nature.com/articles/s41467-024-52490-4); [Morris et al., Science 2023](https://www.science.org/doi/10.1126/science.adh7699)
