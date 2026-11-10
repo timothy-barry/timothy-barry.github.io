@@ -7,7 +7,7 @@ site: distill::distill_website
 
 -   **T Barry**, Z Niu, E Katsevich, X Lin. "The permuted score test for robust differential expression analysis," 2025. [[arXiv]](https://arxiv.org/abs/2501.03530)
 
-- L Fischer, **T Barry**, A Ramdas. "Multiple testing with anytime-valid Monte-Carlo p-values," 2024. [[arXiv]](https://arxiv.org/abs/2404.15586)
+- L Fischer, **T Barry**, A Ramdas. "Multiple testing with anytime-valid Monte-Carlo p-values," **Electronic Journal of Statistics**, 2024. [[Journal]](https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-20/issue-1/Multiple-testing-with-anytime-valid-Monte-Carlo-p-values/10.1214/26-EJS2514.full) [[ArXiv]](https://arxiv.org/abs/2404.15586)
 
 -   **T Barry**, K Mason, K Roeder, E Katsevich. "Robust differential expression testing for single-cell CRISPR screens at low multiplicity of infection," **Genome Biology**, 2024. [[Journal]](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03254-2) [[bioRxiv]](https://doi.org/10.1101/2023.05.15.540875) [[Replication code]](https://github.com/Katsevich-Lab/sceptre2-manuscript). [(Mihaela Serban Memorial Award, American Statistical Association, Pittsburgh chapter)]{style="color:blue"}
 
